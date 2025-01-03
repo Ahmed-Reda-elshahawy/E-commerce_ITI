@@ -7,7 +7,7 @@
     <script>
         window.addEventListener('load', function() {
             document.getElementById('submit').addEventListener('click', function(event) {
-                // Prevent form submission initially for validation
+                
                 event.preventDefault();
 
                 var name = document.getElementById('fname').value;
@@ -16,15 +16,15 @@
                 var repeatPassword = document.getElementById('psw-repeat').value;
                 var phone = document.getElementById('phone').value;
                 var address = document.getElementById('address').value;
-
+                
                 var age = document.getElementById('age').value;
                 var date = new Date();
                 // Generate unique ID
             var id = localStorage.length ;
-
+           
                
 
-                // Username validation
+               
                 const usernameRegex = /^[^\d\s][^\s]*$/;
                 if (!usernameRegex.test(name)) {
                     alert('Username cannot start with a number or contain spaces.');
@@ -60,33 +60,42 @@
                     return;
                 }
 
-                // Ensure a User Type is selected
+               
                 var userType = document.querySelector('input[name="type"]:checked');
-                console.log(userType);
+              
                 if (!userType) {
                     alert('Please select an account type (Customer or Seller).');
                     return;
                 }
+                var selectedUserType = userType.value;
+               
+
                 var userData = {
                 name: name,
                 email: email,
+                password: password,
                 phone: phone,
                 address: address,
                 age: age,
                 date: date.toISOString(),
-                userType:userType
+                UserType:selectedUserType
                 };
                
                   // Save user data to localStorage with a unique key
             localStorage.setItem(`userData_${id}`, JSON.stringify(userData));
 
-// Redirect to home page
-window.location.href = './cover.html';
+            // Redirect to home page
+            window.location.href = '../Home/Home.html';
                 //link for home page
              
                 
                 
                 
+            });
+
+
+            document.getElementById('cancel').addEventListener('click', function(event) {
+                window.location.href = "http:../Auth/Login.html";
             });
         });
     </script>
@@ -235,8 +244,8 @@ window.location.href = './cover.html';
             <div class="form-group">
                 <label for="type"><b>Account Type*</b></label>
                 <div class="radio-options">
-                    <label><input type="radio" name="type" value="Customer" required> Customer</label>
-                    <label><input type="radio" name="type" value="Seller" required> Seller</label>
+                    <label><input type="radio" name="type" value="Customer" id="Customer" required> Customer</label>
+                    <label><input type="radio" name="type" value="Seller" id="Seller" required> Seller</label>
                 </div>
             </div>
             </div>

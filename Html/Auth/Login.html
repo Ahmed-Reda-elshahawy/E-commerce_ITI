@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <script>
+        window.addEventListener('load', function() {
+    document.getElementById('submit').addEventListener('click', function(event) {
+                
+                event.preventDefault();
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('psw').value;
+          
+                
+               
+               for(var i=0; i<localStorage.length; i++){
+                var users = JSON.parse(localStorage.getItem(`userData_${i+1}`)) ;
+                if(users!=undefined){
+               
+               if(users.email==email && users.password==password){
+                    alert('Login Successfully');
+                    window.location.href = "http:../Home/Home.html";
+                    return;
+                
+                }   
+                
+                
+            }
+            
+                 
+               }
+               alert('Invalid Email or Password');
+    });
+    document.getElementById('cancel').addEventListener('click', function(event) {
+    
+
+    window.location.href = "http:../Auth/Registration.html";});
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            })//end of load;
+    </script>
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+    .container {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+    p {
+        text-align: center;
+        color: gray;
+    }
+    .form-group {
+     display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+     width: 100%; 
+    margin-left: 160px; 
+    }
+
+    .form-group label {
+         width: 25%; 
+        text-align: right; 
+        margin-right: 10px; 
+        }
+
+    .form-group input[type="text"],
+    .form-group input[type="password"] {
+    width: 30%;
+     padding: 10px;
+    
+     border: 1px solid black;
+     border-radius: 4px;
+}
+
+    input[type=text]:focus, input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+    .button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .registerbtn {
+            background-color: #252eb6;
+            color: white;
+            font-size: 18px;
+            padding: 16px 20px;
+            margin: 8px auto;
+            border: none;
+            cursor: pointer;
+            width: 35%;
+            opacity: 0.9;
+        }
+        .signin {
+            font-size: 40px;
+            text-align: center;
+        }
+        #cancel ,#forget{
+            background: none;
+            color: black;
+            text-decoration: underline;
+            padding: 16px 20px;
+            margin: 8px auto;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            font-size: 18px;
+
+          
+        }
+</style> 
+</head>
+<body>
+    <form>
+    <div class="container">
+        <h1>Login Form</h1>
+        <p>Be Part of Your Community</p>
+        <br><br>
+        <div class="form-group">
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Your Email" name="email" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Your password" name="password" id="psw" required>
+        </div>
+        <br><br>
+            <div class="button">
+                <button type="submit" class="registerbtn" id="submit">Login</button> <br>
+                <button type="reset" id="cancel">Don't have an account? Sign up</button>
+                <button type="reset" id="forget">Forget Password?</button>
+            
+        </div>
+    </form>
+</body>
+</html>
