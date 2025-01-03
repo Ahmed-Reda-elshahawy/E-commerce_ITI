@@ -1,0 +1,22 @@
+{
+    "Admins": [
+        {
+            "AdminID": "unique_identifier_1",
+            "AdminName": "admin_name_1",
+            "Email": "admin_email_1@example.com",
+            "Password": "secure_password_1",
+            "Role": "admin",
+            "ContactInfo": "admin_contact_info_1",
+            "DateCreated": "date_created_1"
+        },
+        {
+            "AdminID": "unique_identifier_2",
+            "AdminName": "admin_name_2",
+            "Email": "admin_email_2@example.com",
+            "Password": "secure_password_2",
+            "Role": "admin",
+            "ContactInfo": "admin_contact_info_2",
+            "DateCreated": "date_created_2"
+        }
+    ]
+}
