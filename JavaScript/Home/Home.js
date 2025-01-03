@@ -23,23 +23,23 @@ document.querySelectorAll(".btn").forEach(function (btn) {
 //     }
 // });
 
-let scrollAmount = 0;
-    const cardWidth = 160; 
-    const totalCards = 10; 
-    const maxScroll = (totalCards - 5) * cardWidth; 
+// let scrollAmount = 0;
+//     const cardWidth = 160; 
+//     const totalCards = 10; 
+//     const maxScroll = (totalCards - 5) * cardWidth; 
 
-    function moveLeft() {
-        const row = document.querySelector('.rowSale');
-        if (scrollAmount > 0) {
-            scrollAmount -= cardWidth;
-            row.style.transform = `translateX(${Math.max(scrollAmount, 0)}px)`;
-        }
-    }
+//     function moveLeft() {
+//         const row = document.querySelector('.rowSale');
+//         if (scrollAmount > 0) {
+//             scrollAmount -= cardWidth;
+//             row.style.transform = `translateX(${Math.max(scrollAmount, 0)}px)`;
+//         }
+//     }
 
-    function moveRight() {
-        const row = document.querySelector('.rowSale');
-        if (scrollAmount < maxScroll) {
-            scrollAmount += cardWidth;
-            row.style.transform = `translateX(${Math.min(scrollAmount, maxScroll)}px)`;
-        }
-    }
+//     function moveRight() {
+//         const row = document.querySelector('.rowSale');
+//         if (scrollAmount < maxScroll) {
+//             scrollAmount += cardWidth;
+//             row.style.transform = `translateX(${Math.min(scrollAmount, maxScroll)}px)`;
+//         }
+//     }
