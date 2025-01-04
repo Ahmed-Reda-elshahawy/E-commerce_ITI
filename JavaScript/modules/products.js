@@ -85,8 +85,10 @@ export function listAllProducts() {
 //search function
 export function searchProduct(searchQuery) {
     const products = JSON.parse(localStorage.getItem("products")) || [];
-    const result = products.filter(product => product.title.toLowerCase().includes(searchQuery.toLowerCase())) ||
-        (product.description && product.description.toLowerCase().includes(searchQuery.toLowerCase()));
+    const result = products.filter(product => 
+        product.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        (product.description && product.description.toLowerCase().includes(searchQuery.toLowerCase()))
+    );
 
     if (result.length === 0) {
         console.log("No products found matching the search criteria.");
@@ -94,7 +96,7 @@ export function searchProduct(searchQuery) {
     }
 
     return result;
-};
+}
 
 // Load products if they are not already stored in localStorage
 if (!localStorage.getItem('products')) {
