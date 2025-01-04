@@ -194,7 +194,9 @@ ul {
 
 .add-to-cart-icon {
     position: absolute;
-    transform: translate(9.2vw, -4.3vh); 
+    top: 99%;
+    right: 10px;
+    transform: translateY(-50%); 
     color: black; 
     text-align: center;
     justify-content: end;
