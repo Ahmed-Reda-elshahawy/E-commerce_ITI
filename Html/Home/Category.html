@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Category</title>
     <link rel="stylesheet" href="../../assets/Bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../../Style/Home/Home.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -34,23 +34,17 @@
                                 data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1">
                                 Brands
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="categorylist">
                                 <div class="row">
                                     <div class="col-6">
-                                        <li><a class="dropdown-item" href="#"><i class="fasspcial fas fa-suitcase"></i>
-                                                Nike</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="fasspcial fas fa-suitcase"></i>
-                                                Puma</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="fasspcial fas fa-suitcase"></i>
-                                                Adidas</a></li>
+                                        <li><a class="dropdown-item brand" href="../Home/Category.html" data-brand="Nike"><i class="fasspcial fas fa-suitcase"></i> Nike</a></li>
+                                        <li><a class="dropdown-item brand" href="../Home/Category.html" data-brand="Puma"><i class="fasspcial fas fa-suitcase"></i> Puma</a></li>
+                                        <li><a class="dropdown-item brand" href="../Home/Category.html" data-brand="Adidas"><i class="fasspcial fas fa-suitcase"></i> Adidas</a></li>
                                     </div>
                                     <div class="col-6">
-                                        <li><a class="dropdown-item" href="#"><i class="fasspcial fas fa-suitcase"></i>
-                                                Reebok</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="fasspcial fas fa-suitcase"></i>
-                                                Herschel</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="fasspcial fas fa-suitcase"></i>
-                                                The North Face</a></li>
+                                        <li><a class="dropdown-item brand" href="../Home/Category.html" data-brand="Reebok"><i class="fasspcial fas fa-suitcase"></i> Reebok</a></li>
+                                        <li><a class="dropdown-item brand" href="../Home/Category.html" data-brand="Herschel"><i class="fasspcial fas fa-suitcase"></i> Herschel</a></li>
+                                        <li><a class="dropdown-item brand" href="../Home/Category.html" data-brand="The North Face"><i class="fasspcial fas fa-suitcase"></i> The North Face</a></li>
                                     </div>
                                 </div>
                             </ul>
@@ -63,25 +57,25 @@
 
                 <ul class="navbar-nav rightSideNav d-flex justify-content-end align-items-center gap-3 w-100 ms-auto">
                     <li class="nav-item navbar-nav d-flex justify-content-end align-items-center gap-2">
-                        <div class="collapse" id="searchContainer">
-                            <input type="text" class="form-control" placeholder="Search...">
+                        <div>
+                            <input type="text" class="form-control" placeholder="Search..." id="searchInput">
+                            <ul id="searchResults" style="list-style-type: none; padding-left: 0;"></ul>
                         </div>
-                        <a class="icon iconhover" href="#" data-bs-toggle="collapse" data-bs-target="#searchContainer">
+                        <a class="icon iconhover" href="#">
                             <i class="fas fa-search"></i>
-                            <div id="searchResults"></div>
                         </a>
                     </li>
+                    
                     <li class="nav-item dropdown">
                         <a class="icon btn nav-link iconhover" id="userIcon" href="#">
                             <i class="fas fa-user"></i>
                         </a>
                         <ul class="dropdown-menu" id="userDropdown">
-                            <!-- style="display: none; width: 200px; height: 150px; position: absolute; left: 50%; transform: translateX(-50%); z-index: 1000;" -->
                             <li class="dropdown-item">
-                                <a id="login" class="nav-link active w-100" aria-current="page" href="#">Login</a>
+                                <a id="login" class="nav-link w-100" aria-current="page" href="#">Login</a>
                             </li>
                             <li class="dropdown-item">
-                                <a id="signUp" class="nav-link active w-100" aria-current="page" href="#">Sign Up</a>
+                                <a id="signUp" class="nav-link w-100" aria-current="page" href="#">Sign Up</a>
                             </li>
                         </ul>
                     </li>
@@ -99,7 +93,7 @@
         <div class="HomeProducts container">
             <div class="">
                 <div class="d-flex justify-content-center align-items-center">
-                    <h4 class="NewArrivalHeader NewArrivalHeadersp">Shop All</h4>
+                    <h4 class="NewArrivalHeader NewArrivalHeadersp"></h4>
                 </div>
             </div>
             <div class="row ms-5 mt-4 g-2 allProducts" id="cardContainerAll">
@@ -160,13 +154,11 @@
             </div>
         </footer>
     </div>
-
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
     <script src="../../assets/Bootstrap/bootstrap.bundle.js"></script>
-    <script src="../../JavaScript/modules/products.js" type="module"></script>
-    <script src="../../JavaScript/Home/ShopAll.js"></script>
+    <script src="../../JavaScript/Home/Category.js"></script>
 </body>
 
 </html>

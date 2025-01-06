@@ -34,23 +34,17 @@
                                 data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1">
                                 Brands
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="categorylist">
                                 <div class="row">
                                     <div class="col-6">
-                                        <li><a class="dropdown-item" href="#"><i class="fasspcial fas fa-suitcase"></i>
-                                                Nike</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="fasspcial fas fa-suitcase"></i>
-                                                Puma</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="fasspcial fas fa-suitcase"></i>
-                                                Adidas</a></li>
+                                        <li><a class="dropdown-item " href="../Home/Category.html" data-brand="Nike"><i class="fasspcial fas fa-suitcase"></i> Nike</a></li>
+                                        <li><a class="dropdown-item" href="../Home/Category.html" data-brand="Puma"><i class="fasspcial fas fa-suitcase"></i> Puma</a></li>
+                                        <li><a class="dropdown-item" href="../Home/Category.html" data-brand="Adidas"><i class="fasspcial fas fa-suitcase"></i> Adidas</a></li>
                                     </div>
                                     <div class="col-6">
-                                        <li><a class="dropdown-item" href="#"><i class="fasspcial fas fa-suitcase"></i>
-                                                Reebok</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="fasspcial fas fa-suitcase"></i>
-                                                Herschel</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="fasspcial fas fa-suitcase"></i>
-                                                The North Face</a></li>
+                                        <li><a class="dropdown-item" href="../Home/Category.html" data-brand="Reebok"><i class="fasspcial fas fa-suitcase"></i> Reebok</a></li>
+                                        <li><a class="dropdown-item" href="../Home/Category.html" data-brand="Herschel"><i class="fasspcial fas fa-suitcase"></i> Herschel</a></li>
+                                        <li><a class="dropdown-item" href="../Home/Category.html" data-brand="The North Face"><i class="fasspcial fas fa-suitcase"></i> The North Face</a></li>
                                     </div>
                                 </div>
                             </ul>
@@ -63,22 +57,25 @@
 
                 <ul class="navbar-nav rightSideNav d-flex justify-content-end align-items-center gap-3 w-100 ms-auto">
                     <li class="nav-item navbar-nav d-flex justify-content-end align-items-center gap-2">
-                        <div class="collapse" id="searchContainer">
-                            <input type="text" class="form-control" placeholder="Search...">
+                        <div>
+                            <input type="text" class="form-control" placeholder="Search..." id="searchInput">
+                            <ul id="searchResults" style="list-style-type: none; padding-left: 0;"></ul>
                         </div>
-                        <a class="icon iconhover" href="#" data-bs-toggle="collapse" data-bs-target="#searchContainer">
+                        <a class="icon iconhover" href="#">
                             <i class="fas fa-search"></i>
-                            <div id="searchResults"></div>
                         </a>
                     </li>
+                    
                     <li class="nav-item dropdown">
                         <a class="icon btn nav-link iconhover" id="userIcon" href="#">
                             <i class="fas fa-user"></i>
                         </a>
                         <ul class="dropdown-menu" id="userDropdown">
-                            <!-- style="display: none; width: 200px; height: 150px; position: absolute; left: 50%; transform: translateX(-50%); z-index: 1000;" -->
                             <li class="dropdown-item">
-                                <a id="signUp" class="nav-link active w-100" aria-current="page" href="#">Sign Out</a>
+                                <a id="login" class="nav-link w-100" aria-current="page" href="#">Login</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a id="signUp" class="nav-link w-100" aria-current="page" href="#">Sign Up</a>
                             </li>
                         </ul>
                     </li>
@@ -222,9 +219,6 @@
             <div class="row ms-5 mt-4 g-2 allProducts" id="cardContainerAllSale">
 
             </div>
-            <div class="NewArrivalButtonDiv mt-4">
-                <button class="NewArrivalButton" id="SaleButton" onclick="shopAllSale()">Shop All</button>
-            </div>
         </div>
     </div>
 
@@ -322,6 +316,7 @@
     <script src="../../assets/Bootstrap/bootstrap.bundle.js"></script>
     <script src="../../JavaScript/Home/Home.js" type="module"></script>
     <script src="../../JavaScript/modules/products.js" type="module"></script>
+    <script src="../../JavaScript/Home/Category.js"></script>
 </body>
 
 </html>

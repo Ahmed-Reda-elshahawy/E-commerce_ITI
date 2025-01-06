@@ -9,6 +9,33 @@ body {
 }
 /* Navbar Style */
 
+#searchResults {
+    position: absolute; 
+    background-color: white; 
+    border: 1px solid #ccc;
+    border-top: none;
+    width: 93%; 
+    max-height: 200px; 
+    overflow-y: auto; 
+    display: none; 
+    z-index: 1000; 
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+    border-radius: 5px;
+}
+
+#searchResults li {
+    padding: 10px; 
+    border-bottom: 1px solid #f0f0f0; 
+}
+
+#searchResults li:hover {
+    background-color: #f0f0f0; 
+    cursor: pointer; 
+}
+
+
 .navbar{
     background-color: white;
 }
@@ -28,6 +55,10 @@ ul {
 
 .icon {
     color: #000000;
+}
+
+.dropdown-toggle::after {
+    display: none;
 }
 
 #signUp,
@@ -80,6 +111,10 @@ ul {
     height: 200px;
 }
 
+.dropdownColor{
+    color: gray;
+}
+
 .fasspcial {
     font-size: 19px;
 }
@@ -116,6 +151,14 @@ ul {
 }
 
 .nav-item:hover #userDropdown {
+    display: block;
+}
+
+#categorylist{
+    display: none;
+}
+
+.nav-item:hover #categorylist{
     display: block;
 }
 

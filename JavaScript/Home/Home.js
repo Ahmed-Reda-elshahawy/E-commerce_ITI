@@ -1,8 +1,15 @@
-document.querySelectorAll(".btn").forEach(function (btn) {
-    btn.parentNode.addEventListener("click", function () {
-        btn.classList.toggle("rotated");
-    });
-});
+async function loadDataFromJson() {
+    try {
+        const response = await fetch('../../Data/products.json');
+        const data = await response.json();
+        localStorage.setItem("products", JSON.stringify(data));
+        console.log("Data loaded into localStorage:", data);
+        // return "Products loaded into localStorage";
+    } catch (error) {
+        console.error("Error loading data: ", error);
+        return null;
+    }
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     let products = JSON.parse(localStorage.getItem("products"));
@@ -67,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">${products.products[i].title}</h5>
-                        <p class="itemPrice"><del style="color: rgb(85, 84, 84)">${products.products[i].price}$</del> ${((products.products[i].price)-((products.products[i].price)*((products.products[i].discountPercentage)/100))).toFixed(2)}$</p>
+                        <p class="itemPrice"><del style="color: rgb(85, 84, 84)">${products.products[i].price}$</del> ${((products.products[i].price) - ((products.products[i].price) * ((products.products[i].discountPercentage) / 100))).toFixed(2)}$</p>
                     </div>
                 </div>
             `;
@@ -81,12 +88,85 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.getElementById("NewArrivalButton").addEventListener("click", newArrival);
 
-function newArrival(){
+function newArrival() {
     window.location.href = "../Home/NewArrival.html"
 }
 
 document.getElementById("shopNowButton").addEventListener("click", shopNow);
 
-function shopNow(){
+function shopNow() {
     window.location.href = "../Home/ShopAll.html"
 }
+
+// search
+
+function searchProduct(searchQuery) {
+    const products = JSON.parse(localStorage.getItem("products") || "[]");
+    return Array.isArray(products) ? products.filter(product =>
+        product.title.toLowerCase().trim().includes(searchQuery.toLowerCase().trim()) || 
+        (product.category && product.category.toLowerCase().trim().includes(searchQuery.toLowerCase().trim()))
+    ) : [];
+}
+
+document.getElementById("searchInput").addEventListener("input", function () {
+    const searchQuery = this.value.trim();
+    const searchResultsContainer = document.getElementById("searchResults");
+    searchResultsContainer.innerHTML = "";
+
+    if (searchQuery === "") {
+        searchResultsContainer.style.display = "none";
+        return;
+    }
+
+    const results = searchProduct(searchQuery);
+
+    if (results.length === 0) {
+        const noResultsItem = document.createElement("li");
+        noResultsItem.textContent = "No products found.";
+        noResultsItem.style.color = "red";
+        noResultsItem.style.padding = "5px 10px";
+        searchResultsContainer.appendChild(noResultsItem);
+        searchResultsContainer.style.display = "block";
+        return;
+    }
+
+    if(results.length > 0){
+        results.forEach(product => {
+            const resultItem = document.createElement("li");
+            resultItem.textContent = product.title;
+            resultItem.style.cursor = "pointer";
+            resultItem.style.padding = "5px 10px";
+    
+            resultItem.addEventListener("click", function () {
+                document.getElementById("searchInput").value = product.title;
+                searchResultsContainer.innerHTML = "";
+                searchResultsContainer.style.display = "none";
+            });
+    
+            searchResultsContainer.appendChild(resultItem);
+        });
+    
+    }
+    searchResultsContainer.style.display = "block";
+});
+
+
+// category
+
+const brandLinks = document.querySelectorAll(".dropdown-item");
+
+brandLinks.forEach(link => {
+    link.addEventListener("click", event => {
+        event.preventDefault();
+
+        const brandName = link.getAttribute("data-brand");
+
+        const allProducts = JSON.parse(localStorage.getItem("products")) || [];
+
+        const filteredProducts = allProducts.filter(product => product.brand === brandName);
+
+        localStorage.setItem("filteredProducts", JSON.stringify(filteredProducts));
+
+        window.location.href = link.getAttribute("href");
+    });
+});
