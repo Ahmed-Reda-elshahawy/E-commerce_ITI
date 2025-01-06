@@ -9,7 +9,7 @@
             "color": "Color: Obsidian/Obsidian/White",
             "style": "Style: DD0559-451",
             "category": "Nike Bags",
-            "price":29.99,
+            "price": 29.99,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -52,17 +52,16 @@
                 "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9d431554-8dd9-48d7-9660-ebb5891f0b01/NK+ELMNTL+BKPK+-+HBR.png"
             ]
         },
-
         {
-           
+            "id": 2,
             "sellerId": 1,
             "title": "Jordan Icon",
             "tittle2": "Backpack",
             "description": "This backpack has an elevated look making it great for everyday wear. It's made from durable poly fabric and features the iconic elephant skin pattern to complement your Jordans. The spacious main compartment houses a padded laptop sleeve, the zip pocket on the front helps secure small items you want quick and easy access to and the adjustable straps provide comfortable wear.",
-            "color" : "Color: Light Olive",
-            "style" : "Style: HQ7238-380",
+            "color": "Color: Light Olive",
+            "style": "Style: HQ7238-380",
             "category": "Nike Bags",
-            "price":109.99,
+            "price": 109.99,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -105,7 +104,6 @@
                 "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2aff51eb-b00f-4fb2-8788-4e0b41a9b963/JAM+MONOGRAM+BACKPACK.png"
             ]
         },
-
         {
             "id": 3,
             "sellerId": 1,
@@ -115,7 +113,7 @@
             "color": "Color: Black/Black/White",
             "style": "Style: DD0562-010",
             "category": "Nike Bags",
-            "price":37.99,
+            "price": 37.99,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -158,17 +156,16 @@
                 "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0d87d388-d6f4-4a45-b5fc-4e43d6f96bcc/NK+ELMNTL+BKPK+-+LBR.png"
             ]
         },
-
         {
             "id": 4,
             "sellerId": 2,
             "title": "Nike Utility Speed 2.0",
             "tittle2": "Backpack",
             "description": "Keep your gear organised with exterior zipped front pockets for small items and a spacious main compartment with a luggage-style zip that opens fully to the bottom. The main compartment fits a pair of shoes and a change of clothes and has internal slip pockets as well as dedicated pockets for a 16 inch laptop and other small electronics.",
-            "color":"Color: Red Sepia/Red Sepia/Black",
-            "style":"Style: HF0635-218",
+            "color": "Color: Red Sepia/Red Sepia/Black",
+            "style": "Style: HF0635-218",
             "category": "Nike Bags",
-            "price":55.99,
+            "price": 55.99,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -211,17 +208,16 @@
                 "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ee2765a3-7e50-454c-ae63-6e873046cbbe/NK+UTILITY+SPD+BKPK+-+2.0+GFX.png"
             ]
         },
-        
         {
             "id": 5,
             "sellerId": 2,
             "title": "Nike Brasilia",
             "tittle2": "Backpack",
             "description": "You've got stuff and we've got the perfect way to carry it all. Meet the Nike Brasilia backpack. Its roomy main compartment has space for books and other large gear, while the mesh side pockets can fit a water bottle or other small items you want to keep within easy reach.",
-            "color" : "Color: Armoury Navy/Aegean Storm/Green Frost",
+            "color": "Color: Armoury Navy/Aegean Storm/Green Frost",
             "style": "Style: HF6651-478",
             "category": "Nike Bags",
-            "price":31.99,
+            "price": 31.99,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -264,17 +260,16 @@
                 "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3e246e9e-2d8e-4658-b353-b9e039c561ca/Y+NK+BRSLA+BKPK+-+CAT+AOP+FA24.png"
             ]
         },
-
         {
             "id": 6,
             "sellerId": 2,
             "title": "Nike Pro",
             "tittle2": "Storm-FIT ADV Backpack",
             "description": "Wet weather doesn't have to be a pain in the back. Nike Storm-FIT technology helps resist elements like wind and water to help keep your stuff dry, while a double-zip main compartment with a laptop sleeve and a reflective-design front pocket help keep you organised.",
-            "color" : "Color: Black/Black/Reflect Silver",
+            "color": "Color: Black/Black/Reflect Silver",
             "style": "Style: FZ6369-010",
             "category": "Nike Bags",
-            "price":55.99,
+            "price": 55.99,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -317,17 +312,16 @@
                 "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/500b8bcf-b683-4087-826d-691ec8cd695d/NK+ELEMENTAL+PRO+BKPK+-+SF+ADV.png"
             ]
         },
-        
         {
             "id": 7,
             "sellerId": 3,
             "title": "Nike Utility Power",
             "tittle2": "Backpack",
             "description": "Your life isn't one-dimensional, so your bag shouldn't be either. Keep your work life separated from your play with separate internal compartments for your laptop, phone and shoes. There are also three exterior zip pockets for small essentials to help keep you organised.",
-            "color" : "Color: Desert Khaki/Desert Khaki/Khaki",
+            "color": "Color: Desert Khaki/Desert Khaki/Khaki",
             "style": "Style: FN4120-251",
             "category": "Nike Bags",
-            "price":94.99,
+            "price": 94.99,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -370,17 +364,16 @@
                 "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e3ba44bd-f28a-4549-b861-696cdcd558ea/NK+UTILITY+POWER+BKPK+-+2.0.png"
             ]
         },
-        
         {
             "id": 8,
             "sellerId": 3,
             "title": "Nike One",
             "tittle2": "Backpack",
             "description": "Don't tell your other bags, but this might just be the only one you need. A large main pocket and interior pockets make organising essentials a breeze. Padded and adjustable shoulder straps for comfortable carrying.",
-            "color" : "Color: Black/Iron Grey/Black",
+            "color": "Color: Black/Iron Grey/Black",
             "style": "Style: HV1194-010",
             "category": "Nike Bags",
-            "price":89.99,
+            "price": 89.99,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -423,17 +416,16 @@
                 "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/91fffb2f-fb63-40b3-81fc-7b18c60ddcb2/NK+ONE+BKPK.png"
             ]
         },
-        
         {
             "id": 9,
             "sellerId": 3,
             "title": "Nike Air",
             "tittle2": "Backpack",
             "description": "Keep your gear in check with a backpack inspired by the iconic Air Max 95. With convenient organisation that includes a laptop sleeve and water bottle pouch, this backpack keeps up with you. Padded adjustable straps keep you comfortable whether you're headed to a kickabout or hanging out with friends.",
-            "color" : "Color: Black/Iron Grey/White",
+            "color": "Color: Black/Iron Grey/White",
             "style": "Style: DV6246-010",
             "category": "Nike Bags",
-            "price":47.99,
+            "price": 47.99,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -476,17 +468,16 @@
                 "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1d61dea4-793c-47ad-b8f1-89852a3c4804/NK+AIR+GRX+BKPK.png"
             ]
         },
-        
         {
             "id": 10,
             "sellerId": 4,
             "title": "Nike Academy Team",
             "tittle2": "Backpack",
             "description": "The Nike Academy Team Backpack gives you spacious storage with multiple pockets. Padding on the straps and back panel lets you comfortably carry your gear.",
-            "color" : "Color: Black/Black/White",
+            "color": "Color: Black/Black/White",
             "style": "Style: DA2571-010",
             "category": "Nike Bags",
-            "price":32.99,
+            "price": 32.99,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -529,17 +520,16 @@
                 "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e17e4d2b-ac8e-404e-b702-cb5b1801c9ea/Y+NK+ACDMY+TEAM+BKPK.png"
             ]
         },
-        
         {
             "id": 11,
             "sellerId": 4,
             "title": "Nike Sportswear RPM",
             "tittle2": "Backpack",
             "description": "Meet the backpack made for the person who needs to carry it all. Whether it's on a sunny-day hike or hiking around campus, you have plenty of space to stay organised while also staying comfortable. Multiple zip pockets complement the spacious main compartment, while both the back and straps are padded for long days on your feet.",
-            "color" : "Color: Armoury Navy/Black/Armoury Navy",
+            "color": "Color: Armoury Navy/Black/Armoury Navy",
             "style": "Style: FD7544-478",
             "category": "Nike Bags",
-            "price":79.99,
+            "price": 79.99,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -582,17 +572,16 @@
                 "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3ab84032-02f9-472d-afb3-4e4fffc0ecc6/NK+NSW+RPM+BKPK+2.0.png"
             ]
         },
-
         {
             "id": 12,
             "sellerId": 4,
             "title": "Nike Heritage",
             "tittle2": "Backpack",
             "description": "Take your gear to go with the Nike Heritage Backpack. Its spacious main compartment features a sleeve that holds up to a 15 inch laptop, so your computer is never out of reach. 2 zipped accessories pockets help keep your gear organised and easy to grab. This product is made from at least 65% recycled polyester fibres.",
-            "color" : "Color: Smoke Grey/Smoke Grey/White",
+            "color": "Color: Smoke Grey/Smoke Grey/White",
             "style": "Style: DC4244-063",
             "category": "Nike Bags",
-            "price":34.99,
+            "price": 34.99,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -635,17 +624,16 @@
                 "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3c3c2f04-44a4-4120-a90a-dc23ca47b98d/NK+HERITAGE+BKPK.png"
             ]
         },
-
         {
             "id": 13,
             "sellerId": 5,
             "title": "Nike Academy Team",
             "tittle2": "Backpack",
             "description": "The weather doesn't keep you from training, and it shouldn't keep you from having dry gear. Whether resting on the ground or hanging on a fence, this backpack handles less-than-ideal game and training conditions—and holds your ball in the front pocket. The rain fly features Nike Storm-FIT technology to help provide extra coverage from the elements, while mesh on the bag allows breathability and ventilation on those good-weather days.",
-            "color" : "Color: Black/Black/White",
+            "color": "Color: Black/Black/White",
             "style": "Style: DV0761-011",
             "category": "Nike Bags",
-            "price":42.99,
+            "price": 42.99,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -688,17 +676,16 @@
                 "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/aeb732f9-601d-41a3-b297-ab230dee61f2/NK+ACDMY+TEAM+BKPK+2.3.png"
             ]
         },
-
         {
             "id": 14,
             "sellerId": 5,
             "title": "Jordan Alpha",
             "tittle2": "Backpack",
             "description": "This backpack is for those who are self-assured, confident, powerful. It's made from durable recycled fabrics and has a versatile design that will take you from work to gym and to travel. The spacious main compartment has a 2-way zip closure and houses a laptop compartment, as well as a mesh slip pocket to secure smaller items. A front zip pocket helps secure smaller items you want quick and easy access to, pockets on the sides can be used to hold your favourite beverages and a zip shoe garage at the bottom allows you to easily bring an extra pair of shoes for travel or keep gym shoes away from the items you want to keep from getting soiled.",
-            "color" : "Color: Midnight Navy",
+            "color": "Color: Midnight Navy",
             "style": "Style: HF7334-410",
             "category": "Nike Bags",
-            "price":104.99,
+            "price": 104.99,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -741,17 +728,16 @@
                 "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/4583f9d0-025c-4630-9deb-5fcd9b262a32/ALPHA+BACKPACK.png"
             ]
         },
-        
         {
             "id": 15,
             "sellerId": 5,
             "title": "Nike Aura",
             "tittle2": "Backpack",
             "description": "Keep your essentials close and your style game on point. A 24-litre capacity makes this bag ideal for carrying nearly everything you need for your day. A front zip pocket is perfect for smaller essentials while an interior slip pocket fits most laptops.",
-            "color" : "Color: Black/Black/Matte Silver",
+            "color": "Color: Black/Black/Matte Silver",
             "style": "Style: HF7007-010",
             "category": "Nike Bags",
-            "price":59.99,
+            "price": 59.99,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -794,7 +780,6 @@
                 "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/538bbee8-ac45-4f52-8fc5-b133ea587e74/NK+AURA+BKPK.png"
             ]
         },
-
         {
             "id": 16,
             "sellerId": 6,
@@ -804,7 +789,7 @@
             "color": "Color: PUMA Black",
             "style": "Style: 079943_01",
             "category": "PUMA Bags",
-            "price":35.00,
+            "price": 35.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -846,17 +831,16 @@
                 "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/079943/01/dt01/fnd/PNA/fmt/png/PUMA-Phase-Backpack"
             ]
         },
-
         {
             "id": 17,
             "sellerId": 6,
             "title": "PUMA Entrant",
             "tittle2": "Backpack",
             "description": "Style up and go with this backpack, crafted from 100% polyester. Its ample interior storage space gives you plenty of room to put",
-            "color" : "Color: LAVENDAR",
-            "style" : "Style: 859896_03",
+            "color": "Color: LAVENDAR",
+            "style": "Style: 859896_03",
             "category": "PUMA Bags",
-            "price":45.00,
+            "price": 45.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -898,17 +882,16 @@
                 "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/859896/03/dt02/fnd/PNA/fmt/png/PUMA-Entrant-Women's-Backpack"
             ]
         },
-
         {
             "id": 18,
             "sellerId": 6,
             "title": "PUMA",
             "tittle2": "Backpack",
             "description": "PUMA style meets practicality with this backpack. With its ample interior space and bold PUMA branding, this backpack ups your",
-            "color" : "Color: BRIGHT GREEN",
-            "style" : "Style: 859594_02",
+            "color": "Color: BRIGHT GREEN",
+            "style": "Style: 859594_02",
             "category": "PUMA Bags",
-            "price":50.00,
+            "price": 50.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -950,17 +933,16 @@
                 "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/859594/02/dt02/fnd/PNA/fmt/png/PUMA-Training-Backpack"
             ]
         },
-
         {
             "id": 19,
             "sellerId": 7,
             "title": "PPUMA FWDUMA",
             "tittle2": "Backpack",
             "description": "Carry your essentials into the future with this backpack from PUMA FWD. Form meets function in a streamlined design packed",
-            "color" : "Color: PUMA Black",
-            "style" : "Style: 079968_01",
+            "color": "Color: PUMA Black",
+            "style": "Style: 079968_01",
             "category": "PUMA Bags",
-            "price":160.00,
+            "price": 160.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1002,17 +984,16 @@
                 "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/079968/01/dt01/fnd/PNA/fmt/png/PUMA-FWD-Backpack"
             ]
         },
-
         {
             "id": 20,
             "sellerId": 7,
             "title": "PUMA x REPRESENT 247",
             "tittle2": "Backpack",
             "description": "Unleash your adventurous spirit with this versatile backpack. Featuring multiple compartments and a sleek design, it's perfect",
-            "color" : "Color: PUMA Black",
-            "style" : "Style: 091597_01",
+            "color": "Color: PUMA Black",
+            "style": "Style: 091597_01",
             "category": "PUMA Bags",
-            "price":175.00,
+            "price": 175.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1054,17 +1035,16 @@
                 "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/091597/01/dt02/fnd/PNA/fmt/png/PUMA-x-REPRESENT-247-Backpack"
             ]
         },
-
         {
             "id": 21,
             "sellerId": 7,
             "title": "PUMA Hurdle",
             "tittle2": "Backpack",
             "description": "No hurdle stands in your way with this backpack. Its ample interior space makes this backpack the perfect choice for stowing",
-            "color" : "Color: NATURAL",
-            "style" : "Style: 942279_02",
+            "color": "Color: NATURAL",
+            "style": "Style: 942279_02",
             "category": "PUMA Bags",
-            "price":50.00,
+            "price": 50.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1105,17 +1085,16 @@
                 "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/942279/02/dt01/fnd/PNA/fmt/png/PUMA-Hurdle-Backpack"
             ]
         },
-
         {
             "id": 22,
             "sellerId": 8,
             "title": "PUMA x NEYMAR JR BNA",
             "tittle2": "Backpack",
             "description": "Head to the pitch in style with this Neymar Jr-approved backpack, the perfect storage solution for any soccer star.",
-            "color" : "Color: Sailing Blue-Gold-Pelé Yellow",
-            "style" : "Style: 090997_01",
+            "color": "Color: Sailing Blue-Gold-Pelé Yellow",
+            "style": "Style: 090997_01",
             "category": "PUMA Bags",
-            "price":40.00,
+            "price": 40.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1157,17 +1136,16 @@
                 "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/090997/01/dt01/fnd/PNA/fmt/png/PUMA-x-NEYMAR-JR-BNA-Backpack"
             ]
         },
-
         {
             "id": 23,
             "sellerId": 8,
             "title": "PUMA teamGOAL",
             "tittle2": "Backpack",
             "description": "The teamGOAL collection combines high-performance materials with modern design to keep you prepared for the demands of the",
-            "color" : "Color: PUMA Navy",
-            "style" : "Style: 090458_05",
+            "color": "Color: PUMA Navy",
+            "style": "Style: 090458_05",
             "category": "PUMA Bags",
-            "price":60.00,
+            "price": 60.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1209,17 +1187,16 @@
                 "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/090458/05/dt01/fnd/PNA/fmt/png/teamGOAL-Premium-XL-Soccer-Backpack"
             ]
         },
-
         {
             "id": 24,
             "sellerId": 8,
             "title": "PUMA Plus PRO",
             "tittle2": "Backpack",
             "description": "Charge through your day with the PUMA Plus PRO backpack. Multiple compartments keep you organized while padded straps",
-            "color" : "Color: Desert Dust",
-            "style" : "Style: 090350_04",
+            "color": "Color: Desert Dust",
+            "style": "Style: 090350_04",
             "category": "PUMA Bags",
-            "price":45.00,
+            "price": 45.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1261,17 +1238,16 @@
                 "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/090350/04/dt02/fnd/PNA/fmt/png/PUMA-Plus-PRO-Backpack"
             ]
         },
-
         {
             "id": 25,
             "sellerId": 9,
             "title": "PUMA.BL",
             "tittle2": "Backpack",
             "description": "The PUMA.BL Backpack embodies this collection's bold philosophy: we rise above labels to celebrate each individual for",
-            "color" : "Color: PUMA Black",
-            "style" : "Style: 090394_01",
+            "color": "Color: PUMA Black",
+            "style": "Style: 090394_01",
             "category": "PUMA Bags",
-            "price":80.00,
+            "price": 80.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1313,17 +1289,16 @@
                 "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/090394/01/dt01/fnd/PNA/fmt/png/PUMA.BL-Backpack"
             ]
         },
-
         {
             "id": 26,
             "sellerId": 9,
             "title": "PUMA x SQUID GAME",
             "tittle2": "Backpack",
             "description": "Let the games begin. The PUMA x SQUID GAME collection is finally here, blending PUMA's effortless sport-style with the DNA",
-            "color" : "Color: Dark Slate",
-            "style" : "Style: 090918_01",
+            "color": "Color: Dark Slate",
+            "style": "Style: 090918_01",
             "category": "PUMA Bags",
-            "price":120.00,
+            "price": 120.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1366,17 +1341,16 @@
                 "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/090918/01/dt01/fnd/PNA/fmt/png/PUMA-x-SQUID-GAME-Backpack"
             ]
         },
-
         {
             "id": 28,
             "sellerId": 9,
             "title": "PUMA Downtown",
             "tittle2": "Backpack",
             "description": "Celebrate throwback 90s culture in this DOWNTOWN backpack. The backpack has a two-way zip opening into main compartment",
-            "color" : "Color: PUMA Black",
-            "style" : "Style: 090255_01",
+            "color": "Color: PUMA Black",
+            "style": "Style: 090255_01",
             "category": "PUMA Bags",
-            "price":50.00,
+            "price": 50.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1418,17 +1392,16 @@
                 "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/090255/01/dt01/fnd/PNA/fmt/png/Downtown-Backpack"
             ]
         },
-
         {
             "id": 29,
             "sellerId": 10,
             "title": "PUMA.BL",
             "tittle2": "Backpack",
             "description": "The PUMA.BL Backpack embodies this collection's bold philosophy: we rise above labels to celebrate each individual for",
-            "color" : "Color: Midnight Plum",
-            "style" : "Style: 090394_08",
+            "color": "Color: Midnight Plum",
+            "style": "Style: 090394_08",
             "category": "PUMA Bags",
-            "price":80.00,
+            "price": 80.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1470,17 +1443,16 @@
                 "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/090394/08/dt02/fnd/PNA/fmt/png/PUMA.BL-Backpack"
             ]
         },
-
         {
             "id": 30,
             "sellerId": 10,
             "title": "PUMA Sense",
             "tittle2": "Backpack",
             "description": "The Sense backpack is packed with features that will quickly make it your go-to bag for everyday adventures.",
-            "color" : "Color: PUMA Black",
-            "style" : "Style: 079584_01",
+            "color": "Color: PUMA Black",
+            "style": "Style: 079584_01",
             "category": "PUMA Bags",
-            "price":130.00,
+            "price": 130.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1522,17 +1494,16 @@
                 "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/079584/01/dt01/fnd/PNA/fmt/png/PUMA-Sense-Women's-Backpack"
             ]
         },
-
         {
             "id": 31,
             "sellerId": 11,
             "title": "Adidas Santiago 3 Lunch Bag",
             "tittle2": "Backpack",
             "description": "An insulated lunch bag for everyday use.Pack your favorite food and drinks, and this adidas lunch bag will help keep them fresh and cool. After a class or after the gym, nourishing refreshment is just a zip away. A front pocket offers easy access to snacks, and a clip on.",
-            "color" : "Color: Grey / Rose Gold Metallic",
-            "style" : "Style:IU7741",
+            "color": "Color: Grey / Rose Gold Metallic",
+            "style": "Style:IU7741",
             "category": "Adidas Bags",
-            "price":28.00,
+            "price": 28.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1573,17 +1544,16 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9105dcd4b7b64e14a46519aa441d5224_9366/Santiago_3_Lunch_Bag_Grey_IU7741_02_standard.jpg"
             ]
         },
-
         {
             "id": 32,
             "sellerId": 11,
             "title": "Adidas Utility 4 Sling Bag",
             "tittle2": "Backpack",
             "description": "A durable sling bag for super easy carry.Keep your stuff secure and your hands free carrying this adidas sling. Durably built to hold up to wear and tear, this versatile tote includes an adjustable crossbody strap that you can wear over either shoulder. It has multiple zippered utility pockets and a water bottle pocket that can hold up to a 20 oz bottle.",
-            "color" : "Color: Wonder White / White",
-            "style" : "Style:JJ7605",
+            "color": "Color: Wonder White / White",
+            "style": "Style:JJ7605",
             "category": "Adidas Bags",
-            "price":50.00,
+            "price": 50.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1625,17 +1595,16 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/328ae686cdb145f79167ded0275762a3_9366/Utility_4_Sling_Bag_White_JJ7605_05_hover_standard.jpg"
             ]
         },
-
         {
             "id": 33,
             "sellerId": 11,
             "title": "Adidas Golf Premium",
             "tittle2": "Backpack",
             "description": "A golf backpack with a laptop holder, made in part with recycled materials.Head straight to the course after work with this adidas golf backpack. It's got plenty of room for your gear, including zip pockets for securing essentials and a laptop compartment. Adjustable straps and a mesh back panel keep you comfortable when you're on the move.This product is made with at least 50% recycled materials. By reusing materials that have already been created, we help to reduce waste and our reliance on finite resources and reduce the footprint of the products we make.",
-            "color" : "Color: Legend Ink",
-            "style" : "Style:JI6951",
+            "color": "Color: Legend Ink",
+            "style": "Style:JI6951",
             "category": "Adidas Bags",
-            "price":130,
+            "price": 130,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1678,17 +1647,16 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7b1647dfb3e6419483f053c4cfc8caec_9366/Golf_Premium_Backpack_Blue_JI6951_05_hover_standard.jpg"
             ]
         },
-
         {
             "id": 34,
             "sellerId": 12,
             "title": "Adidas Originals Daily",
             "tittle2": "Backpack",
             "description": "This backpack is ready for your everyday.It's not just a backpack. It's your companion for every day and every adventure. Load up this adidas backpack with everything you need, from your laptop and gym clothes to your water bottle and lunch, and head out ready to face the day.",
-            "color" : "Color: White / Beige / Onix",
-            "style" : "Style:IU7706",
+            "color": "Color: White / Beige / Onix",
+            "style": "Style:IU7706",
             "category": "Adidas Bags",
-            "price":60,
+            "price": 60,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1730,17 +1698,16 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0421fb7da1564cb385029c7419954ebd_9366/Originals_Daily_Backpack_White_IU7706_05_hover_standard.jpg"
             ]
         },
-
         {
             "id": 35,
             "sellerId": 12,
             "title": "Adidas Classic Wntr Backpack",
             "tittle2": "Backpack",
             "description": "A sleek and soft backpack made in part with recycled materials.Crafted from winterized fabric with a soft, suede feel, this adidas backpack is the ideal cold-weather companion. The roomy main compartment provides space for books, lunch and more, while a front zip pocket and side slip-in pockets keep smaller items within easy reach. Adjustable shoulder straps ensure a custom fit for all-day comfort. Versatile enough for any activity yet understated in its design, this backpack lends a stylish accent to any outfit.This product is made with at least 50% recycled materials. By reusing materials that have already been created, we help to reduce waste and our reliance on finite resources and reduce the footprint of the products we make.",
-            "color" : "Color: Grey Two / Black",
-            "style" : "Style: IM5524",
+            "color": "Color: Grey Two / Black",
+            "style": "Style: IM5524",
             "category": "Adidas Bags",
-            "price":58,
+            "price": 58,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1782,17 +1749,16 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/bb6ee516b83c469984db616e15762280_9366/adidas_Classic_Wntr_Backpack_Grey_IM5524_05_hover_standard.jpg"
             ]
         },
-
         {
             "id": 36,
             "sellerId": 12,
             "title": "Adidas Golf Shoe Bag",
             "tittle2": "Backpack",
             "description": "A golf shoe bag for easy transitions ad travel. Head for the course organized and ready to tee off. This adidas golf shoe bag stows your spikes for easy transport and safekeeping. A two-way zip makes for a wide opening and easy storage.",
-            "color" : "Color: Legend Ink",
-            "style" : "Style: JD7100",
+            "color": "Color: Legend Ink",
+            "style": "Style: JD7100",
             "category": "Adidas Bags",
-            "price":22,
+            "price": 22,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1835,17 +1801,16 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f438c45a8c8f4746853d1d28f3b06cdf_9366/Golf_Shoe_Bag_Blue_JD7100_05_hover_standard.jpg"
             ]
         },
-
         {
             "id": 37,
             "sellerId": 13,
             "title": "Adidas Energy",
             "tittle2": "Backpack",
             "description": "A rugged training backpack made in part with recycled content. Get your gear from here to there in true adidas style. You've got options, thanks to multiple zip pockets on the inside and outside of this backpack. Easy to clean, the material also resists wear and tear, so you can keep it looking fresh longer.Made with a series of recycled materials, and at least 40% recycled content, this product represents just one of our solutions to help end plastic waste.",
-            "color" : "Color: Black / White",
-            "style" : "Style: GA5188",
+            "color": "Color: Black / White",
+            "style": "Style: GA5188",
             "category": "Adidas Bags",
-            "price":60,
+            "price": 60,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1887,17 +1852,16 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9cf8dc9deab246c4a750ae88015d7aaa_9366/Energy_Backpack_Black_GA5188_02_standard.jpg"
             ]
         },
-
         {
             "id": 38,
             "sellerId": 13,
             "title": "Adidas Excel 7",
             "tittle2": "Backpack",
             "description": "A large backpack that keeps you ready for adventure. When you've got both work and a workout on your schedule, you're going to need your gym clothes, water bottle, laptop, snacks and more. Luckily, it all fits in this adidas backpack. Head out the door with everything organized in plentiful compartments and slipped comfortably over your shoulders.",
-            "color" : "Color: Black / White",
-            "style" : "Style: IU7678",
+            "color": "Color: Black / White",
+            "style": "Style: IU7678",
             "category": "Adidas Bags",
-            "price":60,
+            "price": 60,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1939,17 +1903,16 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c43a167e5f7f425096a77cca1d526229_9366/Excel_7_Backpack_Black_IU7678_05_hover_standard.jpg"
             ]
         },
-
         {
             "id": 39,
             "sellerId": 13,
             "title": "Adidas Originals Luna",
             "tittle2": "Backpack",
             "description": "This backpack holds all your essentials One less thing to think about while you're running out the door. This adidas backpack is effortless in every way, from its goes-with-anything style to its convenient storage. An inner sleeve stores your laptop, zip compartments keep your other items close by, and the adjustable straps let you wear it how you want.",
-            "color" : "Color: White / White",
-            "style" : "Style: IU7709",
+            "color": "Color: White / White",
+            "style": "Style: IU7709",
             "category": "Adidas Bags",
-            "price":60,
+            "price": 60,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -1991,17 +1954,16 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/459fed3965474b7d8b56643a704c99cc_9366/Originals_Luna_Backpack_White_IU7709_05_hover_standard.jpg"
             ]
         },
-
         {
             "id": 40,
             "sellerId": 14,
             "title": "Adidas Originals National 3.0",
             "tittle2": "Backpack",
             "description": "A trusty backpack to carry all your daily essentials. This adidas backpack provides on-the-go storage for work, school or travel. It's made with recycled content as part of adidas' commitment to help end plastic waste. Slip your laptop into the inner sleeve and store clothes, books and everything else in any of the multiple zip compartments.",
-            "color" : "Color: White / Beige / Onix",
-            "style" : "Style: GC1195",
+            "color": "Color: White / Beige / Onix",
+            "style": "Style: GC1195",
             "category": "Adidas Bags",
-            "price":60,
+            "price": 60,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2044,17 +2006,16 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b881efef72f54abca460af6900382a9b_9366/Originals_National_3.0_Backpack_White_GC1195_05_hover_standard.jpg"
             ]
         },
-
         {
             "id": 41,
             "sellerId": 14,
             "title": "Adidas Defender 5",
             "tittle2": "Backpack",
             "description": "This backpack has all the storage you need for daily activities. The Defender 5 Backpack keeps your hands free, so you can stay focused when you're heading to practice, a game or school. It's built to last from durable polyester with a water-resistant base and webbing attachment points to clip keys, a water bottle or other essentials. There's a large main area and multiple zippered pockets, including a vented pocket for dirty clothes.",
-            "color" : "Color: Black",
-            "style" : "Style: JJ7423",
+            "color": "Color: Black",
+            "style": "Style: JJ7423",
             "category": "Adidas Bags",
-            "price":55,
+            "price": 55,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2096,17 +2057,16 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f5e78848163048579e62ec56b2cc3c9d_9366/Defender_5_Backpack_Black_JJ7423_05_hover_standard.jpg"
             ]
         },
-
         {
             "id": 42,
             "sellerId": 14,
             "title": "Adidas Originals National 3.0",
             "tittle2": "Backpack",
             "description": "A trusty backpack to carry all your daily essentials. This adidas backpack provides on-the-go storage for work, school or travel. It's made with recycled content as part of adidas' commitment to help end plastic waste. Slip your laptop into the inner sleeve and store clothes, books and everything else in any of the multiple zip compartments.",
-            "color" : "Color: Medium Grey / Grey / Onix",
-            "style" : "Style: IU7701",
+            "color": "Color: Medium Grey / Grey / Onix",
+            "style": "Style: IU7701",
             "category": "Adidas Bags",
-            "price":55,
+            "price": 55,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2148,17 +2108,16 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/658cae4104664838b0dc82306e90d3ef_9366/Originals_National_3.0_Backpack_Grey_IU7701_05_hover_standard.jpg"
             ]
         },
-
         {
             "id": 43,
             "sellerId": 15,
             "title": "Adidas 5-Star Team 2",
             "tittle2": "Backpack",
             "description": "A classic backpack for easy carry. Game day or practice, you'll be able to carry all your gear in this adidas backpack. Keep your wet and dirty things separate from everything else with a ventilated zipper pocket. Carry it with the adjustable shoulder straps or use the trolley strap to attach it to your wheeled luggage.",
-            "color" : "Color: Black",
-            "style" : "Style: IR0734",
+            "color": "Color: Black",
+            "style": "Style: IR0734",
             "category": "Adidas Bags",
-            "price":75,
+            "price": 75,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2201,17 +2160,16 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/249267023f094bce9816e1ecea4aab44_9366/5-Star_Team_2_Backpack_Black_IR0734_05_hover_standard.jpg"
             ]
         },
-
         {
             "id": 44,
             "sellerId": 15,
             "title": "Adidas Yoga",
             "tittle2": "Backpack",
             "description": "A backpack for yogis made in part with recycled materials. Head to the studio hands-free with this yoga backpack from adidas. An exterior cord system securely stows your mat, and multiple pockets keep essentials organized and easy to find. Adjustable shoulder straps ensure carrying comfort on your walk to class. This product is made with at least 50% recycled materials. By reusing materials that have already been created, we help to reduce waste and our reliance on finite resources and reduce the footprint of the products we make.",
-            "color" : "Color: Aurora Ink / Violet Tone",
-            "style" : "Style: JD2250",
+            "color": "Color: Aurora Ink / Violet Tone",
+            "style": "Style: JD2250",
             "category": "Adidas Bags",
-            "price":55,
+            "price": 55,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2253,17 +2211,16 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3361b6f4cef549048853dda9ef51b2b4_9366/Yoga_Backpack_Blue_JD2250_05_hover_standard.jpg"
             ]
         },
-
         {
             "id": 45,
             "sellerId": 15,
             "title": "Adidas Y-3 Teamgeist",
             "tittle2": "Backpack",
             "description": "A luxe take on the classic backpack by Y-3. The Y-3 Teamgeist Backpack brings luxury into play with practicality by giving a classic design an elevated treatment. The nylon build is slightly padded for a hint of volume and softness. A top zip gives you access to the main compartment that includes a laptop compartment with a top zip. White leather Teamgeist cut lines highlight the design, and a Y-3 logo provides the signature finish.",
-            "color" : "Color: Black / Talc",
-            "style" : "Style: JE2016",
+            "color": "Color: Black / Talc",
+            "style": "Style: JE2016",
             "category": "Adidas Bags",
-            "price":330,
+            "price": 330,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2305,17 +2262,16 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/2aecfa629a384d49a53292cc499e40c4_9366/Y-3_Teamgeist_Backpack_Black_JE2016_05_hover_standard.jpg"
             ]
         },
-
         {
             "id": 46,
             "sellerId": 16,
             "title": "Reebok Sam",
             "tittle2": "Backpack",
             "description": "A durable backpack with a classic design Stay organized on the go with this Reebok backpack. Its classic design includes a roomy main compartment with a padded laptop sleeve and a zip pocket. Mesh pockets on the outside hold water bottles.",
-            "color" : "Color: Black/Rose Gold",
-            "style" : "Style: 100214629",
+            "color": "Color: Black/Rose Gold",
+            "style": "Style: 100214629",
             "category": "Reebok Bags",
-            "price":55,
+            "price": 55,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2356,17 +2312,16 @@
                 "https://reebok.bynder.com/transform/7fccade6-2f99-4567-a2e4-01c0128715d0/100214629_B_eCom-tif?io=transform:fit,width:1000&quality=100"
             ]
         },
-
         {
             "id": 47,
             "sellerId": 16,
             "title": "Reebok Trainer",
             "tittle2": "Backpack",
             "description": "An everyday backpack with lots of pockets Hit the gym ready to work with this Reebok backpack. It features a large main compartment and plenty of pockets for organizing essentials. A separate padded sleeve keeps a laptop secure. An air mesh back panel offers ventilation when you're on the move.",
-            "color" : "Color: BLACK",
-            "style" : "Style: 100214702",
+            "color": "Color: BLACK",
+            "style": "Style: 100214702",
             "category": "Reebok Bags",
-            "price":75,
+            "price": 75,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2407,17 +2362,16 @@
                 "https://reebok.bynder.com/transform/0d554ac4-c584-4931-8782-0168249756fb/100214702_B_eCom-tif?io=transform:fit,width:1000&quality=100"
             ]
         },
-
         {
             "id": 48,
             "sellerId": 16,
             "title": "Reebok Element III",
             "tittle2": "Backpack",
             "description": "A versatile backpack for going to and from the gym Get your gear from your workout, hangout, or place of work in this Reebok backpack. Mesh pockets keep the air flowing. Zip interior pockets secure and organize all your stuff. The Vector logo signs it off.",
-            "color" : "Color: Infused Lilac",
-            "style" : "Style: 100227180",
+            "color": "Color: Infused Lilac",
+            "style": "Style: 100227180",
             "category": "Reebok Bags",
-            "price":35,
+            "price": 35,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2458,17 +2412,16 @@
                 "https://reebok.bynder.com/transform/5f993557-addd-4f8a-985e-6f506bc6944b/100227180_B_eCom-tif?io=transform:fit,width:1000&quality=100"
             ]
         },
-
         {
             "id": 49,
             "sellerId": 17,
             "title": "Reebok Sam",
             "tittle2": "Backpack",
             "description": "A durable backpack with a classic design Stay organized on the go with this Reebok backpack. Its classic design includes a roomy main compartment with a padded laptop sleeve and a zip pocket. Mesh pockets on the outside hold water bottles.",
-            "color" : "Color: Light Heather Grey",
-            "style" : "Style: 100214630",
+            "color": "Color: Light Heather Grey",
+            "style": "Style: 100214630",
             "category": "Reebok Bags",
-            "price":55,
+            "price": 55,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2509,17 +2462,16 @@
                 "https://reebok.bynder.com/transform/c5ada1e4-bcb4-4d39-953f-331f24bfe174/100214630_B_eCom-tif?io=transform:fit,width:1000&quality=100"
             ]
         },
-
         {
             "id": 50,
             "sellerId": 17,
             "title": "Reebok Santa Fe",
             "tittle2": "Backpack",
             "description": "A versatile Santa Fe backpack This Reebok backpack keeps things convenient and simple. Mesh pockets keep the air flowing for everything from water bottles to dirty shoes. Lots of pockets give you places to organize and separate your stuff. Attach essentials to the molle webbing, and you're good to go.",
-            "color" : "Color: Black",
-            "style" : "Style: 100227161",
+            "color": "Color: Black",
+            "style": "Style: 100227161",
             "category": "Reebok Bags",
-            "price":50,
+            "price": 50,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2560,17 +2512,16 @@
                 "https://reebok.bynder.com/transform/20a50cf7-a6bc-4745-bd67-3675f8050af9/100227161_B_eCom-tif?io=transform:fit,width:1000&quality=100"
             ]
         },
-
         {
             "id": 51,
             "sellerId": 17,
             "title": "Reebok Reagan Mini",
             "tittle2": "Backpack",
             "description": "A training backpack that carries all your must-haves You travel light to your workouts, so all you need is a Reebok mini backpack. Keep all your essentials handy in the front zip pocket. Only want to take your cards or cash? Detach the coin pouch, and head out.",
-            "color" : "Color: Pink Stucco/Rose Gold",
-            "style" : "Style: 100227907",
+            "color": "Color: Pink Stucco/Rose Gold",
+            "style": "Style: 100227907",
             "category": "Reebok Bags",
-            "price":30,
+            "price": 30,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2611,17 +2562,16 @@
                 "https://reebok.bynder.com/transform/820b2097-18fe-4f1b-89f4-150fdb6fd832/100227907_B_eCom-tif?io=transform:fit,width:1000&quality=100"
             ]
         },
-
         {
             "id": 52,
             "sellerId": 18,
             "title": "Reebok Element III",
             "tittle2": "Backpack",
             "description": "A versatile backpack for going to and from the gym Get your gear from your workout, hangout, or place of work in this Reebok backpack. Mesh pockets keep the air flowing. Zip interior pockets secure and organize all your stuff. The Vector logo signs it off.",
-            "color" : "Color: Trek Green",
-            "style" : "Style: 100227182",
+            "color": "Color: Trek Green",
+            "style": "Style: 100227182",
             "category": "Reebok Bags",
-            "price":35,
+            "price": 35,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2662,17 +2612,16 @@
                 "https://reebok.bynder.com/transform/7883016b-e87e-4e5c-828d-24367aa28e5f/100227182_B_eCom-tif?io=transform:fit,width:1000&quality=100"
             ]
         },
-
         {
             "id": 53,
             "sellerId": 18,
             "title": "Reebok Stefhan",
             "tittle2": "Backpack",
             "description": "A durable backpack with sporty Reebok style Head to the gym with all your gear in tow with this backpack. The design includes a roomy main compartment with a padded laptop sleeve and a zip pocket. Mesh pockets on the outside hold water bottles. A big Vector logo shows off Reebok style.",
-            "color" : "Color: VARSITY GREEN",
-            "style" : "Style: 100214474",
+            "color": "Color: VARSITY GREEN",
+            "style": "Style: 100214474",
             "category": "Reebok Bags",
-            "price":55,
+            "price": 55,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2713,17 +2662,16 @@
                 "https://reebok.bynder.com/transform/7f90b82a-3377-4a7e-9d93-aad0f29b2cbe/100214474_B_eCom-tif?io=transform:fit,width:1000&quality=100"
             ]
         },
-
         {
             "id": 54,
             "sellerId": 18,
             "title": "Reebok Quinn",
             "tittle2": "Backpack",
             "description": "A Reebok Quinn backpack with plenty of pockets This Reebok backpack has all the pockets you need. Zip pockets, slip pockets, and sleeves. Mesh pockets? Yep, it's got those, too. A Vector logo and you're done.",
-            "color" : "Color: Army Camo",
-            "style" : "Style: 100227154",
+            "color": "Color: Army Camo",
+            "style": "Style: 100227154",
             "category": "Reebok Bags",
-            "price":55,
+            "price": 55,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2764,17 +2712,16 @@
                 "https://reebok.bynder.com/transform/d6973a96-e21d-4385-9b5a-088baf9ced03/100227154_B_eCom-tif?io=transform:fit,width:1000&quality=100"
             ]
         },
-
         {
             "id": 55,
             "sellerId": 19,
             "title": "Reebok Element III",
             "tittle2": "Backpack",
             "description": "A versatile backpack for going to and from the gym Get your gear from your workout, hangout, or place of work in this Reebok backpack. Mesh pockets keep the air flowing. Zip interior pockets secure and organize all your stuff. The Vector logo signs it off.",
-            "color" : "Color: Black",
-            "style" : "Style: 100227178",
+            "color": "Color: Black",
+            "style": "Style: 100227178",
             "category": "Reebok Bags",
-            "price":35,
+            "price": 35,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2815,17 +2762,16 @@
                 "https://reebok.bynder.com/transform/1c6c8eaa-4443-4361-a614-86142b17bbce/100227178_B_eCom-tif?io=transform:fit,width:1000&quality=100"
             ]
         },
-
         {
             "id": 56,
             "sellerId": 19,
             "title": "The North Face Borealis",
             "tittle2": "Backpack",
             "description": "When we built the Borealis, we had one goal—create the ultimate daypack. 25 years later, its legacy continues. Originally designed with the organization needed for a full day on the trail, it has since become a classic on campus and on the job. Celebrated for its iconic bungee straps, comfortable FLEXVENT™ suspension system and protective compartments for your most important items, there’s no limit to where you’ll go. Spacious but light. Sturdy but balanced. This isn’t just a backpack. This is the Borealis.",
-            "color" : "Color: Black",
-            "style" : "Style: NF0A52SE",
+            "color": "Color: Black",
+            "style": "Style: NF0A52SE",
             "category": "The North Face Bags",
-            "price":99.00,
+            "price": 99.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2867,17 +2813,16 @@
                 "https://assets.thenorthface.com/images/t_img/c_pad,b_white,f_auto,h_1510,w_1300,e_sharpen:70/NF0A52SE4HF-BACK/NF0A52SE4HF-in-TNF-BlackTNF-BlackNPF.png"
             ]
         },
-
         {
             "id": 57,
             "sellerId": 20,
             "title": "The North Face Recon",
             "tittle2": "Backpack",
             "description": "A classic, reimagined. The 30-liter Recon excels as a daypack with its large mesh storage pocket and daisy-chain attachment points. The FLEXVENT™ suspension system, sternum strap and removable waist belt make carrying heavier loads a breeze.",
-            "color" : "Color: Black",
-            "style" : "Style: NF0A52SH",
+            "color": "Color: Black",
+            "style": "Style: NF0A52SH",
             "category": "The North Face Bags",
-            "price":109.00,
+            "price": 109.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2919,17 +2864,16 @@
                 "https://assets.thenorthface.com/images/t_img/c_pad,b_white,f_auto,h_1510,w_1300,e_sharpen:70/NF0A52SH4HF-BACK/NF0A52SH4HF-in-TNF-BlackTNF-BlackNPF.png"
             ]
         },
-
         {
             "id": 58,
             "sellerId": 20,
             "title": "The North Face Borealis Mini",
             "tittle2": "Backpack",
             "description": "The Borealis Mini Backpack will carry a small load and still has the durability and iconic front bungee system of its bigger sibling, making it perfect for shorter adventures.",
-            "color" : "Color: Black",
-            "style" : "Style: NF0A52SW",
+            "color": "Color: Black",
+            "style": "Style: NF0A52SW",
             "category": "The North Face Bags",
-            "price":109.00,
+            "price": 109.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -2971,17 +2915,16 @@
                 "https://assets.thenorthface.com/images/t_img/c_pad,b_white,f_auto,h_1510,w_1300,e_sharpen:70/NF0A52SW4HF-BACK/NF0A52SW4HF-in-TNF-BlackTNF-BlackNPF.png"
             ]
         },
-
         {
             "id": 59,
             "sellerId": 20,
             "title": "The North Face Jester Luxe",
             "tittle2": "Backpack",
             "description": "Our classic Jester pack—now available in a Luxe edition with premium metallic accents—has a padded laptop sleeve, simplified organization, and can stand up completely unsupported. It’s also endorsed by the American Chiropractic Association.",
-            "color" : "Color: Black",
-            "style" : "Style: NF0A81E6",
+            "color": "Color: Black",
+            "style": "Style: NF0A81E6",
             "category": "The North Face Bags",
-            "price":80.00,
+            "price": 80.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3023,17 +2966,16 @@
                 "https://assets.thenorthface.com/images/t_img/c_pad,b_white,f_auto,h_1510,w_1300,e_sharpen:70/NF0A81E67ZQ-BACK/Womens-Jester-Luxe-Backpack-in-TNF-Black-HeatherBurnt-Coral-Metallic.png"
             ]
         },
-
         {
             "id": 60,
             "sellerId": 21,
             "title": "The North Face Borealis",
             "tittle2": "Backpack",
             "description": "When we built the Borealis, we had one goal—create the ultimate daypack. 25 years later, its legacy continues. Originally designed with the organization needed for a full day on the trail, it has since become a classic on campus and on the job. Celebrated for its iconic bungee straps, comfortable FLEXVENT™ suspension system and protective compartments for your most important items, there’s no limit to where you’ll go. Spacious but light. Sturdy but balanced. This isn’t just a backpack. This is the Borealis.",
-            "color" : "Color: Black",
-            "style" : "Style: NF0A52SE",
+            "color": "Color: Black",
+            "style": "Style: NF0A52SE",
             "category": "The North Face Bags",
-            "price":99.00,
+            "price": 99.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3075,17 +3017,16 @@
                 "https://assets.thenorthface.com/images/t_img/c_pad,b_white,f_auto,h_1510,w_1300,e_sharpen:70/NF0A52SE56U-BACK/Borealis-Backpack-in-TNF-Black-Patch.png"
             ]
         },
-
         {
             "id": 61,
             "sellerId": 21,
             "title": "The North Face Jester Luxe",
             "tittle2": "Backpack",
             "description": "Our classic Jester pack—now available in a Luxe edition with premium metallic accents—has a padded laptop sleeve, simplified organization, and can stand up completely unsupported. It’s also endorsed by the American Chiropractic Association.",
-            "color" : "Color: Midnight Mauve/Burnt Coral Metallic",
-            "style" : "Style: NF0A81E6",
+            "color": "Color: Midnight Mauve/Burnt Coral Metallic",
+            "style": "Style: NF0A81E6",
             "category": "The North Face Bags",
-            "price":80.00,
+            "price": 80.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3127,17 +3068,16 @@
                 "https://assets.thenorthface.com/images/t_img/c_pad,b_white,f_auto,h_1510,w_1300,e_sharpen:70/NF0A81E60OQ-BACK/NF0A81E60OQ-in-Midnight-MauveBurnt-Coral-Metallic.png"
             ]
         },
-
         {
             "id": 62,
             "sellerId": 21,
             "title": "The North Face Borealis Convertible",
             "tittle2": "Backpack",
             "description": "Innovative and nimble, the Borealis Convertible Pack allows you to switch between a daypack and a lumbar pack in a few simple steps. With the Borealis’ signature bungee cord system for flexible storage, a mesh water bottle pocket and a stowable hip belt, you’ve got plenty of on-the-go functionality.",
-            "color" : "Color: Black",
-            "style" : "Style: NF0A88TK",
+            "color": "Color: Black",
+            "style": "Style: NF0A88TK",
             "category": "The North Face Bags",
-            "price":89.00,
+            "price": 89.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3179,17 +3119,16 @@
                 "https://assets.thenorthface.com/images/t_img/c_pad,b_white,f_auto,h_1510,w_1300,e_sharpen:70/NF0A88TKKX7-BACK/NF0A88TKKX7-in-TNF-BlackTNF-Black.png"
             ]
         },
-
         {
             "id": 63,
             "sellerId": 22,
             "title": "The North Face Recon",
             "tittle2": "Backpack",
             "description": "A classic, reimagined. The 30-liter Recon excels as a daypack with its large mesh storage pocket and daisy-chain attachment points. The FLEXVENT™ suspension system, sternum strap and removable waist belt make carrying heavier loads a breeze.",
-            "color" : "Color: Evergreen/TNF Black",
-            "style" : "Style: NF0A52SH",
+            "color": "Color: Evergreen/TNF Black",
+            "style": "Style: NF0A52SH",
             "category": "The North Face Bags",
-            "price":109.00,
+            "price": 109.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3231,17 +3170,16 @@
                 "https://assets.thenorthface.com/images/t_img/c_pad,b_white,f_auto,h_1510,w_1300,e_sharpen:70/NF0A52SHS9W-BACK/NF0A52SHS9W-in-EvergreenTNF-Black.png"
             ]
         },
-
         {
             "id": 64,
             "sellerId": 22,
             "title": "The North Face Jester",
             "tittle2": "Backpack",
             "description": "Our classic Jester Backpack has a padded laptop sleeve, simplified organization, and it can stand up completely unsupported. It’s also endorsed by the American Chiropractic Association thanks to its comfortable FLEXVENT™ suspension system.",
-            "color" : "Color: Black",
-            "style" : "Style: NF0A3VXF",
+            "color": "Color: Black",
+            "style": "Style: NF0A3VXF",
             "category": "The North Face Bags",
-            "price":109.00,
+            "price": 109.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3283,17 +3221,16 @@
                 "https://assets.thenorthface.com/images/t_img/c_pad,b_white,f_auto,h_1510,w_1300,e_sharpen:70/NF0A3VXF4H0-BACK/NF0A3VXF4H0-in-TNF-BlackNPF.png"
             ]
         },
-
         {
             "id": 65,
             "sellerId": 22,
             "title": "The North Face Recon",
             "tittle2": "Backpack",
             "description": "A classic, reimagined. The 30-liter Recon excels as a daypack with its large mesh storage pocket and daisy-chain attachment points. The FLEXVENT™ suspension system, sternum strap and removable waist belt make carrying heavier loads a breeze.",
-            "color" : "Color: Smokey Brown/TNF Black",
-            "style" : "Style: NF0A52SH",
+            "color": "Color: Smokey Brown/TNF Black",
+            "style": "Style: NF0A52SH",
             "category": "The North Face Bags",
-            "price":109.00,
+            "price": 109.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3335,17 +3272,16 @@
                 "https://assets.thenorthface.com/images/t_img/c_pad,b_white,f_auto,h_1510,w_1300,e_sharpen:70/NF0A52SH5EX-BACK/NF0A52SH5EX-in-Smokey-BrownTNF-Black.png"
             ]
         },
-
         {
             "id": 66,
             "sellerId": 23,
             "title": "Herschel Kaslo",
             "tittle2": "Backpack",
             "description": "The perfect gift for staying organized. The Kaslo Backpack Tech features a convenient luggage trolley sleeve, pockets for in-flight essentials, and three main compartments with organizers for all the trips they’re taking. ",
-            "color" : "Color: Black",
-            "style" : "Style: NF0A52SH",
+            "color": "Color: Black",
+            "style": "Style: NF0A52SH",
             "category": "Herschel Bags",
-            "price":150.00,
+            "price": 150.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3388,17 +3324,16 @@
                 "https://herschel.com/content/dam/herschel/products/11288/11288-00001-OS_06.jpg.sthumbnails.2000.2500.webp"
             ]
         },
-
         {
             "id": 67,
             "sellerId": 23,
             "title": "Herschel Classic",
             "tittle2": "Backpack",
             "description": "Classic for a reason. Simple and versatile, this backpack is designed for every day and is made with 100% recycled EcoSystem™ fabrics.",
-            "color" : "Color: Black",
-            "style" : "Style: NF0A52SH",
+            "color": "Color: Black",
+            "style": "Style: NF0A52SH",
             "category": "Herschel Bags",
-            "price":55.00,
+            "price": 55.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3441,17 +3376,16 @@
                 "https://herschel.com/content/dam/herschel/products/11544/11544-00001-OS_04.jpg.sthumbnails.2000.2500.webp"
             ]
         },
-
         {
             "id": 68,
             "sellerId": 23,
             "title": "Herschel Little America",
             "tittle2": "Backpack",
             "description": "Our signature backpack. Iconic mountain style, reinvented with modern features built to carry everything you need for a full day.",
-            "color" : "Color: Black",
-            "style" : "Style: NF0A52SH",
+            "color": "Color: Black",
+            "style": "Style: NF0A52SH",
             "category": "Herschel Bags",
-            "price":130.00,
+            "price": 130.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3494,17 +3428,16 @@
                 "https://herschel.com/content/dam/herschel/products/11390/11390-00001-OS_02.jpg.sthumbnails.2000.2500.webp"
             ]
         },
-
         {
             "id": 69,
             "sellerId": 24,
             "title": "Herschel Pop Quiz",
             "tittle2": "Backpack",
             "description": "Ready for anything. This backpack features multiple pockets—inside and out—to keep everything organized on your journeys to school or work.",
-            "color" : "Color: Black",
-            "style" : "Style: NF0A52SH",
+            "color": "Color: Black",
+            "style": "Style: NF0A52SH",
             "category": "Herschel Bags",
-            "price":95.00,
+            "price": 95.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3547,17 +3480,16 @@
                 "https://herschel.com/content/dam/herschel/products/11405/11405-00055-OS_04.jpg.sthumbnails.2000.2500.webp"
             ]
         },
-
         {
             "id": 70,
             "sellerId": 24,
             "title": "Herschel Heritage",
             "tittle2": "Backpack",
             "description": "All packed for class. Redesigned for today with more space and made with EcoSystem™ recycled fabrics, this roomy, durable backpack transitions effortlessly from school to play with multiple pockets and comfortable padded shoulder.",
-            "color" : "Color: Doodle Bloom",
-            "style" : "Style: NF0A52SH",
+            "color": "Color: Doodle Bloom",
+            "style": "Style: NF0A52SH",
             "category": "Herschel Bags",
-            "price":55.00,
+            "price": 55.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3600,17 +3532,16 @@
                 "https://herschel.com/content/dam/herschel/products/11576/11576-06368-OS_02.jpg.sthumbnails.2000.2500.webp"
             ]
         },
-
         {
             "id": 71,
             "sellerId": 25,
             "title": "Herschel Survey™",
             "tittle2": "Backpack",
             "description": "Made for your daily commute. Constructed with recycled materials and a matte coating, the Weather Resistant Herschel Survey™ II backpack features a laptop sleeve and mesh organizers for journeys through the city.",
-            "color" : "Color: Black",
-            "style" : "Style: NF0A52SH",
+            "color": "Color: Black",
+            "style": "Style: NF0A52SH",
             "category": "Herschel Bags",
-            "price":55.00,
+            "price": 55.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3653,17 +3584,16 @@
                 "https://herschel.com/content/dam/herschel/products/10999/10999-00001-OS_02.jpg.sthumbnails.2000.2500.webp"
             ]
         },
-
         {
             "id": 72,
             "sellerId": 25,
             "title": "Herschel Retreat™",
             "tittle2": "Backpack",
             "description": "Take a quick Retreat. Sized to carry just what you need and made from 100% recycled EcoSystem™ fabrics, our smallest Retreat Backpack keeps essentials with you when you're on the go.",
-            "color" : "Color: Nirvana",
-            "style" : "Style: NF0A52SH",
+            "color": "Color: Nirvana",
+            "style": "Style: NF0A52SH",
             "category": "Herschel Bags",
-            "price":70.00,
+            "price": 70.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3706,17 +3636,16 @@
                 "https://herschel.com/content/dam/herschel/products/11398/11398-06067-OS_04.jpg.sthumbnails.2000.2500.webp"
             ]
         },
-
         {
             "id": 73,
             "sellerId": 25,
             "title": "Herschel City",
             "tittle2": "Backpack",
             "description": "Light, fast and made to get to work. This streamlined backpack has the pockets to organize your work tools and a sleek profile that moves effortlessly through busy sidewalks and crowded subways.",
-            "color" : "Color: Nirvana",
-            "style" : "Style: NF0A52SH",
+            "color": "Color: Nirvana",
+            "style": "Style: NF0A52SH",
             "category": "Herschel Bags",
-            "price":70.00,
+            "price": 70.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3759,17 +3688,16 @@
                 "https://herschel.com/content/dam/herschel/products/11376/11376-00001-OS_03.jpg.sthumbnails.2000.2500.webp"
             ]
         },
-
         {
             "id": 74,
             "sellerId": 26,
             "title": "Herschel Retreat™",
             "tittle2": "Backpack",
             "description": "Small backpack, big personality. Created for busy lives, the alpine inspired Retreat Small Backpack carries your tools and tech and is made with 100% recycled EcoSystem™ fabrics.",
-            "color" : "Color: Oxblood Red Quilted",
-            "style" : "Style: NF0A52SH",
+            "color": "Color: Oxblood Red Quilted",
+            "style": "Style: NF0A52SH",
             "category": "Herschel Bags",
-            "price":80.00,
+            "price": 80.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3812,17 +3740,16 @@
                 "https://herschel.com/content/dam/herschel/products/11400/11400-06501-OS_04.jpg.sthumbnails.2000.2500.webp"
             ]
         },
-
         {
             "id": 75,
             "sellerId": 26,
             "title": "Herschel Settlement",
             "tittle2": "Backpack",
             "description": "Keep it simple. The minimalist Settlement Backpack carries and organizes the essentials you need to navigate life, school and work. Made from EcoSystem™ recycled fabrics, this bag features an expandable water bottle sleeve, a padded floating laptop sleeve, and a front pocket organizer.",
-            "color" : "Color: Nirvana",
-            "style" : "Style: NF0A52SH",
+            "color": "Color: Nirvana",
+            "style": "Style: NF0A52SH",
             "category": "Herschel Bags",
-            "price":80.00,
+            "price": 80.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3865,17 +3792,16 @@
                 "https://herschel.com/content/dam/herschel/products/11407/11407-06067-OS_04.jpg.sthumbnails.2000.2500.webp"
             ]
         },
-
         {
             "id": 76,
             "sellerId": 26,
             "title": "Herschel Heritage",
             "tittle2": "Backpack",
             "description": "Keep it simple. The minimalist Settlement Backpack carries and organizes the essentials you need to navigate life, school and work. Made from EcoSystem™ recycled fabrics, this bag features an expandable water bottle sleeve, a padded floating laptop sleeve, and a front pocket organizer.",
-            "color" : "Color: Night Sky Camo",
-            "style" : "Style: NF0A52SH",
+            "color": "Color: Night Sky Camo",
+            "style": "Style: NF0A52SH",
             "category": "Herschel Bags",
-            "price":80.00,
+            "price": 80.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
@@ -3918,17 +3844,16 @@
                 "https://herschel.com/content/dam/herschel/products/11387/11387-06349-OS_02.jpg.sthumbnails.2000.2500.webp"
             ]
         },
-
         {
             "id": 77,
             "sellerId": 27,
             "title": "Herschel Nova",
             "tittle2": "Backpack",
             "description": "Made for the weekend. The Herschel Nova™ Mid-Volume backpack is made to fit all your essentials with a laptop sleeve and two side pockets. The signature dual top handles offer two ways to carry.",
-            "color" : "Color: Ash Rose",
-            "style" : "Style: NF0A52SH",
+            "color": "Color: Ash Rose",
+            "style": "Style: NF0A52SH",
             "category": "Herschel Bags",
-            "price":80.00,
+            "price": 80.00,
             "discountPercentage": 7.17,
             "rating": 4.94,
             "stock": 5,
