@@ -35,7 +35,6 @@ const products = JSON.parse(localStorage.getItem("products")) || [];
 products.push(Product);
 setStoredData(products);
 return Product;
-}
 
 // Update an existing product
 export function updateProduct(productID, updatedProduct) {
@@ -98,7 +97,7 @@ export function searchProduct(searchQuery) {
         product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         (product.description && product.description.toLowerCase().includes(searchQuery.toLowerCase()))
     );
-
+}
 // //     if (result.length === 0) {
 // //         console.log("No products found matching the search criteria.");
 // //         return null;
