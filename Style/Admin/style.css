@@ -76,3 +76,8 @@ table {
     background-color: #f1f1f1;
     border-radius: 6px;
 }
+
+.dropdown-menu .dropdown-item:hover {
+    transition: all 0.3s ease-in-out;
+    background-color: #f1f1f1;
+}
