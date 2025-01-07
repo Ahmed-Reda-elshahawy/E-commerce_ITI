@@ -1,73 +1,60 @@
-// Export main functions for products
+const productsTableBody = document.querySelector('.products-table tbody');
 
-// Load data from a JSON file and store it in localStorage
-// async function loadDataFromJson() {
-//     try {
-//         const response = await fetch('../../Data/products.json');
-//         const data = await response.json();
-//         localStorage.setItem("products", JSON.stringify(data));
-//         console.log("Data loaded into localStorage:", data);
-//         // return "Products loaded into localStorage";
-//     } catch (error) {
-//         console.error("Error loading data: ", error);
-//         return null;
-//     }
-// }
 
-// Create a new product
-// export function createProduct(Product) {
-//     // Ensure the product has necessary properties like id and name
-//     if (!Product || !Product.id || !Product.name) {
-//         console.error("The product must have an id and name.");
-//         return null;
-//     }
 
-//     const products = JSON.parse(localStorage.getItem("products")) || [];
-//     products.push(Product);
-//     localStorage.setItem("products", JSON.stringify(products));
-//     return Product;
-// }
+// ==== Get and set stored products ==== //
+export function getStoredProducts() {
+    return JSON.parse(localStorage.getItem('products')) || [];
+}
+export function setStoredProducts(products) {
+    localStorage.setItem('products', JSON.stringify(products));
+}
 
-// // Update an existing product
-// export function updateProduct(productID, updatedProduct) {
-//     const products = JSON.parse(localStorage.getItem("products")) || [];
-//     const productIndex = products.findIndex(product => product.id === productID);
 
-//     // Check if the product was found
-//     if (productIndex === -1) {
-//         console.error(`Product with id ${productID} not found.`);
-//         return null;
-//     }
 
-//     // Ensure that the updated product has the correct id (to avoid mismatched updates)
-//     if (updatedProduct && updatedProduct.id !== productID) {
-//         console.error("The updated product must have the same id as the original.");
-//         return null;
-//     }
+// ==== Display products data ==== //
+export function DisplayProducts(data) {
+    productsTableBody.innerHTML = '';
+    data.forEach(product => {
+        productsTableBody.innerHTML += `
+            <tr class="table-active">
+                <td>${product.id}</td>
+                <td><img src="${product.images[0]}" alt="product-img" style="width: 50px; border-radius: 6px;"/></td>
+                <td>${product.category}</td>
+                <td>$${product.price}</td>
+                <td>${product.stock}</td>
+                <td>
+                    <button class="btn" id="delete-btn" data-bs-target="#deleteModalForProduct"
+                        data-bs-toggle="modal" onclick="deleteProduct(${product.id})">
+                        <i class="fa-solid fa-trash-can text-danger"></i>
+                    </button>
+                </td>
+            </tr>
+        `
+    });
+}
 
-//     products[productIndex] = { ...products[productIndex], ...updatedProduct };
-//     localStorage.setItem("products", JSON.stringify(products));
-//     return updatedProduct;
-// }
 
-// // Delete a product
-// export function deleteProduct(productID) {
-//     const products = JSON.parse(localStorage.getItem("products")) || [];
-//     const updatedProducts = products.filter(product => product.id !== productID);
 
-//     // Check if the product was found and deleted
-//     if (updatedProducts.length === products.length) {
-//         console.error(`Product with id ${productID} not found.`);
-//         return null;
-//     }
+// ==== Delete a product ==== //
+let currentProductIdToDelete = 0;
+export function deleteProduct(productId) {
+    currentProductIdToDelete = productId;
+}
 
-//     localStorage.setItem("products", JSON.stringify(updatedProducts));
-//     return `Product with id ${productID} deleted`;
-// }
+export function confirmDeleteProduct() {
+    const products = getStoredProducts();
+    const newProducts = products.filter(product => product.id != currentProductIdToDelete);
+    setStoredProducts(newProducts);
+    DisplayProducts(newProducts);
+    const deleteModal = document.querySelector('#deleteModalForProduct');
+    const modal = bootstrap.Modal.getInstance(deleteModal);
+    modal.hide();
+}
 
 // // Get a product by its id
 // export function getProductById(productID) {
-//     const products = JSON.parse(localStorage.getItem("products")) || [];
+//     const products = getStoredProducts();
 //     const product = products.find(product => product.id == productID);
 //     // Log an error if the product was not found
 //     if (!product) {
@@ -76,29 +63,25 @@
 //     return product || null;
 // }
 
-// // Return all products
-// export function listAllProducts() {
-//     const products = JSON.parse(localStorage.getItem("products")) || [];
-//     return products;
-// }
+
 
 // //search function
-// // export function searchProduct(searchQuery) {
-// //     const products = JSON.parse(localStorage.getItem("products")) || [];
-// //     const result = products.filter(product => 
-// //         product.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-// //         (product.description && product.description.toLowerCase().includes(searchQuery.toLowerCase()))
-// //     );
+// export function searchProduct(searchQuery) {
+//     const products = getStoredProducts();
+//     const result = products.filter(product =>
+//         product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+//         (product.description && product.description.toLowerCase().includes(searchQuery.toLowerCase()))
+//     );
+// }
+// // //     if (result.length === 0) {
+// // //         console.log("No products found matching the search criteria.");
+// // //         return null;
+// // //     }
 
-// //     if (result.length === 0) {
-// //         console.log("No products found matching the search criteria.");
-// //         return null;
-// //     }
+// // //     return result;
+// // // }
 
-// //     return result;
-// // }
-
-// // // Load products if they are not already stored in localStorage
+// // Load products if they are not already stored in localStorage
 // // if (!localStorage.getItem('products')) {
 // //     loadDataFromJson();
 // // }
