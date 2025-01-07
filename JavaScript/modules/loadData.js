@@ -64,3 +64,26 @@ async function fetchAndStoreOrders() {
     }
 }
 (async () => { await fetchAndStoreOrders(); })();
+
+
+
+// ==== Fetch and store orders ==== //
+async function fetchAndStoreAdmins() {
+    // Check if users have been fetched and stored
+    const isFetched = localStorage.getItem('isAdminsFetched');
+    if (isFetched) {
+        return;
+    }
+
+    try {
+        const response = await fetch('../../Data/admin.json');
+        const admins = await response.json();
+        localStorage.setItem('admins', JSON.stringify(admins));
+        // Set the flag to indicate users have been fetched and stored
+        localStorage.setItem('isAdminsFetched', 'true');
+    } catch (error) {
+        console.error('Error fetching admins data: ', error);
+        return [];
+    }
+}
+(async () => { await fetchAndStoreAdmins(); })();

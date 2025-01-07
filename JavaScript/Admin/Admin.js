@@ -9,6 +9,19 @@ import {
 import { handleActiveSection } from '../modules/activeSection.js';
 import { confirmDeleteProduct, deleteProduct, DisplayProducts, getStoredProducts } from '../modules/products.js';
 
+const adminImgs = document.querySelectorAll('.adminImg');
+const adminNames = document.querySelectorAll('.adminName');
+const adminRole = document.querySelector('.adminRole');
+
+const admins = JSON.parse(localStorage.getItem("admins"));
+if (admins && admins.length > 0) {
+    adminImgs.forEach(adminImg => adminImg.src = admins[0].Img);
+    adminNames.forEach(adminName => adminName.innerText = admins[0].Name);
+    adminRole.innerText = admins[0].Role;
+} else {
+    console.error('No admins found in localStorage or the data is malformed');
+}
+
 // // ============== CRUD old functions ============= //
 // // ==== initial data from json file ==== //
 // async function fetchAndStoreUsers() {
