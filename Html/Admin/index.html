@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../../assets/Bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../../assets/Bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css"> -->
     <link rel="stylesheet" href="../../Style/Admin/style.css">
 </head>
 
@@ -24,18 +24,25 @@
                 </div>
             </div>
             <ul class="control-list d-flex flex-column gap-4 mt-5 ps-0 align-items-center">
-                <li class="active-section w-100 p-2">
+                <li class="active-section w-100 p-2" data-section="customers">
                     <button
                         class="w-100 mx-auto d-md-flex flex-md-column align-items-md-center mx-xl-0 flex-xl-row gap-2">
                         <i class="fa-solid fa-users p-2 bg-dark bg-opacity-10 rounded-circle"></i>
-                        <span class="d-none d-md-block">Customers</span>
+                        <span class="d-none d-md-block">Users</span>
                     </button>
                 </li>
-                <li class=" w-100 p-2">
+                <li class=" w-100 p-2" data-section="products">
                     <button
                         class="w-100 mx-auto d-md-flex flex-md-column align-items-md-center mx-xl-0 flex-xl-row gap-2">
                         <i class="fa-solid fa-shop p-2 bg-dark bg-opacity-10 rounded-circle"></i>
                         <span class="d-none d-md-block">Products</span>
+                    </button>
+                </li>
+                <li class=" w-100 p-2" data-section="orders">
+                    <button
+                        class="w-100 mx-auto d-md-flex flex-md-column align-items-md-center mx-xl-0 flex-xl-row gap-2">
+                        <i class="fa-solid fa-cart-shopping p-2 bg-dark bg-opacity-10 rounded-circle"></i>
+                        <span class="d-none d-md-block">Orders</span>
                     </button>
                 </li>
             </ul>
@@ -74,6 +81,7 @@
                                     <th>Id</th>
                                     <th>Name</th>
                                     <th>Email</th>
+                                    <th>Role</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -254,9 +262,9 @@
         </div>
     </main>
 
-    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
     <script src="../../assets/Bootstrap/bootstrap.bundle.js"></script>
-    <script src="../../JavaScript/Admin/Admin.js"></script>
+    <!-- <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script> -->
+    <script src="../../JavaScript/Admin/Admin.js" type="module"></script>
     <script src="../../JavaScript/Admin/products.js"></script>
     <!-- <script src="../../JavaScript/Admin/CreateAdmin.js"></script> -->
 </body>
