@@ -1,7 +1,7 @@
 // Export main functions for products
 
 // Load data from a JSON file and store it in localStorage
-async function loadDataFromJson() {
+ export async function loadDataFromJson() {
     try {
         const response = await fetch('../../Data/products.json');
         const data = await response.json();

@@ -3,10 +3,11 @@
         "id": 1,
         "username": "user1",
         "email": "user1@example.com",
+        "password": "user1",
         "role": "user",
         "phone": "+1234567890",
         "address": "456 User Avenue, City, Country",
         "registrationDate": "2023-05-23T08:56:21.618Z",
-        "orders": []
+        "active": true
     }
 ]
