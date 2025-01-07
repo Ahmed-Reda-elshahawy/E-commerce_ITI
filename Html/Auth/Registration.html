@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
+    
     <script>
         window.addEventListener('load', function() {
             document.getElementById('submit').addEventListener('click', function(event) {
@@ -18,7 +19,8 @@
                 var address = document.getElementById('address').value;
                 
                 var age = document.getElementById('age').value;
-                var ResigrationDate = new Date();
+                var date = new Date();
+                var h3=document.querySelector('h3');
                 // Generate unique ID
             
            
@@ -27,36 +29,49 @@
                
                 const usernameRegex = /^[^\d\s][^\s]*$/;
                 if (!usernameRegex.test(name)) {
-                    alert('Username cannot start with a number or contain spaces.');
+                    h3.classList.add('active');
+                    h3.innerHTML='Username cannot start with a number or contain spaces.';
                     return; 
                 }
                 if (!/^\+?\d{7,15}$/.test(phone)) {
-                alert('Please enter a valid phone number (e.g., +123456789 or 123456789).');
+  
+                h3.classList.add('active');
+                h3.innerHTML='Please enter a valid phone number (e.g., +123456789 or 123456789).';
                     return; 
                 }
                 const ageRegex = /^\d+$/;
                 if(age !== "" && !/^\d+$/.test(age)){
                     alert('Age must be a number');
+                    h3.classList.add('active');
+                    h3.innerHTML='Age must be a number';
                     return;
                 }
                 // Email validation
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailRegex.test(email)) {
                     alert('Please enter a valid email address.');
+                    h3.classList.add('active');
+                    h3.innerHTML='Please enter a valid email address.';
                     return;
                 }
                 if (email.includes(' ')) {
-                    alert('Email cannot contain spaces.');
+                   
+                    h3.classList.add('active');
+                    h3.innerHTML='Email cannot contain spaces.';
                     return;
                 }
 
                 // Password validation
                 if (password !== repeatPassword) {
-                    alert('Passwords do not match.');
+                    
+                    h3.classList.add('active');
+                    h3.innerHTML='Passwords do not match.';
                     return;
                 }
                 if (password.length < 8) {
-                    alert('Password must be at least 8 characters long.');
+                    
+                    h3.classList.add('active');
+                    h3.innerHTML='Password must be at least 8 characters long.';
                     return;
                 }
 
@@ -64,7 +79,9 @@
                 var userType = document.querySelector('input[name="type"]:checked');
               
                 if (!userType) {
-                    alert('Please select an account type (Customer or Seller).');
+                    
+                    h3.classList.add('active');
+                    h3.innerHTML='Please select an account type (Customer or Seller).';
                     return;
                 }
                 var selectedUserType = userType.value;
@@ -209,6 +226,14 @@
             flex-direction: column;
             justify-content: center;
         }
+        h3{
+            color:red;
+            text-align: center;
+            display: none ;
+            }
+        .active {
+            display: block;
+        }    
     </style>
 </head>
 <body>
@@ -263,10 +288,12 @@
             </div>
             </div>
                 <div class="button">
+                 <h3 >Wrong data Entered</h3>   
                 <button type="submit" class="registerbtn" id="submit">Create Account</button> <br>
                 <button type="reset" id="cancel">Already got an account? Sign in</button>
             </div>
         </div>
     </form>
+    <script src="../../JavaScript/modules/loadData.js" type="module"></script>
 </body>
 </html>

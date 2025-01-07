@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget Password</title>
+
+    <script>
+        window.addEventListener('load', function() {
+            var h3=document.querySelector('h3');
+            var h4=document.querySelector('h4');
+                var password = document.getElementById('psw').value;
+                var repeatPassword = document.getElementById('psw-repeat').value;
+    document.getElementById('submit').addEventListener('click', function(event) {
+            var email = document.getElementById('email').value;
+                var phone = document.getElementById('phone').value;
+                var hidden = document.querySelector('.none');
+                event.preventDefault();
+                
+                
+                var users = JSON.parse(localStorage.getItem(`users`)) ;
+               for(var i=0; i<users.length; i++){
+              
+               if(users[i].email==email && users[i].phone==phone){
+                    hidden.classList.add('hidden');
+                    hidden.classList.remove('none');
+                    return;
+                
+                }   
+                
+                
+            } h4.classList.add('active');
+                h4.innerHTML='Invalid Email or Phone' ;
+            
+                 
+              
+    });
+    document.getElementById('cancel').addEventListener('click', function(event) {
+        
+        
+
+    window.location.href = "http:../Auth/Registration.html";});
+            
+            
+            
+            
+            
+      document.getElementById('Change').addEventListener('click',function(event){
+        event.preventDefault();        
+         var password = document.getElementById('psw').value;
+        var repeatPassword = document.getElementById('psw-repeat').value; 
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
+          if (password !== repeatPassword) {
+                   
+                    h3.classList.add('active');
+                    h3.innerHTML='Passwords does not match.';
+                    return;
+                }
+                if (password.length < 8) {
+                    
+                    h3.classList.add('active');
+                   
+                    h3.innerHTML='Password must be at least 8 characters long.';
+                  return;
+                }
+                var users = JSON.parse(localStorage.getItem(`users`)) ;
+                for(var i=0; i<users.length; i++){
+              
+              if(users[i].email==email && users[i].phone==phone){
+                     users[i].password=password;
+                        localStorage.setItem('users',JSON.stringify(users));
+                     alert('Password Updated Successfully');
+                     window.location.href = "http:../Auth/Login.html";
+                        return;
+                   
+               
+               }   
+                }
+      });
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            })//end of load;
+    </script>
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+    .container {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+    p {
+        text-align: center;
+        color: gray;
+    }
+    .form-group {
+     display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+     width: 100%; 
+    margin-left: 160px; 
+    }
+
+    .form-group label {
+         width: 25%; 
+        text-align: right; 
+        margin-right: 10px; 
+        }
+
+    .form-group input[type="text"],
+    .form-group input[type="password"] {
+    width: 30%;
+     padding: 10px;
+    
+     border: 1px solid black;
+     border-radius: 4px;
+}
+
+    input[type=text]:focus, input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+    .button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .registerbtn {
+            background-color: #252eb6;
+            color: white;
+            font-size: 18px;
+            padding: 16px 20px;
+            margin: 8px auto;
+            border: none;
+            cursor: pointer;
+            width: 35%;
+            opacity: 0.9;
+        }
+        .registerbtn2 {
+            background-color: #252eb6;
+            color: white;
+            font-size: 18px;
+            margin-left: 350px;
+            height: 50px;
+            margin-top: 15px;
+            border: none;
+            cursor: pointer;
+            width: 35%;
+            opacity: 0.9;
+        }
+        .signin {
+            font-size: 40px;
+            text-align: center;
+        }
+        #cancel ,#forget{
+            background: none;
+            color: black;
+            text-decoration: underline;
+            padding: 16px 20px;
+            margin: 8px auto;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            font-size: 18px;
+
+          
+        }
+      .none{
+          display: none;}
+        .hidden {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.hidden-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%; 
+    margin-left: 200px;
+}
+
+.hidden-group label {
+    width: 25%; /* Align with other labels */
+    text-align: right; 
+    margin-right: 10px; 
+}
+
+.hidden-group input[type="password"] {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+h3{
+    display: none;
+    color: red;
+    text-align: center;
+    margin-left: 400px;
+    font-size: 22px;
+}
+h4{ display: none;
+    color: red;
+    text-align: center;
+    font-size: 22px;
+
+}
+.active{
+    display: block;
+}
+
+</style> 
+</head>
+<body>
+    <form>
+    <div class="container">
+        <h1>Forget Password Page</h1>
+        
+        <br><br>
+        <div class="form-group">
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Your Email" name="email" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone"><b>phone</b></label>
+            <input type="text" placeholder="Enter your phone Number" name="phone" id="phone" required>
+        </div>
+
+        <br><br>
+            <div class="button">
+                <h4>Wrong data Entered</h4>   
+                <button type="submit" class="registerbtn" id="submit">Verify</button> <br>
+                <button type="reset" id="cancel">Don't have an account? Sign up</button>
+                
+            </div>
+        </div>
+            <div class="none" > 
+                <div class="hidden-group">
+                    <label for="password"><b>New Password</b></label>
+                    <input type="password" placeholder="Enter your new password" name="password" id="psw" required>
+
+                </div>
+                <div class="hidden-group">
+                    <label for="psw-repeat"><b>Repeat Password</b></label>
+                    <input type="password" placeholder="Repeat your password" name="repeatPassword" id="psw-repeat" required>
+                    
+                </div>
+                <div class="hidden-group">
+                    <h3 >Wrong data Entered</h3>
+                    
+                </div>
+                <div class="hidden-group">
+                        
+                        <button type="submit" class="registerbtn2" id="Change">Update Password</button>
+                    </div>
+                </div>
+            </div>
+            
+       
+    </form>
+</body>
+</html>
