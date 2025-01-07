@@ -73,6 +73,7 @@
                     </div>
                 </nav>
                 <section class="content p-4">
+
                     <div class="table-container">
                         <table class="table table-light text-center customers-table">
                             <caption>Customers Data</caption>
@@ -98,9 +99,10 @@
                             <thead>
                                 <tr>
                                     <th>Id</th>
+                                    <th>Image</th>
                                     <th>Name</th>
                                     <th>price</th>
-                                    <th>count</th>
+                                    <th>In stock</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -113,6 +115,26 @@
                         </nav>
                     </div>
 
+                    <div class="table-container d-none">
+                        <table class="table table-light text-center orders-table">
+                            <caption>Orders Data</caption>
+                            <thead>
+                                <tr>
+                                    <th>Order Id</th>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>price</th>
+                                    <th>count</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- orders data -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- ### modals ### -->
                     <!-- Delete Modal for produsts -->
                     <div class="modal fade" id="deleteModalForProduct" tabindex="-1" aria-labelledby="deleteModalLabel"
                         aria-hidden="true">
@@ -124,7 +146,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-danger">Delete</button>
+                                    <button type="button" class="btn btn-danger" id="delete-product">Delete</button>
                                 </div>
                             </div>
                         </div>

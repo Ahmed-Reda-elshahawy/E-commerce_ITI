@@ -7,6 +7,7 @@ import {
     updateCustomer
 } from '../../JavaScript/modules/users.js';
 import { handleActiveSection } from '../modules/activeSection.js';
+import { confirmDeleteProduct, deleteProduct, DisplayProducts, getStoredProducts } from '../modules/products.js';
 
 // // ============== CRUD old functions ============= //
 // // ==== initial data from json file ==== //
@@ -117,9 +118,9 @@ import { handleActiveSection } from '../modules/activeSection.js';
 //     modal.hide();
 // });
 
-displayCustomers(getStoredCustomers());
-
 handleActiveSection();
+
+displayCustomers(getStoredCustomers());
 
 document.getElementById("edit-customer").addEventListener('click', editCustomer);
 document.getElementById("delete-customer").addEventListener('click', confirmDeleteCustomer);
@@ -127,4 +128,11 @@ document.getElementById("delete-customer").addEventListener('click', confirmDele
 window.deleteCustomer = deleteCustomer;
 window.updateCustomer = updateCustomer;
 
-// ======( products )====== //
+// =====================( products )===================== //
+DisplayProducts(getStoredProducts());
+
+// document.getElementById("edit-customer").addEventListener('click', editCustomer);
+document.getElementById("delete-product").addEventListener('click', confirmDeleteProduct);
+
+// window.updateCustomer = updateCustomer;
+window.deleteProduct = deleteProduct;

@@ -1,112 +1,91 @@
-// Export main functions for products
+const productsTableBody = document.querySelector('.products-table tbody');
 
-// Load data from a JSON file and store it in localStorage
-export async function loadDataFromJson() {
-    try {
-        const response = await fetch('../../Data/products.json');
-        const data = await response.json();
 
-        if (getStoredData().length === 0)
-            setStoredData(data);
-        console.log("Data loaded into localStorage:", data["products"]);
-    } catch (error) {
-        console.error("Error loading data: ", error);
-        return null;
-    }
-}
 
-// get and set data to localStorage
-export function getStoredData() {
+// ==== Get and set stored products ==== //
+export function getStoredProducts() {
     return JSON.parse(localStorage.getItem('products')) || [];
 }
-export function setStoredData(products) {
+export function setStoredProducts(products) {
     localStorage.setItem('products', JSON.stringify(products));
 }
 
-// Create a new product
-// export function createProduct(Product) {
-//     // Ensure the product has necessary properties like id and name
-//     if (!Product || !Product.id || !Product.name) {
-//         console.error("The product must have an id and name.");
-//         return null;
+
+
+// ==== Display products data ==== //
+export function DisplayProducts(data) {
+    productsTableBody.innerHTML = '';
+    data.forEach(product => {
+        productsTableBody.innerHTML += `
+            <tr class="table-active">
+                <td>${product.id}</td>
+                <td><img src="${product.images[0]}" alt="product-img" style="width: 50px; border-radius: 6px;"/></td>
+                <td>${product.category}</td>
+                <td>$${product.price}</td>
+                <td>${product.stock}</td>
+                <td>
+                    <button class="btn" id="edit-btn" data-bs-target="#updateModalForProduct"
+                        data-bs-toggle="modal">
+                        <i class="fa-regular fa-pen-to-square text-primary"></i>
+                    </button>
+                    <button class="btn" id="delete-btn" data-bs-target="#deleteModalForProduct"
+                        data-bs-toggle="modal" onclick="deleteProduct(${product.id})">
+                        <i class="fa-solid fa-trash-can text-danger"></i>
+                    </button>
+                </td>
+            </tr>
+        `
+    });
+}
+
+
+
+// ==== Delete a product ==== //
+let currentProductIdToDelete = 0;
+export function deleteProduct(productId) {
+    currentProductIdToDelete = productId;
+}
+
+export function confirmDeleteProduct() {
+    const products = getStoredProducts();
+    const newProducts = products.filter(product => product.id != currentProductIdToDelete);
+    setStoredProducts(newProducts);
+    DisplayProducts(newProducts);
+    const deleteModal = document.querySelector('#deleteModalForProduct');
+    const modal = bootstrap.Modal.getInstance(deleteModal);
+    modal.hide();
+}
+
+// // Get a product by its id
+// export function getProductById(productID) {
+//     const products = getStoredProducts();
+//     const product = products.find(product => product.id == productID);
+//     // Log an error if the product was not found
+//     if (!product) {
+//         console.error(`Product with id ${productID} not found.`);
 //     }
-
-const products = JSON.parse(localStorage.getItem("products")) || [];
-products.push(Product);
-setStoredData(products);
-return Product;
-
-// Update an existing product
-export function updateProduct(productID, updatedProduct) {
-    const products = getStoredData();
-    const productIndex = products.findIndex(product => product.id === productID);
-
-    //     // Check if the product was found
-    //     if (productIndex === -1) {
-    //         console.error(`Product with id ${productID} not found.`);
-    //         return null;
-    //     }
-
-    //     // Ensure that the updated product has the correct id (to avoid mismatched updates)
-    //     if (updatedProduct && updatedProduct.id !== productID) {
-    //         console.error("The updated product must have the same id as the original.");
-    //         return null;
-    //     }
-
-    products[productIndex] = { ...products[productIndex], ...updatedProduct };
-    setStoredData(products);
-    return updatedProduct;
-}
-
-// Delete a product
-export function deleteProduct(productID) {
-    const products = getStoredData();
-    const updatedProducts = products.filter(product => product.id !== productID);
-
-    //     // Check if the product was found and deleted
-    //     if (updatedProducts.length === products.length) {
-    //         console.error(`Product with id ${productID} not found.`);
-    //         return null;
-    //     }
-
-    setStoredData(updatedProducts);
-    return `Product with id ${productID} deleted`;
-}
-
-// Get a product by its id
-export function getProductById(productID) {
-    const products = getStoredData();
-    const product = products.find(product => product.id == productID);
-    // Log an error if the product was not found
-    if (!product) {
-        console.error(`Product with id ${productID} not found.`);
-    }
-    return product || null;
-}
-
-// Return all products
-export function listAllProducts() {
-    const products = getStoredData();
-    return products;
-}
-
-//search function
-export function searchProduct(searchQuery) {
-    const products = getStoredData();
-    const result = products.filter(product =>
-        product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (product.description && product.description.toLowerCase().includes(searchQuery.toLowerCase()))
-    );
-}
-// //     if (result.length === 0) {
-// //         console.log("No products found matching the search criteria.");
-// //         return null;
-// //     }
-
-// //     return result;
-// // }
-
-// Load products if they are not already stored in localStorage
-// if (!localStorage.getItem('products')) {
-//     loadDataFromJson();
+//     return product || null;
 // }
+
+
+
+// //search function
+// export function searchProduct(searchQuery) {
+//     const products = getStoredProducts();
+//     const result = products.filter(product =>
+//         product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+//         (product.description && product.description.toLowerCase().includes(searchQuery.toLowerCase()))
+//     );
+// }
+// // //     if (result.length === 0) {
+// // //         console.log("No products found matching the search criteria.");
+// // //         return null;
+// // //     }
+
+// // //     return result;
+// // // }
+
+// // Load products if they are not already stored in localStorage
+// // if (!localStorage.getItem('products')) {
+// //     loadDataFromJson();
+// // }
