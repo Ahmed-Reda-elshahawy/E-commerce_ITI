@@ -24,10 +24,6 @@ export function DisplayProducts(data) {
                 <td>$${product.price}</td>
                 <td>${product.stock}</td>
                 <td>
-                    <button class="btn" id="edit-btn" data-bs-target="#updateModalForProduct"
-                        data-bs-toggle="modal">
-                        <i class="fa-regular fa-pen-to-square text-primary"></i>
-                    </button>
                     <button class="btn" id="delete-btn" data-bs-target="#deleteModalForProduct"
                         data-bs-toggle="modal" onclick="deleteProduct(${product.id})">
                         <i class="fa-solid fa-trash-can text-danger"></i>
