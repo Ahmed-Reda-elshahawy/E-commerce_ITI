@@ -1,5 +1,4 @@
 import {
-    fetchAndStoreUsers,
     getStoredCustomers,
     displayCustomers,
     editCustomer,
@@ -118,10 +117,7 @@ import { handleActiveSection } from '../modules/activeSection.js';
 //     modal.hide();
 // });
 
-(async () => {
-    await fetchAndStoreUsers();
-    displayCustomers(getStoredCustomers());
-})();
+displayCustomers(getStoredCustomers());
 
 handleActiveSection();
 
