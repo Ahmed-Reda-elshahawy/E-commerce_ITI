@@ -14,12 +14,10 @@
                 var password = document.getElementById('psw').value;
           
                 
-               
-               for(var i=0; i<localStorage.length; i++){
-                var users = JSON.parse(localStorage.getItem(`userData_${i+1}`)) ;
-                if(users!=undefined){
-               
-               if(users.email==email && users.password==password){
+                var users = JSON.parse(localStorage.getItem(`users`)) ;
+               for(var i=0; i<users.length; i++){
+              
+               if(users[i].email==email && users[i].password==password){
                     alert('Login Successfully');
                     window.location.href = "http:../Home/Home.html";
                     return;
@@ -30,7 +28,7 @@
             }
             
                  
-               }
+               
                alert('Invalid Email or Password');
     });
     document.getElementById('cancel').addEventListener('click', function(event) {

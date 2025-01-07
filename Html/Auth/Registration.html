@@ -18,9 +18,9 @@
                 var address = document.getElementById('address').value;
                 
                 var age = document.getElementById('age').value;
-                var date = new Date();
+                var ResigrationDate = new Date();
                 // Generate unique ID
-            var id = localStorage.length ;
+            
            
                
 
@@ -69,20 +69,33 @@
                 }
                 var selectedUserType = userType.value;
                
-
+                if (selectedUserType === 'Customer') {
+                    selectedUserType = 'User';
+                } 
                 var userData = {
-                name: name,
+                username: name,
                 email: email,
                 password: password,
                 phone: phone,
                 address: address,
-                age: age,
-                date: date.toISOString(),
-                UserType:selectedUserType
+                ResigrationDate: date.toISOString(),
+                role:selectedUserType ,
+                active:true
                 };
                
-                  // Save user data to localStorage with a unique key
-            localStorage.setItem(`userData_${id}`, JSON.stringify(userData));
+                var users=JSON.parse(localStorage.getItem('users')) ;
+                if(users==null){
+                   
+                    users=[];
+                   
+                    users.push(userData);
+                    localStorage.setItem('users',JSON.stringify(users));
+                }
+                else{   
+                   
+                    users.push(userData);
+                    localStorage.setItem('users',JSON.stringify(users));
+                }
 
             // Redirect to home page
             window.location.href = '../Home/Home.html';
