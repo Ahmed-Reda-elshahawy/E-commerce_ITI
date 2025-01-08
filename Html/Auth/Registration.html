@@ -21,11 +21,40 @@
                 var age = document.getElementById('age').value;
                 var date = new Date();
                 var h3=document.querySelector('h3');
+                var active=true;
                 // Generate unique ID
             
            
+               var users = JSON.parse(localStorage.getItem('users')) ;
+               for(var i=0; i<users.length; i++){
+              
+              if(users[i].email==email){
+                   
+                     h3.classList.add('active');
+                    h3.innerHTML='This email is already registered., Please use another email.'; ;
+                    return;
+                  
                
-
+               }   
+               
+               
+           }
+           for(var i=0; i<users.length; i++){
+              
+             
+                   console.log(users[i].currentUser);
+                  users[i].currentUser=false;
+                  
+                  localStorage.setItem('users',JSON.stringify(users));
+                 
+               
+               
+           }
+           
+              
+   ;
+              
+   
                
                 const usernameRegex = /^[^\d\s][^\s]*$/;
                 if (!usernameRegex.test(name)) {
@@ -97,7 +126,8 @@
                 address: address,
                 ResigrationDate: date.toISOString(),
                 role:selectedUserType ,
-                active:true
+                active:true,
+                currentUser:active
                 };
                
                 var users=JSON.parse(localStorage.getItem('users')) ;

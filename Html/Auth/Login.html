@@ -16,10 +16,20 @@
           
                 
                 var users = JSON.parse(localStorage.getItem(`users`)) ;
+                for(var i=0; i<users.length; i++)  {
+                users[i].currentUser=false;
+                localStorage.setItem('users',JSON.stringify(users));
+                }
+           
+                     
+       
+          
+
                for(var i=0; i<users.length; i++){
               
                if(users[i].email==email && users[i].password==password){
-                    alert('Login Successfully');
+                    users[i].currentUser=true;
+                    localStorage.setItem('users',JSON.stringify(users));
                     window.location.href = "http:../Home/Home.html";
                     return;
                 
@@ -40,7 +50,10 @@
             
             
             
-            
+       document.getElementById('forget').addEventListener('click', function(event) {
+
+    window.location.href = "http:../Auth/Forgetpass.html";});
+        
             
             
             
