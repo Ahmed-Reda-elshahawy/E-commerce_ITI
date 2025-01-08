@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(235, 235, 235);
+}
+
+ul li {
+    transition: all 0.4s ease-in;
+}
+
+ul li button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+#edit-btn {
+    border: none !important;
+    outline: none !important;
+}
+
+#delete-btn {
+    border: none !important;
+    outline: none !important;
+}
+
+#delete-btn:hover {
+    background-color: lightcoral;
+}
+
+#edit-btn:hover {
+    background-color: lightblue;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    min-width: 400px;
+}
+
+/* Custom scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: whitesmoke;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.active-section {
+    background-color: #f1f1f1;
+    border-radius: 6px;
+}
+
+
+
+
+#add-btn {
+    margin-left: 1100px;
+    margin-bottom: 10px;
+    /* background-color: #4CAF50; 
+    color: white;  */
+    /* padding: 10px 20px;  */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded corners */
+    /* font-size: 16px; 
+    font-weight: bold;  */
+    text-align: center; /* Center text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+/* Hover effect */
+#add-btn:hover {
+    /* background-color: #45a049;  */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Focus effect */
+#add-btn:focus {
+    outline: none; /* Remove the default outline on focus */
+    /* box-shadow: 0 0 10px rgba(72, 161, 60, 0.7);  */
+}
+
+/* Active button effect (when clicked) */
+#add-btn:active {
+    transform: scale(1); /* Ensure button returns to normal size on click */
+}
