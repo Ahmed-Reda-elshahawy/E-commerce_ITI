@@ -20,9 +20,9 @@ function DisplayNewProducts() {
 
         for (let i = 0; i < Math.min(30, shuffledProducts.length); i++) {
             const cardCol = document.createElement("div");
-            cardCol.className = "col-6 col-md-4 col-lg-2";
+            cardCol.className = "col-6 col-md-4 col-lg-3 col-xl-2 mb-3";
             cardCol.innerHTML = `
-                <div class="card product-card w-100 h-100" data-product-id="${products[i].id}">
+                <div class="card product-card h-100" data-product-id="${products[i].id}">
                     <div class="card-image-container">
                         <img src="${products[i].images[0]}" class="card-img-top mainimg" alt="${products[i].title}">
                         <div class="add-to-cart-icon">

@@ -20,6 +20,40 @@ body {
 
 /* Navbar Style */
 
+.search-container{
+    position: relative;
+}
+
+#searchResults {
+    list-style-type: none;
+    padding-left: 0;
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    width: 100%; 
+    display: none; 
+    background: #F6F6F6; 
+    border: 2px solid gray; 
+    z-index: 1000;
+    max-height: 200px; 
+    overflow-y: auto;
+    border-radius: 15px; 
+}
+
+#searchResults li {
+    padding: 10px;
+    cursor: pointer;
+    color: rgb(88, 87, 87);
+    margin: 5px 10px; 
+    border-radius: 10px; 
+    background-color: #FFFFFF; 
+}
+
+#searchResults li:hover {
+    color: #000000;
+    background-color: #F0F0F0; 
+}
+
 .navbar-nav {
     text-align: left;
     width: 100%;
@@ -43,49 +77,52 @@ body {
         flex-direction: column;
         text-align: left;
     }
+
     .navbar-nav .nav-item {
         margin-bottom: 10px;
     }
+
     .navbar-nav .form-control {
         margin-bottom: 10px;
     }
+
     .navbar-nav .dropdown-menu {
         width: 100%;
         text-align: left;
     }
 }
 
-
 #searchResults {
-    position: absolute; 
-    background-color: white; 
+    position: absolute;
+    background-color: white;
     border: 1px solid #ccc;
     border-top: none;
-    width: 93%; 
-    max-height: 200px; 
-    overflow-y: auto; 
-    display: none; 
-    z-index: 1000; 
-    list-style-type: none; 
-    padding: 0; 
-    margin: 0; 
+    width: 93%;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     border-radius: 5px;
 }
 
 #searchResults li {
-    padding: 10px; 
-    border-bottom: 1px solid #f0f0f0; 
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 #searchResults li:hover {
-    background-color: #f0f0f0; 
-    cursor: pointer; 
+    background-color: #f0f0f0;
+    cursor: pointer;
 }
 
 
-.navbar{
+.navbar {
     background-color: white;
 }
+
 .navbar-brand {
     font-family: 'Alfa Slab One', serif;
     font-weight: bolder;
@@ -151,14 +188,14 @@ ul {
 
 .dropdown-menu {
     color: white;
-    box-shadow:0px 0px 10px inset rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px inset rgb(255, 255, 255);
     border: white solid 1px;
     border-radius: 20px;
     width: 450px;
     height: 200px;
 }
 
-.dropdownColor{
+.dropdownColor {
     color: gray;
 }
 
@@ -177,7 +214,7 @@ ul {
 
 .rotated::after {
     transform: rotate(180deg);
-  }
+}
 
 .nav-item {
     position: relative;
@@ -201,11 +238,11 @@ ul {
     display: block;
 }
 
-#categorylist{
+#categorylist {
     display: none;
 }
 
-.nav-item:hover #categorylist{
+.nav-item:hover #categorylist {
     display: block;
 }
 
@@ -219,33 +256,34 @@ ul {
     background: #f0f0f0;
 }
 
-.iconhover:hover{
+.iconhover:hover {
     color: gray;
 }
 
-.itemsnavhover:hover{
+.itemsnavhover:hover {
     text-decoration: underline;
 }
 
 /* Slider Style */
-#carouselExampleCaptions{
+#carouselExampleCaptions {
     margin-top: 90px;
 }
-.d-block{
+
+.d-block {
     width: 100%;
     height: 600px;
     border-radius: 0 30px 30px 0;
 }
 
-.text-content{
+.text-content {
     color: black;
 }
 
-.sliderheader{
+.sliderheader {
     font-weight: bolder;
 }
 
- .imgSlider{
+.imgSlider {
     opacity: 0.9;
 }
 
@@ -254,12 +292,12 @@ ul {
 }
 
 
-.slide{
+.slide {
     background-color: #F6F6F6;
-} 
+}
 
 /* Brand Bar */
-.brandimg{
+.brandimg {
     width: 120px;
     height: 120px;
     align-items: center;
@@ -267,7 +305,7 @@ ul {
     padding: 10px;
 }
 
-.brandsbar{
+.brandsbar {
     display: flex;
     justify-content: space-evenly;
     margin: 50px 0;
@@ -276,33 +314,33 @@ ul {
 
 /* New Arrival */
 
-.NewArrivalHeadersp{
+.NewArrivalHeadersp {
     font-weight: bolder;
-    padding: 20px;
+    padding: 20px 0;
 }
 
-.card-image-container{
+.card-image-container {
     position: relative;
 }
 
-.AllHomePro{
+.AllHomePro {
     margin: 30px 0;
 }
 
 .card-img-top {
     height: 33vh;
-    object-fit: cover;  
+    object-fit: cover;
 }
 
 .card-body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 
 .itemPrice {
     font-size: 1.2rem;
-    margin-top: auto; 
+    margin-top: auto;
     text-align: start;
     color: #333;
 }
@@ -311,8 +349,8 @@ ul {
     position: absolute;
     top: 99%;
     right: 10px;
-    transform: translateY(-50%); 
-    color: black; 
+    transform: translateY(-50%);
+    color: black;
     text-align: center;
     justify-content: end;
     align-items: end;
@@ -322,10 +360,10 @@ ul {
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 20px rgba(174, 173, 173, 0.833);
     border-radius: 100%;
-    display: block; 
+    display: block;
 }
 
-.add-to-cart-icon:hover{
+.add-to-cart-icon:hover {
     background-color: black;
     color: white;
     box-shadow: 0px 0px 20px rgba(63, 63, 63, 0.833);
@@ -335,17 +373,17 @@ ul {
 /* sale  */
 
 .AllHomePro {
-    background-color:  #F6F6F6;
+    background-color: #F6F6F6;
 }
 
-.NewArrivalButtonDiv{
+.NewArrivalButtonDiv {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
 }
 
-.NewArrivalButton{
+.NewArrivalButton {
     width: 220px;
     height: 50px;
     padding: 10px;
@@ -354,29 +392,29 @@ ul {
     background-color: white;
 }
 
-.NewArrivalButton:hover{
+.NewArrivalButton:hover {
     background-color: black;
     color: white;
     font-weight: bold;
 }
 
-.delPrice{
+.delPrice {
     color: gray;
 }
 
 /* Banner */
 
-.Banner{
+.Banner {
     height: 450px;
     width: 100%;
     margin: 0 auto;
 }
 
-.textBanner{
+.textBanner {
     font-weight: bold;
 }
 
-.shopNowButton{
+.shopNowButton {
     width: 150px;
     height: 50px;
     padding: 10px;
@@ -385,7 +423,7 @@ ul {
     background-color: white;
 }
 
-.shopNowButton:hover{
+.shopNowButton:hover {
     background-color: black;
     color: white;
     font-weight: bold;
@@ -397,6 +435,7 @@ ul {
     margin-top: 60px;
     padding: 60px;
 }
+
 .box {
     border: 3px solid #F6F6F6;
     padding: 10px;
@@ -405,26 +444,27 @@ ul {
     margin: 5px 5px;
 }
 
-.whyCont{
-   padding: 10px;
+.whyCont {
+    padding: 10px;
 }
 
-.head{
+.head {
     font-weight: bold;
 }
 
-.footer{
+.footer {
     color: white;
     background-color: #000000;
     margin: 5px;
     padding: 30px;
     border-radius: 40px 40px 0 0;
 }
-a{
+
+a {
     color: white;
 }
 
-.iconColor{
+.iconColor {
     color: white;
     padding: 3px;
     height: 3vh;
@@ -434,31 +474,71 @@ a{
 
 /* more */
 
-.footer{
+.footer {
     padding: 50px;
     margin-top: 30px;
 }
 
-.nav{
+.nav {
     padding: 40px 0;
 }
 
 .footer {
-    margin-top: 100px; 
+    margin-top: 100px;
 }
 
-.footerIcon{
+.footerIcon {
     margin: 0 8px;
 }
 
 .dropdown-item:hover {
-    background-color: initial; 
-    color: initial; 
+    background-color: initial;
+    color: initial;
 }
 
 .dropdown-item:active {
-    background-color: initial; 
-    color: initial; 
+    background-color: initial;
+    color: initial;
 }
 
+#searchResults {
+    position: absolute;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    display: none;
+}
 
+#searchResults li {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#searchResults li:hover {
+    background-color: #f0f0f0;
+}
+
+#searchResults {
+    position: absolute;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    display: none;
+}
+
+#searchResults li {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#searchResults li:hover {
+    background-color: #f0f0f0;
+}

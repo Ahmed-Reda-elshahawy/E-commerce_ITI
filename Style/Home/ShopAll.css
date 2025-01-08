@@ -1,14 +1,13 @@
 .filterAndShop {
-    background-color: #F6F6F6;
-    padding: 20px;
-    width: 100%;
-    margin: 0px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 70px;
-    z-index: 100; 
+     background-color: #F6F6F6; 
+     padding: 20px; width: 100%; 
+     margin: 0px auto; 
+     display: flex; 
+     justify-content: space-between; 
+     align-items: center; 
+     position: fixed; 
+     top: 70px; 
+     z-index: 100;
 }
 
 .fa-filter{
