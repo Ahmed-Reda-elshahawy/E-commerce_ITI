@@ -12,15 +12,16 @@ async function loadDataFromJson() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    let products = JSON.parse(localStorage.getItem("products"));
+    const storedProducts = localStorage.getItem("products");
+    const products = JSON.parse(storedProducts);
 
-    if (products && products.products) {
+    if (products) {
         const cardContainer = document.getElementById("cardContainerAll");
 
         let shuffledProducts = JSON.parse(localStorage.getItem("shuffledProducts"));
 
         if (!shuffledProducts) {
-            shuffledProducts = products.products.sort(() => Math.random() - 0.5);
+            shuffledProducts = products.sort(() => Math.random() - 0.5);
 
             localStorage.setItem("shuffledProducts", JSON.stringify(shuffledProducts));
         }
@@ -28,24 +29,19 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Stored products:", shuffledProducts);
 
         for (let i = 0; i < Math.min(12, shuffledProducts.length); i++) {
-            const product = shuffledProducts[i];
             const cardCol = document.createElement("div");
             cardCol.className = "col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3";
             cardCol.innerHTML = `
                 <div class="card w-100 h-100">
                     <div class="card-image-container">
-                        <img src="${products.products[0].images[0]}" class="card-img-top mainimg" alt="${products.products[0].title[0]}">
+                        <img src="${products[i].images[0]}" class="card-img-top mainimg" alt="${products[i].title[0]}">
                         <div class="add-to-cart-icon">
                             <i class="fas fa-cart-plus"></i>
                         </div>
                     </div>
                     <div class="card-body">
-<<<<<<< HEAD
-                        <h5 class="card-title">${products.products[0].title[0]}</h5>
-                        <p class="card-text">${products.products[0].title[0]}</p>
-=======
-                        <h6 class="card-title"><b>${product.title}</b></h6>
-                        <p class="itemPrice">${product.price}$</p>
+                        <h6 class="card-title"><b>${products.title}</b></h6>
+                        <p class="itemPrice">${products.price}$</p>
                     </div>
                 </div>
             `;
@@ -64,22 +60,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (products) {
         const cardContainerSale = document.getElementById("cardContainerAllSale");
 
-        for (let i = 30; i < 36; i++) {
-            const product = products[i];
+       for (let i = 30; i < 36; i++) {
             const cardCol = document.createElement("div");
             cardCol.className = "col-6 col-md-4 col-lg-2";
             cardCol.innerHTML += `
-                <div class="card w-100 h-100" id="cardSale">
+                <div class="card w-100 h-100">
                     <div class="card-image-container">
-                        <img src="${products.products[i].images[0]}" class="card-img-top mainimg" alt="${products.products[i].title}">
+                        <img src="${products[i].images[0]}" class="card-img-top mainimg" alt="${products[i].title}">
                         <div class="add-to-cart-icon">
                             <i class="fas fa-cart-plus"></i>
                         </div>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">${products.products[i].title}</h5>
-                        <p class="itemPrice"><del style="color: rgb(85, 84, 84)">${products.products[i].price}$</del> ${((products.products[i].price) - ((products.products[i].price) * ((products.products[i].discountPercentage) / 100))).toFixed(2)}$</p>
->>>>>>> 1ecae1c8b91711a4ca5afdb86b0bda6b27d4e98d
+                        <h5 class="card-title">${products[i].title}</h5>
+                        <p class="itemPrice"><del style="color: rgb(85, 84, 84)">${products[i].price}$</del> ${((products[i].price) - ((products[i].price) * ((products[i].discountPercentage) / 100))).toFixed(2)}$</p>
                     </div>
                 </div>
             `;

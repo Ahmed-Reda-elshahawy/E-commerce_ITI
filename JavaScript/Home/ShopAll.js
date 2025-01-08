@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const products = JSON.parse(localStorage.getItem("products"));
 
-    if (products && products.products) {
+    if (products) {
         const cardContainer = document.getElementById("cardContainerAll");
 
         let shuffledProducts = JSON.parse(localStorage.getItem("shuffledProducts"));
@@ -51,6 +51,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     renderProducts(filteredProducts);
                 }
             });
+        });
+
+        const clearAllButton = document.getElementById("clearAll");
+        clearAllButton.addEventListener("click", () => {
+            brandFilters.forEach((filter) => {
+                filter.checked = false;
+            });
+            renderProducts(shuffledProducts);
         });
     } else {
         console.log("No products available or invalid data.");
