@@ -9,7 +9,7 @@ function getStoredData() {
 function setStoredData(products) {
     localStorage.setItem('products', JSON.stringify(products));
 }
-
+console .log (products)
 
 // 2- initial data from json file
 (async function loadDataFromJson() {

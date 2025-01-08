@@ -40,10 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                     </div>
                     <div class="card-body">
-<<<<<<< HEAD
-                        <h5 class="card-title">${products.products[0].title[0]}</h5>
-                        <p class="card-text">${products.products[0].title[0]}</p>
-=======
                         <h6 class="card-title"><b>${product.title}</b></h6>
                         <p class="itemPrice">${product.price}$</p>
                     </div>
@@ -69,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const cardCol = document.createElement("div");
             cardCol.className = "col-6 col-md-4 col-lg-2";
             cardCol.innerHTML += `
-                <div class="card w-100 h-100">
+                <div class="card w-100 h-100" onclick="getproductbyid(${productd[i].id})">
                     <div class="card-image-container">
                         <img src="${products.products[i].images[0]}" class="card-img-top mainimg" alt="${products.products[i].title}">
                         <div class="add-to-cart-icon">
@@ -79,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="card-body">
                         <h5 class="card-title">${products.products[i].title}</h5>
                         <p class="itemPrice"><del style="color: rgb(85, 84, 84)">${products.products[i].price}$</del> ${((products.products[i].price) - ((products.products[i].price) * ((products.products[i].discountPercentage) / 100))).toFixed(2)}$</p>
->>>>>>> 1ecae1c8b91711a4ca5afdb86b0bda6b27d4e98d
                     </div>
                 </div>
             `;
