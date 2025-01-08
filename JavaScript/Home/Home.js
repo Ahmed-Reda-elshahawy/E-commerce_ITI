@@ -40,10 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                     </div>
                     <div class="card-body">
-<<<<<<< HEAD
-                        <h5 class="card-title">${products.products[0].title[0]}</h5>
-                        <p class="card-text">${products.products[0].title[0]}</p>
-=======
                         <h6 class="card-title"><b>${product.title}</b></h6>
                         <p class="itemPrice">${product.price}$</p>
                     </div>
@@ -60,26 +56,26 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const storedProducts = localStorage.getItem("products");
     const products = JSON.parse(storedProducts);
+    console.log(products);
 
     if (products) {
         const cardContainerSale = document.getElementById("cardContainerAllSale");
 
         for (let i = 30; i < 36; i++) {
-            const product = products[i];
+            // const product = products[i];
             const cardCol = document.createElement("div");
             cardCol.className = "col-6 col-md-4 col-lg-2";
             cardCol.innerHTML += `
                 <div class="card w-100 h-100">
                     <div class="card-image-container">
-                        <img src="${products.products[i].images[0]}" class="card-img-top mainimg" alt="${products.products[i].title}">
+                        <img src="${products[i].images[0]}" class="card-img-top mainimg" alt="${products[i].title}">
                         <div class="add-to-cart-icon">
                             <i class="fas fa-cart-plus"></i>
                         </div>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">${products.products[i].title}</h5>
-                        <p class="itemPrice"><del style="color: rgb(85, 84, 84)">${products.products[i].price}$</del> ${((products.products[i].price) - ((products.products[i].price) * ((products.products[i].discountPercentage) / 100))).toFixed(2)}$</p>
->>>>>>> 1ecae1c8b91711a4ca5afdb86b0bda6b27d4e98d
+                        <h5 class="card-title">${products[i].title}</h5>
+                        <p class="itemPrice"><del style="color: rgb(85, 84, 84)">${products[i].price}$</del> ${((products[i].price) - ((products[i].price) * ((products[i].discountPercentage) / 100))).toFixed(2)}$</p>
                     </div>
                 </div>
             `;
@@ -108,7 +104,7 @@ function shopNow() {
 function searchProduct(searchQuery) {
     const products = JSON.parse(localStorage.getItem("products") || "[]");
     return Array.isArray(products) ? products.filter(product =>
-        product.title.toLowerCase().trim().includes(searchQuery.toLowerCase().trim()) || 
+        product.title.toLowerCase().trim().includes(searchQuery.toLowerCase().trim()) ||
         (product.category && product.category.toLowerCase().trim().includes(searchQuery.toLowerCase().trim()))
     ) : [];
 }
@@ -135,22 +131,22 @@ document.getElementById("searchInput").addEventListener("input", function () {
         return;
     }
 
-    if(results.length > 0){
+    if (results.length > 0) {
         results.forEach(product => {
             const resultItem = document.createElement("li");
             resultItem.textContent = product.title;
             resultItem.style.cursor = "pointer";
             resultItem.style.padding = "5px 10px";
-    
+
             resultItem.addEventListener("click", function () {
                 document.getElementById("searchInput").value = product.title;
                 searchResultsContainer.innerHTML = "";
                 searchResultsContainer.style.display = "none";
             });
-    
+
             searchResultsContainer.appendChild(resultItem);
         });
-    
+
     }
     searchResultsContainer.style.display = "block";
 });

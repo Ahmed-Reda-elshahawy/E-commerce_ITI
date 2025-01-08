@@ -47,13 +47,14 @@
                 </li>
             </ul>
         </aside>
+
         <div class="container position-relative d-flex min-vh-100 col-10">
             <main class="w-100">
                 <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
                     <a class="navbar-brand fw-bold" href="#">
                         <span>Dash</span><span class="text-black-50">Admin</span>
                     </a>
-                    <div class="navbar-nav align-items-center ms-auto">
+                    <div class="navbar-nav flex-column align-items-center ms-auto">
                         <!-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                 <img class="rounded-circle me-lg-2" src="../../assets/images/user.jpg" alt="user-img"
@@ -80,6 +81,10 @@
 
                     <div class="table-container">
                         <table class="table table-light text-center customers-table">
+                            <div class="mb-2">
+                                <input type="search" name="searchByName" id="usersSearch" class="px-2 py-1 rounded"
+                                    placeholder="search">
+                            </div>
                             <caption>Customers Data</caption>
                             <thead>
                                 <tr>
@@ -99,11 +104,16 @@
                     <div class="table-container d-none">
                         <table class="table table-light text-center products-table" data-toggle="table"
                             data-pagination="true" data-page-size="5">
+                            <div class="mb-2">
+                                <input type="search" name="searchByName" id="productsSearch" class="px-2 py-1 rounded"
+                                    placeholder="search">
+                            </div>
                             <caption>Products Data</caption>
                             <thead>
                                 <tr>
                                     <th>Id</th>
                                     <th>Image</th>
+                                    <th>Category</th>
                                     <th>Name</th>
                                     <th>price</th>
                                     <th>In stock</th>
@@ -121,6 +131,10 @@
 
                     <div class="table-container d-none">
                         <table class="table table-light text-center orders-table">
+                            <div class="mb-2">
+                                <input type="search" name="searchByName" id="ordersSearch" class="px-2 py-1 rounded"
+                                    placeholder="search">
+                            </div>
                             <caption>Orders Data</caption>
                             <thead>
                                 <tr>

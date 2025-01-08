@@ -21,6 +21,7 @@ export function DisplayProducts(data) {
                 <td>${product.id}</td>
                 <td><img src="${product.images[0]}" alt="product-img" style="width: 50px; border-radius: 6px;"/></td>
                 <td>${product.category}</td>
+                <td>${product.title}</td>
                 <td>$${product.price}</td>
                 <td>${product.stock}</td>
                 <td>
@@ -52,36 +53,27 @@ export function confirmDeleteProduct() {
     modal.hide();
 }
 
-// // Get a product by its id
-// export function getProductById(productID) {
-//     const products = getStoredProducts();
-//     const product = products.find(product => product.id == productID);
-//     // Log an error if the product was not found
-//     if (!product) {
-//         console.error(`Product with id ${productID} not found.`);
-//     }
-//     return product || null;
-// }
+// Get a product by its id
+export function getProductById(productID) {
+    const products = getStoredProducts();
+    const product = products.find(product => product.id == productID);
+    // Log an error if the product was not found
+    if (!product) {
+        console.error(`Product with id ${productID} not found.`);
+    }
+    return product || null;
+}
 
 
 
-// //search function
-// export function searchProduct(searchQuery) {
-//     const products = getStoredProducts();
-//     const result = products.filter(product =>
-//         product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-//         (product.description && product.description.toLowerCase().includes(searchQuery.toLowerCase()))
-//     );
-// }
-// // //     if (result.length === 0) {
-// // //         console.log("No products found matching the search criteria.");
-// // //         return null;
-// // //     }
-
-// // //     return result;
-// // // }
-
-// // Load products if they are not already stored in localStorage
-// // if (!localStorage.getItem('products')) {
-// //     loadDataFromJson();
-// // }
+//search function
+const searchInput = document.getElementById('productsSearch');
+function searchFilter(searchName) {
+    const products = getStoredProducts();
+    return products.filter(product => product.title.toLowerCase().includes(searchName.toLowerCase()));
+}
+searchInput.addEventListener("input", function () {
+    let searchName = searchInput.value;
+    const products = searchFilter(searchName);
+    DisplayProducts(products);
+});
