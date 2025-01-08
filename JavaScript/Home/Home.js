@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const storedProducts = localStorage.getItem("products");
     const products = JSON.parse(storedProducts);
+    console.log(products);
 
     if (products) {
         const cardContainerSale = document.getElementById("cardContainerAllSale");
@@ -67,9 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             cardContainerSale.appendChild(cardCol);
         }
-    } else {
-        console.log("No Data");
-    }
+}
 });
 
 document.getElementById("NewArrivalButton").addEventListener("click", newArrival);
