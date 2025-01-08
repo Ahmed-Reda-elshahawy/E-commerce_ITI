@@ -1,0 +1,48 @@
+.filterAndShop {
+    background-color: #F6F6F6;
+    padding: 20px;
+    width: 100%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 70px;
+    z-index: 100; 
+}
+
+.fa-filter{
+    margin-left: 50px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    font-weight: lighter;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.brandName {
+    margin-left: 5px;
+}
+
+input[type="checkbox"] {
+    accent-color: black;
+    width: 20px;
+    height: 20px;
+}
+
+#clearAll{
+    margin: 0 auto; 
+    padding: 5px; 
+    width: 90%; 
+    border-radius: 20px; 
+    color: white; 
+    background-color: black; 
+    font-weight: bold;
+}
