@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < Math.min(12, shuffledProducts.length); i++) {
             const product = shuffledProducts[i];
             const cardCol = document.createElement("div");
-            cardCol.className = "col-6 col-md-4 col-lg-2";
+            cardCol.className = "col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3";
             cardCol.innerHTML = `
                 <div class="card w-100 h-100">
                     <div class="card-image-container">
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const cardCol = document.createElement("div");
             cardCol.className = "col-6 col-md-4 col-lg-2";
             cardCol.innerHTML += `
-                <div class="card w-100 h-100">
+                <div class="card w-100 h-100" id="cardSale">
                     <div class="card-image-container">
                         <img src="${products.products[i].images[0]}" class="card-img-top mainimg" alt="${products.products[i].title}">
                         <div class="add-to-cart-icon">
@@ -104,74 +104,3 @@ function shopNow() {
 }
 
 // search
-
-function searchProduct(searchQuery) {
-    const products = JSON.parse(localStorage.getItem("products") || "[]");
-    return Array.isArray(products) ? products.filter(product =>
-        product.title.toLowerCase().trim().includes(searchQuery.toLowerCase().trim()) || 
-        (product.category && product.category.toLowerCase().trim().includes(searchQuery.toLowerCase().trim()))
-    ) : [];
-}
-
-document.getElementById("searchInput").addEventListener("input", function () {
-    const searchQuery = this.value.trim();
-    const searchResultsContainer = document.getElementById("searchResults");
-    searchResultsContainer.innerHTML = "";
-
-    if (searchQuery === "") {
-        searchResultsContainer.style.display = "none";
-        return;
-    }
-
-    const results = searchProduct(searchQuery);
-
-    if (results.length === 0) {
-        const noResultsItem = document.createElement("li");
-        noResultsItem.textContent = "No products found.";
-        noResultsItem.style.color = "red";
-        noResultsItem.style.padding = "5px 10px";
-        searchResultsContainer.appendChild(noResultsItem);
-        searchResultsContainer.style.display = "block";
-        return;
-    }
-
-    if(results.length > 0){
-        results.forEach(product => {
-            const resultItem = document.createElement("li");
-            resultItem.textContent = product.title;
-            resultItem.style.cursor = "pointer";
-            resultItem.style.padding = "5px 10px";
-    
-            resultItem.addEventListener("click", function () {
-                document.getElementById("searchInput").value = product.title;
-                searchResultsContainer.innerHTML = "";
-                searchResultsContainer.style.display = "none";
-            });
-    
-            searchResultsContainer.appendChild(resultItem);
-        });
-    
-    }
-    searchResultsContainer.style.display = "block";
-});
-
-
-// category
-
-const brandLinks = document.querySelectorAll(".dropdown-item");
-
-brandLinks.forEach(link => {
-    link.addEventListener("click", event => {
-        event.preventDefault();
-
-        const brandName = link.getAttribute("data-brand");
-
-        const allProducts = JSON.parse(localStorage.getItem("products")) || [];
-
-        const filteredProducts = allProducts.filter(product => product.brand === brandName);
-
-        localStorage.setItem("filteredProducts", JSON.stringify(filteredProducts));
-
-        window.location.href = link.getAttribute("href");
-    });
-});
