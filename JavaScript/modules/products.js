@@ -53,27 +53,30 @@ export function confirmDeleteProduct() {
     modal.hide();
 }
 
-// Get a product by its id
-export function getProductById(productID) {
-    const products = getStoredProducts();
-    const product = products.find(product => product.id == productID);
-    // Log an error if the product was not found
-    if (!product) {
-        console.error(`Product with id ${productID} not found.`);
-    }
-    return product || null;
-}
-
 
 
 //search function
 const searchInput = document.getElementById('productsSearch');
-function searchFilter(searchName) {
-    const products = getStoredProducts();
-    return products.filter(product => product.title.toLowerCase().includes(searchName.toLowerCase()));
+if (searchInput) {
+    function searchFilter(searchName) {
+        const products = getStoredProducts();
+        return products.filter(product => product.title.toLowerCase().includes(searchName.toLowerCase()));
+    }
+    searchInput.addEventListener("input", function () {
+        let searchName = searchInput.value;
+        const products = searchFilter(searchName);
+        DisplayProducts(products);
+    });
 }
-searchInput.addEventListener("input", function () {
-    let searchName = searchInput.value;
-    const products = searchFilter(searchName);
-    DisplayProducts(products);
-});
+
+
+
+// Get a product by its id
+export function goToProductDetailsPage(productId) {
+    window.location.href = `../../Html/ProductsDetails/ProdDetails.html?productId=${productId}`;
+}
+export function getProductById(productId) {
+    const allProducts = JSON.parse(localStorage.getItem("products"));
+    const product = allProducts.find(product => product.id == productId);
+    localStorage.setItem("productDetails", JSON.stringify(product));
+}

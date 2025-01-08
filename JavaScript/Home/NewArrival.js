@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
+import { getProductById, goToProductDetailsPage } from "../modules/products.js";
+
+function DisplayNewProducts() {
     const storedProducts = localStorage.getItem("products");
     const products = JSON.parse(storedProducts);
 
@@ -20,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const cardCol = document.createElement("div");
             cardCol.className = "col-6 col-md-4 col-lg-2";
             cardCol.innerHTML = `
-                <div class="card w-100 h-100">
+                <div class="card product-card w-100 h-100" data-product-id="${products[i].id}">
                     <div class="card-image-container">
                         <img src="${products[i].images[0]}" class="card-img-top mainimg" alt="${products[i].title}">
                         <div class="add-to-cart-icon">
@@ -38,4 +40,16 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.log("No products available or invalid data.");
     }
+}
+DisplayNewProducts();
+
+
+
+const productCards = document.querySelectorAll(".product-card");
+productCards.forEach(card => {
+    card.addEventListener("click", function () {
+        const productId = card.getAttribute("data-product-id");
+        getProductById(productId);
+        goToProductDetailsPage(productId);
+    })
 });
