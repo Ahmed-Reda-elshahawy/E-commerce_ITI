@@ -22,13 +22,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active itemsnavhover" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active itemsnavhover" aria-current="page" href="../Home/Home.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link itemsnavhover" href="../Home/ShopAll.html">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link itemsnavhover" href="#">About Us</a>
+                        <a class="nav-link itemsnavhover" href="../Home/AboutUs.html">About Us</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto d-flex justify-content-end align-items-center gap-3 w-100">
@@ -36,9 +36,9 @@
                         <div class="search-container">
                             <input type="text" class="form-control" placeholder="Search..." id="searchInput">
                             <a class="icon iconhover" href="#"><i class="fas fa-search"></i></a>
-                            <ul id="searchResults" style="list-style-type: none; padding-left: 0;"></ul>
+                            <ul id="searchResults"></ul>
                         </div>
-                    </li>
+                    </li>                    
                     <li class="nav-item dropdown">
                         <a class="icon btn nav-link iconhover" id="userIcon" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-user"></i>
@@ -58,11 +58,12 @@
 
     <div class="filterAndShop d-flex align-items-center">
         <h4 class="NewArrivalHeader text-center mx-auto"><b>Our New Arrivals</b></h4>
-    </div>    
+    </div>   
+
     <div class="container mt-5 pt-5">
-        <div class="HomeProducts container">
+        <div class="HomeProducts">
             <div class="AllHomePro" style="background-color: white; padding-top: 100px;">
-                <div class="row ms-5 mb-5 g-2 allProducts" id="cardContainerAll">
+                <div class="row mb-5 g-2 allProducts" id="cardContainerAll">
 
                 </div>
             </div>
@@ -131,6 +132,7 @@
     <script src="../../assets/Bootstrap/bootstrap.bundle.js"></script>
     <script src="../../JavaScript/modules/products.js" type="module"></script>
     <script src="../../JavaScript/Home/NewArrival.js"></script>
+    <script src="../../JavaScript/Home/CommonHomeFunctions.js"></script>
 </body>
 
 </html>
