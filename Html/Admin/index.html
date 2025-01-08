@@ -17,10 +17,10 @@
     <main class="container-fluid row">
         <aside class="bg-light col-2 p-1 p-sm-3">
             <div class="user d-flex gap-3 align-items-center justify-content-center">
-                <img src="../../assets/images/user.jpg" alt="user" class="rounded-circle">
+                <img src="" alt="user" class="rounded-circle adminImg" style="width: 40px; height: 40px;">
                 <div class="d-none d-md-block">
-                    <h5>Ahmed</h5>
-                    <p class="text-black-50 fs-6 mb-0">Admin</p>
+                    <h5 class="adminName"></h5>
+                    <p class="text-black-50 fs-6 mb-0 adminRole"></p>
                 </div>
             </div>
             <ul class="control-list d-flex flex-column gap-4 mt-5 ps-0 align-items-center">
@@ -54,25 +54,30 @@
                         <span>Dash</span><span class="text-black-50">Admin</span>
                     </a>
                     <div class="navbar-nav align-items-center ms-auto">
-                        <div class="nav-item dropdown">
+                        <!-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                 <img class="rounded-circle me-lg-2" src="../../assets/images/user.jpg" alt="user-img"
                                     style="width: 40px; height: 40px;">
                                 <span class="d-none d-lg-inline-flex">John Doe</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                                <!-- <a href="#" class="dropdown-item">My Profile</a> -->
                                 <button class="dropdown-item">My Profile</button>
-                                <!-- <a href="#" class="dropdown-item">Add New Admin</a> -->
                                 <button class="dropdown-item" data-bs-target="#addModalForCustomer"
                                     data-bs-toggle="modal">Add New Admin</button>
-                                <!-- <a href="#" class="dropdown-item">Log Out</a> -->
                                 <button class="dropdown-item">Log Out</button>
+                            </div>
+                        </div> -->
+                        <div class="nav-item">
+                            <div class="nav-link">
+                                <img class="rounded-circle me-lg-2 adminImg" src="" alt="user-img"
+                                    style="width: 40px; height: 40px;">
+                                <span class="d-none d-lg-inline-flex adminName"></span>
                             </div>
                         </div>
                     </div>
                 </nav>
                 <section class="content p-4">
+
                     <div class="table-container">
                         <table class="table table-light text-center customers-table">
                             <caption>Customers Data</caption>
@@ -98,9 +103,10 @@
                             <thead>
                                 <tr>
                                     <th>Id</th>
+                                    <th>Image</th>
                                     <th>Name</th>
                                     <th>price</th>
-                                    <th>count</th>
+                                    <th>In stock</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -113,6 +119,26 @@
                         </nav>
                     </div>
 
+                    <div class="table-container d-none">
+                        <table class="table table-light text-center orders-table">
+                            <caption>Orders Data</caption>
+                            <thead>
+                                <tr>
+                                    <th>Order Id</th>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>price</th>
+                                    <th>count</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- orders data -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- ### modals ### -->
                     <!-- Delete Modal for produsts -->
                     <div class="modal fade" id="deleteModalForProduct" tabindex="-1" aria-labelledby="deleteModalLabel"
                         aria-hidden="true">
@@ -124,7 +150,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-danger">Delete</button>
+                                    <button type="button" class="btn btn-danger" id="delete-product">Delete</button>
                                 </div>
                             </div>
                         </div>
@@ -263,10 +289,9 @@
     </main>
 
     <script src="../../assets/Bootstrap/bootstrap.bundle.js"></script>
+    <script src="../../JavaScript/modules/loadData.js"></script>
     <!-- <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script> -->
     <script src="../../JavaScript/Admin/Admin.js" type="module"></script>
-    <script src="../../JavaScript/Admin/products.js"></script>
-    <!-- <script src="../../JavaScript/Admin/CreateAdmin.js"></script> -->
 </body>
 
 </html>

@@ -7,6 +7,7 @@
 
     <script>
         window.addEventListener('load', function() {
+            var h3=document.querySelector('h3');
     document.getElementById('submit').addEventListener('click', function(event) {
                 
                 event.preventDefault();
@@ -28,8 +29,8 @@
             }
             
                  
-               
-               alert('Invalid Email or Password');
+               h3.classList.add('active');
+               h3.innerHTML='Invalid Email or Password' ;
     });
     document.getElementById('cancel').addEventListener('click', function(event) {
     
@@ -146,6 +147,14 @@
 
           
         }
+        h3{
+            color:red;
+            text-align: center;
+            display: none ;
+            }
+        .active {
+            display: block;
+        } 
 </style> 
 </head>
 <body>
@@ -164,6 +173,7 @@
         </div>
         <br><br>
             <div class="button">
+                <h3 >Wrong data Entered</h3>   
                 <button type="submit" class="registerbtn" id="submit">Login</button> <br>
                 <button type="reset" id="cancel">Don't have an account? Sign up</button>
                 <button type="reset" id="forget">Forget Password?</button>

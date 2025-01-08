@@ -4,32 +4,12 @@
 // const usersTableContainer = document.querySelector(".table-container:nth-child(1)");
 // const productsTableContainer = document.querySelector(".table-container:nth-child(2)");
 // const updateModalBody = document.querySelector("#updateModal .modal-body");
+
+
 // // inputs of updateModal
 const customersTableBody = document.querySelector(".customers-table tbody");
 const customerName = document.querySelector(".customer-name");
 const customerEmail = document.querySelector(".customer-email");
-
-
-
-// ==== Fetch and store users ==== //
-export async function fetchAndStoreUsers() {
-    // Check if users have been fetched and stored
-    const isFetched = localStorage.getItem('isUsersFetched');
-    if (isFetched) {
-        return;
-    }
-
-    try {
-        const response = await fetch('../../Data/users.json');
-        const users = await response.json();
-        setStoredCustomers(users);
-        // Set the flag to indicate users have been fetched and stored
-        localStorage.setItem('isUsersFetched', 'true');
-    } catch (error) {
-        console.error('Error fetching user data: ', error);
-        return [];
-    }
-}
 
 
 
