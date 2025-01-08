@@ -67,7 +67,7 @@ async function fetchAndStoreOrders() {
 
 
 
-// ==== Fetch and store orders ==== //
+// ==== Fetch and store admins ==== //
 async function fetchAndStoreAdmins() {
     // Check if users have been fetched and stored
     const isFetched = localStorage.getItem('isAdminsFetched');

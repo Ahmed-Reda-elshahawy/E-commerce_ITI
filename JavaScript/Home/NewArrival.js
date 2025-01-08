@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                     </div>
                     <div class="card-body">
-                        <h6 class="card-title"><b>${products.title}</b></h6>
-                        <p class="itemPrice">${products.price}$</p>
+                        <h6 class="card-title"><b>${products[i].title}</b></h6>
+                        <p class="itemPrice">${products[i].price}$</p>
                     </div>
                 </div>
             `;

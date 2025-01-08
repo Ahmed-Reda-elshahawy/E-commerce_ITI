@@ -1,12 +1,22 @@
 [
     {
-        "id": 1,
-        "userId": 1,
-        "sellerId": 1,
-        "total": 400,
-        "orderDate": "2023-05-23T08:56:21.618Z",
+        "orderId": "111",
+        "userId": "user111",
+        "sellerId": "seller1",
+        "products": [],
+        "totalAmount": 100.00,
         "status": "Shipped",
         "shippingAddress": "456 User Avenue, City, Country",
-        "paymentMethod": "Credit Card"
+        "date": "1/1/2025"
+    },
+    {
+        "orderId": "222",
+        "userId": "user222",
+        "sellerId": "seller2",
+        "products": [],
+        "totalAmount": 200.00,
+        "status": "Shipped",
+        "shippingAddress": "456 User Avenue, City, Country",
+        "date": "1/1/2025"
     }
 ]
