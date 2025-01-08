@@ -1,16 +1,14 @@
-{
-    "Categories": [
-        {
-            "CategoryID": "unique_identifier_1",
-            "CategoryName": "category_name_1",
-            "Description": "category_description_1",
-            "DateCreated": "date_created_1"
-        },
-        {
-            "CategoryID": "unique_identifier_2",
-            "CategoryName": "category_name_2",
-            "Description": "category_description_2",
-            "DateCreated": "date_created_2"
-        }
-    ]
-}
+[
+    {
+        "id": "unique_identifier_1",
+        "CategoryName": "category_name_1",
+        "Description": "category_description_1",
+        "DateCreated": "date_created_1"
+    },
+    {
+        "id": "unique_identifier_2",
+        "CategoryName": "category_name_2",
+        "Description": "category_description_2",
+        "DateCreated": "date_created_2"
+    }
+]
