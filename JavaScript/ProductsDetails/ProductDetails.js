@@ -29,51 +29,50 @@ loadProductDetails()
 
 
 
-// Function to add the product to the cart
-function addToCart() {
+
+
+
+
+ // Function to add product to cart
+
+ function addToCart() {
+  
   const selectedProduct = JSON.parse(localStorage.getItem("productDetails"));
-  const quantity = parseInt(document.getElementById('quantity').value);
 
-  const product = {
-    id: selectedProduct.id,
-    title: selectedProduct.title,
-    price: selectedProduct.price,
-    image: selectedProduct.images[0] || 'https://via.placeholder.com/400',
-    quantity: quantity
-  };
+  if (selectedProduct) {
+    
+    const product = {
+      id: selectedProduct.id, 
+      name: selectedProduct.title && selectedProduct.tittle2
+        ? `${selectedProduct.title} ${selectedProduct.tittle2}`
+        : 'Backpack', 
+      price: selectedProduct.price, 
+      image: selectedProduct.images[0] || 'https://via.placeholder.com/80', 
+      quantity: 1 
+    };
 
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const existingProductIndex = cart.findIndex(item => item.id === product.id);
+    
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  if (existingProductIndex !== -1) {
-    cart[existingProductIndex].quantity += product.quantity;
+    
+    const existingProduct = cart.find(item => item.id === product.id);
+    if (existingProduct) {
+      
+      existingProduct.quantity += 1;
+    } else {
+      
+      cart.push(product);
+    }
+
+  
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    
+    window.location.href = '../../Html/cart/cart.html';
   } else {
-    cart.push(product);
+    alert('No product selected. Please try again.');
   }
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-  window.location.href = 'cart.html'; // Redirect to shopping cart
 }
 
-// Load product details when the page loads
-// function loadProductDetails() {
-//   const productDetails = JSON.parse(localStorage.getItem("productDetails"));
 
-//   // Assuming you have elements to display product details
-//   document.getElementById('product-title').innerText = productDetails.title;
-//   document.getElementById('product-price').innerText = `$${productDetails.price.toFixed(2)}`;
-//   document.getElementById('product-image').src = productDetails.images[0] || 'https://via.placeholder.com/400';
-
-//   // Initialize quantity input
-//   document.getElementById('quantity').value = 1;
-// }
-
-// // Call the function to load product details
-// loadProductDetails();
-
-// Add event listener to the "Add to Cart" button
-const addToCartButton = document.getElementById('add-to-cart');
-addToCartButton.addEventListener('click', addToCart);
-
-
-
+document.getElementById('add-to-cart').addEventListener('click', addToCart);

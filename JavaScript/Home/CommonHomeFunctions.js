@@ -52,6 +52,7 @@ document.addEventListener('click', function (event) {
     }
 });
 
+//before and after auth
 document.addEventListener("DOMContentLoaded", function() {
     let user = JSON.parse(localStorage.getItem('users'));
     let userIcon = document.getElementById('userIcon');
