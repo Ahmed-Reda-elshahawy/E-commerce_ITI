@@ -32,20 +32,22 @@ loadProductDetails()
 
 
 
+
  // Function to add product to cart
- function addToCart() {
+function addToCart() {
   
   const selectedProduct = JSON.parse(localStorage.getItem("productDetails"));
 
   if (selectedProduct) {
+      
       const product = {
           id: selectedProduct.id, 
           name: selectedProduct.title && selectedProduct.tittle2
               ? `${selectedProduct.title} ${selectedProduct.tittle2}`
-              : 'Backpack',
-          price: selectedProduct.price,
-          image: selectedProduct.images[0] || 'https://via.placeholder.com/80',
-          quantity: parseInt(document.getElementById('quantity').value)
+              : 'Backpack', 
+          price: selectedProduct.price, 
+          image: selectedProduct.images[0] || 'https://via.placeholder.com/80', 
+          quantity: 1 // Default quantity 
       };
 
       
@@ -55,20 +57,18 @@ loadProductDetails()
       const existingProduct = cart.find(item => item.id === product.id);
       if (existingProduct) {
           
-          existingProduct.quantity += product.quantity;
+          existingProduct.quantity += 1;
       } else {
-        
+          
           cart.push(product);
       }
 
-      
+    
       localStorage.setItem('cart', JSON.stringify(cart));
 
-      alert('Product added to cart!');
+      
+      window.location.href = 'cart.html';
   } else {
       alert('No product selected. Please try again.');
   }
 }
-
-
-loadProductDetails();

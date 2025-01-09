@@ -1,14 +1,8 @@
-
 function loadCart() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartItemsContainer = document.getElementById('cart-items');
 
-    cartItemsContainer.innerHTML = '';
-
-    if (cart.length === 0) {
-        cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
-        return;
-    }
+    cartItemsContainer.innerHTML = ''; 
 
     cart.forEach(item => {
         const cartItem = document.createElement('div');
@@ -26,5 +20,5 @@ function loadCart() {
     });
 }
 
-
+// Load cart when the page loads
 loadCart();
