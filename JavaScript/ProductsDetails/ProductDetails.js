@@ -10,12 +10,13 @@ function loadProductDetails() {
       : 'Backpack';
 
     // Update the DOM with the product details
+    document.getElementById('product-brand').innerText = selectedProduct.brand;
     document.getElementById('product-name').innerText = productName;
     document.getElementById('product-price').textContent = `$${selectedProduct.price.toFixed(2)}`;
     document.getElementById('product-description').textContent = selectedProduct.description;
-    document.getElementById('product-style').textContent = selectedProduct.style;
+    document.getElementById('product-color').textContent = selectedProduct.color;
     document.getElementById('product-category').textContent = selectedProduct.category;
-    document.getElementById('product-image').src = selectedProduct.images[0] || 'https://via.placeholder.com/400'; // Fallback image
+    document.getElementById('product-image').src = selectedProduct.images[0] || 'https://via.placeholder.com/400';
   } else {
     // If no product is selected, redirect to the homepage
     window.location.href = 'index.html';
@@ -26,51 +27,48 @@ loadProductDetails()
 
 
 
-// Function to add the product to the cart
-function addToCart() {
-  const selectedProduct = JSON.parse(localStorage.getItem("selectedProduct"));
 
-  if (!selectedProduct) {
-    // If no product is found, redirect to the homepage
-    window.location.href = 'index.html';
-    return;
-  }
 
-  const quantity = parseInt(document.getElementById('quantity').value);
 
-  const product = {
-    id: selectedProduct.id,
-    title: `${selectedProduct.title} ${selectedProduct.tittle2}`,
-    price: selectedProduct.price,
-    image: selectedProduct.images[0] || 'https://via.placeholder.com/400',
-    style: selectedProduct.style,
-    category: selectedProduct.category,
-    quantity: quantity
-  };
 
-  // Get the existing cart from localStorage
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  // Check if the product already exists in the cart
-  const existingProductIndex = cart.findIndex(
-    (item) => item.id === product.id // Only check for product ID (no size or color)
-  );
+ // Function to add product to cart
+ function addToCart() {
+  
+  const selectedProduct = JSON.parse(localStorage.getItem("productDetails"));
 
-  if (existingProductIndex !== -1) {
-    // If the product exists, update its quantity
-    cart[existingProductIndex].quantity += product.quantity;
+  if (selectedProduct) {
+      const product = {
+          id: selectedProduct.id, 
+          name: selectedProduct.title && selectedProduct.tittle2
+              ? `${selectedProduct.title} ${selectedProduct.tittle2}`
+              : 'Backpack',
+          price: selectedProduct.price,
+          image: selectedProduct.images[0] || 'https://via.placeholder.com/80',
+          quantity: parseInt(document.getElementById('quantity').value)
+      };
+
+      
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      
+      const existingProduct = cart.find(item => item.id === product.id);
+      if (existingProduct) {
+          
+          existingProduct.quantity += product.quantity;
+      } else {
+        
+          cart.push(product);
+      }
+
+      
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      alert('Product added to cart!');
   } else {
-    // If the product does not exist, add it to the cart
-    cart.push(product);
+      alert('No product selected. Please try again.');
   }
-
-  // Save the updated cart back to localStorage
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  // Redirect to the cart page
-  window.location.href = 'cart.html';
 }
 
-// Add event listener to the "Add to Cart" button
-// const addToCartButton = document.getElementById('add-to-cart');
-// addToCartButton.addEventListener('click', addToCart);
+
+loadProductDetails();

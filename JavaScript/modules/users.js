@@ -35,12 +35,12 @@ export function displayCustomers(storedUsers) {
                 <td>${storedUsers[i].email}</td>
                 <td>${storedUsers[i].role}</td>
                 <td>
-                    <button class="btn" id="edit-btn" data-bs-target="#updateModalForCustomer"
-                        data-bs-toggle="modal" onclick="updateCustomer(${storedUsers[i].id})">
+                    <button class="btn edit-btn" data-bs-target="#updateModalForCustomer"
+                        data-bs-toggle="modal" onclick="updateCustomerById(${storedUsers[i].id})">
                         <i class="fa-regular fa-pen-to-square text-primary"></i>
                     </button>
-                    <button class="btn" id="delete-btn" data-bs-target="#deleteModalForCustomer"
-                        data-bs-toggle="modal" onclick="deleteCustomer(${storedUsers[i].id})">
+                    <button class="btn delete-btn" data-bs-target="#deleteModalForCustomer"
+                        data-bs-toggle="modal" onclick="deleteCustomerById(${storedUsers[i].id})">
                         <i class="fa-solid fa-trash-can text-danger"></i>
                     </button>
                 </td>
@@ -53,7 +53,7 @@ export function displayCustomers(storedUsers) {
 
 // ==== Update customer ==== //
 let currentCustomerId = 0;
-export function updateCustomer(storedUsersId) {
+export function updateCustomerById(storedUsersId) {
     const storedUsers = getStoredCustomers();
     const customer = storedUsers.find(customer => customer.id === storedUsersId);
     if (customer) {
@@ -62,7 +62,6 @@ export function updateCustomer(storedUsersId) {
         currentCustomerId = storedUsersId;
     }
 }
-
 export function editCustomer() {
     const storedUsers = getStoredCustomers();
     const customer = storedUsers.find(customer => customer.id === currentCustomerId);
@@ -81,10 +80,9 @@ export function editCustomer() {
 
 // ==== Delete customer ==== //
 let currentCustomerIdToDelete = 0;
-export function deleteCustomer(customerId) {
-    currentCustomerIdToDelete = customerId;
+export function deleteCustomerById(currentCustomerId) {
+    currentCustomerIdToDelete = currentCustomerId;
 }
-
 export function confirmDeleteCustomer() {
     const storedCustomers = getStoredCustomers();
     const newCustomers = storedCustomers.filter(customer => customer.id != currentCustomerIdToDelete);
