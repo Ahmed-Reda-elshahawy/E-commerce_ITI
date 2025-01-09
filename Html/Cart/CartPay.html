@@ -5,30 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../Style/Cart/CartPay.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../Style/Cart/CartPay.css">
 </head>
 <body>
-    <div class="cart-and-payment-container">
+    <div class="shopping-page-container">
         <!-- Shopping Cart Section -->
-        <div class="cart-container">
-            <div class="cart-header">
-                <h2>Your Shopping Cart</h2>
-            </div>
+        <div id="cart-container" class="cart-container">
+            <h2>Shopping Cart</h2>
             <div id="cart-items">
-                <!-- Cart items will be dynamically inserted here -->
+                <!-- Cart items will be dynamically added here -->
             </div>
         </div>
 
-        <!-- Payment Info Section -->
-        <div class="payment-container">
-            <div class="payment-header">
-                <h2>Payment Info</h2>
-            </div>
+        <!-- Payment Section -->
+        <div id="payment-container" class="payment-container">
+            <h2>Payment Info</h2>
+            <p id="payment-summary"><strong>Total:</strong> $<span id="cart-total-payment">0.00</span></p>
             <form id="payment-form">
-                <!-- Payment Method Dropdown -->
                 <div class="form-group">
                     <label for="payment-method">Payment Method</label>
-                    <select id="payment-method" class="form-control" required>
+                    <select id="payment-method" class="form-control">
                         <option value="">Select Payment Method</option>
                         <option value="credit-card">Credit Card</option>
                         <option value="paypal">PayPal</option>
@@ -36,40 +32,30 @@
                     </select>
                 </div>
 
-                <!-- Credit Card Fields (Initially Hidden) -->
-                <div id="credit-card-fields" class="payment-method-fields">
-                    <div class="form-group">
-                        <label for="cardholder-name">Name On Card</label>
-                        <input type="text" id="cardholder-name" placeholder="John Carter" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="card-number">Card Number</label>
-                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="expiry-date">Expiration Date</label>
-                        <input type="text" id="expiry-date" placeholder="MM/YY" required>
-                    </div>
+                <!-- Credit Card Fields -->
+                <div id="credit-card-fields" class="payment-method-fields" style="display: none;">
+                    <label for="cardholder-name">Cardholder Name</label>
+                    <input type="text" id="cardholder-name" placeholder="John Doe">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                    <label for="expiry-date">Expiration Date</label>
+                    <input type="text" id="expiry-date" placeholder="MM/YY">
                 </div>
 
-                <!-- PayPal Fields (Initially Hidden) -->
+                <!-- PayPal Fields -->
                 <div id="paypal-fields" class="payment-method-fields" style="display: none;">
-                    <div class="form-group">
-                        <p>You will be redirected to PayPal to complete your payment.</p>
-                    </div>
+                    <p>You will be redirected to PayPal to complete your payment.</p>
                 </div>
 
-                <!-- Bank Transfer Fields (Initially Hidden) -->
+                <!-- Bank Transfer Fields -->
                 <div id="bank-transfer-fields" class="payment-method-fields" style="display: none;">
-                    <div class="form-group">
-                        <p>Please transfer the amount to the following bank account:</p>
-                        <p><strong>Account Name:</strong> Your Company Name</p>
-                        <p><strong>Account Number:</strong> 1234 5678 9012 3456</p>
-                        <p><strong>Bank Name:</strong> Example Bank</p>
-                    </div>
+                    <p>Please transfer the amount to the following account:</p>
+                    <p><strong>Account Name:</strong> Example Corp</p>
+                    <p><strong>Account Number:</strong> 1234 5678 9012</p>
+                    <p><strong>Bank Name:</strong> Example Bank</p>
                 </div>
 
-                <button type="submit" class="btn-checkout">Check Out</button>
+                <button type="submit" class="btn-checkout">Checkout</button>
             </form>
         </div>
     </div>
