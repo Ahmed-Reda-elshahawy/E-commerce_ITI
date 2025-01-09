@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            position: relative;
+        }
+
+        #mainwrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 60%;
+            height: 80%; 
+            margin-top: 50px; 
+            z-index: 1;
+            background-color: #f9f9f9; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            padding: 20px;
+        }
+
+        #mainwrapper img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .corner-image {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+        }
+
+        .corner-image:hover {
+            cursor: pointer;
+        }
+
+        .top-left {
+            top: 50px;
+            left: 50px;
+        }
+
+        .top-right {
+            top: 50px;
+            right: 50px;
+        }
+
+        .field {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .field label {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .field input {
+            font-size: 1rem;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .edit-icon {
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #007bff;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+    </style>
+    <script>
+       window.addEventListener('load', function () {
+    var users = JSON.parse(localStorage.getItem('users')) || [{
+        username: 'DefaultUser',
+        email: 'user@example.com',
+        phone: '1234567890',
+        address: 'Default Address',
+        currentUser: true
+    }];
+
+    var user = users.find(user => user.currentUser);
+
+    // Set initial values
+    document.getElementById('usernameLabel').textContent =  user.username;
+    document.getElementById('emailLabel').textContent = user.email;
+    document.getElementById('phoneLabel').textContent = user.phone;
+    document.getElementById('addressLabel').textContent = user.address;
+
+    // Edit functionality
+    document.querySelectorAll('.edit-icon').forEach(icon => {
+        icon.addEventListener('click', function () {
+            var inputField = this.previousElementSibling; // Input field
+            var label = inputField.previousElementSibling; // Label
+
+            if (inputField.style.display === 'none' || inputField.style.display === '') {
+                // Enable editing: show input, hide label, and set input value
+                inputField.style.display = 'inline-block';
+                inputField.value = label.textContent;
+                label.style.display = 'none';
+            } else {
+                // Save changes: hide input, show label, and update label text
+                inputField.style.display = 'none';
+                label.style.display = 'inline';
+                label.textContent = inputField.value;
+
+                // Save updated value to the user object
+                const fieldId = inputField.id.replace('Input', '');
+                user[fieldId] = inputField.value;
+
+                // Save back to localStorage
+                localStorage.setItem('users', JSON.stringify(users));
+            
+            }});});
+    });
+    </script>
+</head>
+<body>
+    <img src="../../assets/images/profileLeft.JPG" class="corner-image top-left" alt="User Profile">
+    <div id="mainwrapper">
+        <img id="userImage" src="../../assets/images/UserProfile.jpg" alt="User Image">
+        
+
+        <div class="field">
+            <label id="usernameLabel">Welcome: </label>
+            <input type="text" id="usernameInput">
+            <span class="edit-icon">✏️</span>
+        </div>
+
+        <div class="field">
+            <label id="emailLabel">Email </label>
+            <input type="text" id="emailInput">
+            <span class="edit-icon">✏️</span>
+        </div>
+
+        <div class="field">
+            <label id="phoneLabel">phone </label>
+            <input type="text" id="phoneInput">
+            <span class="edit-icon">✏️</span>
+        </div>
+
+        <div class="field">
+            <label id="addressLabel">Address: </label>
+            <input type="text" id="addressInput">
+            <span class="edit-icon">✏️</span>
+        </div>
+    </div>
+    <img src="../../assets/images/ProfileRight.JPG" class="corner-image top-right" alt="User Profile">
+</body>
+</html>

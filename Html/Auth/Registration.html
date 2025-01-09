@@ -67,6 +67,7 @@
                     return;
                 }
                 var userData = {
+                    id:users.length + 1,
                     username: name,
                     email: email,
                     password: password,
@@ -79,7 +80,13 @@
                 };
                 users.push(userData);
                 localStorage.setItem('users', JSON.stringify(users));
-                window.location.href = '../Home/Home.html';
+                if(userType.value === 'Customer') {
+                    window.location.href = '../Home/Home.html';
+                }
+                else {
+                    window.location.href = `../Seller/DashboardSaller.html`;
+                }
+             
             });
 
             document.getElementById('cancel').addEventListener('click', function() {
