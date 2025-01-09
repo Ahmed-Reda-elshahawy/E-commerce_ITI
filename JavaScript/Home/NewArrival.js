@@ -25,9 +25,6 @@ function DisplayNewProducts() {
                 <div class="card product-card h-100" data-product-id="${products[i].id}">
                     <div class="card-image-container">
                         <img src="${products[i].images[0]}" class="card-img-top mainimg" alt="${products[i].title}">
-                        <div class="add-to-cart-icon">
-                            <i class="fas fa-cart-plus"></i>
-                        </div>
                     </div>
                     <div class="card-body">
                         <h6 class="card-title"><b>${products[i].title}</b></h6>

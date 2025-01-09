@@ -34,25 +34,30 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto d-flex justify-content-end align-items-center gap-3 w-100">
-                    <li class="nav-item navbar-nav d-flex justify-content-end align-items-center gap-2">
-                        <div class="search-container">
+                    <li class="nav-item searchGroup navbar-nav d-flex justify-content-end align-items-center gap-2">
+                        <div class="search-container d-flex justify-content-center align-items-center">
                             <input type="text" class="form-control" placeholder="Search..." id="searchInput">
                             <a class="icon iconhover" href="#"><i class="fas fa-search"></i></a>
                             <ul id="searchResults"></ul>
                         </div>
-                    </li>
+                    </li>                    
                     <li class="nav-item dropdown">
                         <a class="icon btn nav-link iconhover" id="userIcon" href="#" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             <i class="fas fa-user"></i>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" id="userDropdown">
+                        <ul class="dropdown-menu dropdown-menu-end beforelogin" id="userDropdown1">
                             <li class="dropdown-item"><a id="login" class="nav-link w-100" href="#">Login</a></li>
                             <li class="dropdown-item"><a id="signUp" class="nav-link w-100" href="#">Sign Up</a></li>
                         </ul>
+                        <ul class="dropdown-menu dropdown-menu-end afterlogin" id="userDropdown2">
+                            <li class="dropdown-item"><a id="logOut" class="nav-link w-100" href="#">Log Out</a></li>
+                            <li class="dropdown-item"><a id="sitting" class="nav-link w-100" href="#"><i class="fa-solid fa-gear p-2"></i>Profile</a></li>
+                        </ul>
+                        
                     </li>
                     <li class="nav-item">
-                        <a class="icon iconhover" href="#"><i class="fas fa-solid fa-bag-shopping"></i></a>
+                        <a class="icon iconhover" href="../../Html/Cart/cart.html"><i class="fas fa-solid fa-bag-shopping"></i></a>
                     </li>
                 </ul>
             </div>
@@ -76,9 +81,9 @@
                             class="imgSlider d-block w-100" alt="Slider One">
                     </div>
                     <div class="text-content col-12 col-md-6 d-flex flex-column align-items-center">
-                        <div class="text-start">
+                        <div class="text-start container mt-3 mt-md-0">
                             <h2 class="sliderheader">Where Style Meets Functionality!</h2>
-                            <p>Discover the ultimate collection of backpacks for every <br> adventure—all in one
+                            <p>Discover the ultimate collection of backpacks for every adventure—all in one
                                 place.🎒Find Your Perfect Match Today!</p>
                         </div>
                     </div>
@@ -92,9 +97,9 @@
                             alt="Slider Two">
                     </div>
                     <div class="text-content col-12 col-md-6 d-flex flex-column align-items-center">
-                        <div class="text-start">
+                        <div class="text-start container mt-3 mt-md-0">
                             <h2 class="sliderheader">One Destination, <br> Endless Possibilities!</h2>
-                            <p>From sleek designs to rugged essentials, explore backpacks that <br> suit every
+                            <p>From sleek designs to rugged essentials, explore backpacks that suit every
                                 lifestyle.✨ Shop Now and Carry With Confidence!</p>
                         </div>
                     </div>
@@ -108,9 +113,9 @@
                             alt="Slider Three">
                     </div>
                     <div class="text-content col-12 col-md-6 d-flex flex-column align-items-center">
-                        <div class="text-start">
+                        <div class="text-start container mt-3 mt-md-0">
                             <h2 class="sliderheader">Your Backpack, Your Way!</h2>
-                            <p>All the styles you love, curated for you in one store. <br> Simplify your search—shop
+                            <p>All the styles you love, curated for you in one store. Simplify your search—shop
                                 now!🌟Click to Explore the Collection!</p>
                         </div>
                     </div>

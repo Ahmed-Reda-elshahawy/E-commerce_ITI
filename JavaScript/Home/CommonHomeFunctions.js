@@ -51,3 +51,23 @@ document.addEventListener('click', function (event) {
         searchResults.style.display = 'none';
     }
 });
+
+const userDropdown1 = document.getElementById("userDropdown1");
+const userDropdown2 = document.getElementById("userDropdown2");
+
+function isLogin() {
+    const storedUsers = localStorage.getItem("users");
+    const users = JSON.parse(storedUsers);
+
+    if (users) {
+        const activeUser = users.find(user => user.active === true);
+
+        if (activeUser) {
+            userDropdown1.style.display = "none";
+            userDropdown2.style.display = "block";
+        } else {
+            userDropdown1.style.display = "block";
+            userDropdown2.style.display = "none";
+        }
+}
+}

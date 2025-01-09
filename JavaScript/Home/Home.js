@@ -24,9 +24,6 @@ function DisplayHomePageProducts() {
                 <div class="card product-card w-100 h-100" data-product-id="${product.id}">
                     <div class="card-image-container">
                         <img src="${product.images[0]}" class="card-img-top mainimg" alt="${product.title}">
-                        <div class="add-to-cart-icon">
-                            <i class="fas fa-cart-plus"></i>
-                        </div>
                     </div>
                     <div class="card-body">
                         <h6 class="card-title"><b>${product.title}</b></h6>
@@ -48,9 +45,6 @@ function DisplayHomePageProducts() {
                 <div class="card product-card w-100 h-100" data-product-id="${product.id}">
                     <div class="card-image-container">
                         <img src="${product.images[0]}" class="card-img-top mainimg" alt="${product.title}">
-                        <div class="add-to-cart-icon">
-                            <i class="fas fa-cart-plus"></i>
-                        </div>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">${product.title}</h5>

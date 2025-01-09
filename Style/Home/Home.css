@@ -20,6 +20,16 @@ body {
 
 /* Navbar Style */
 
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+#searchInput {
+    margin-right: 8px;
+}
+
+
 .search-container{
     position: relative;
 }
@@ -146,7 +156,8 @@ ul {
 }
 
 #signUp,
-#login {
+#login,
+#logOut {
     border: #000000 solid 2px;
     width: 70px;
     height: 40px;
@@ -155,7 +166,7 @@ ul {
     text-align: center;
 }
 
-#signUp {
+#signUp, #logOut {
     background-color: #000000;
     color: white;
     width: 90px;
@@ -167,6 +178,11 @@ ul {
 }
 
 #signUp:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+#logOut:hover{
     opacity: 0.8;
     text-decoration: underline;
 }
@@ -219,19 +235,6 @@ ul {
 .nav-item {
     position: relative;
     display: inline-block;
-}
-
-#userDropdown {
-    display: none;
-    width: 200px;
-    height: auto;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    background: white;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .nav-item:hover #userDropdown {
@@ -319,10 +322,6 @@ ul {
     padding: 20px 0;
 }
 
-.card-image-container {
-    position: relative;
-}
-
 .AllHomePro {
     margin: 30px 0;
 }
@@ -343,31 +342,6 @@ ul {
     margin-top: auto;
     text-align: start;
     color: #333;
-}
-
-.add-to-cart-icon {
-    position: absolute;
-    top: 99%;
-    right: 10px;
-    transform: translateY(-50%);
-    color: black;
-    text-align: center;
-    justify-content: end;
-    align-items: end;
-    font-size: 16px;
-    padding: 10px;
-    border: none;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 20px rgba(174, 173, 173, 0.833);
-    border-radius: 100%;
-    display: block;
-}
-
-.add-to-cart-icon:hover {
-    background-color: black;
-    color: white;
-    box-shadow: 0px 0px 20px rgba(63, 63, 63, 0.833);
-
 }
 
 /* sale  */
@@ -541,4 +515,73 @@ a {
 
 #searchResults li:hover {
     background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+    .navbar .container > .d-flex:first-child {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .navbar-nav > .nav-item {
+        display: inline-block;
+    }
+
+    .search-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-container input {
+        width: 80%;
+        max-width: 400px;
+    }
+
+    .navbar-collapse {
+        margin-top: 10px;
+    }
+
+    .ms-auto {
+        justify-content: center;
+    }
+
+    .icon {
+        font-size: 20px;
+    }
+}
+
+#userDropdown1.beforelogin {
+    display: none;
+    width: 160px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-55%);
+    z-index: 1000;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#userDropdown2.afterlogin {
+    display: none;
+    width: 160px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-55%);
+    z-index: 1000;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
