@@ -11,6 +11,7 @@
             var h4=document.querySelector('h4');
                 var password = document.getElementById('psw').value;
                 var repeatPassword = document.getElementById('psw-repeat').value;
+                var hide = document.getElementById('first');
     document.getElementById('submit').addEventListener('click', function(event) {
             var email = document.getElementById('email').value;
                 var phone = document.getElementById('phone').value;
@@ -24,6 +25,7 @@
                if(users[i].email==email && users[i].phone==phone){
                     hidden.classList.add('hidden');
                     hidden.classList.remove('none');
+                    hide.classList.add('none');
                     return;
                 
                 }   
@@ -123,7 +125,7 @@
     align-items: center;
     margin-bottom: 15px;
      width: 100%; 
-    margin-left: 160px; 
+    margin-left: 280px; 
     }
 
     .form-group label {
@@ -134,7 +136,7 @@
 
     .form-group input[type="text"],
     .form-group input[type="password"] {
-    width: 30%;
+    width: 20%;
      padding: 10px;
     
      border: 1px solid black;
@@ -158,19 +160,19 @@
             margin: 8px auto;
             border: none;
             cursor: pointer;
-            width: 35%;
+            width: 20%;
             opacity: 0.9;
         }
         .registerbtn2 {
             background-color: #252eb6;
             color: white;
             font-size: 18px;
-            margin-left: 350px;
+            margin-left: 400px;
             height: 50px;
             margin-top: 15px;
             border: none;
             cursor: pointer;
-            width: 35%;
+            width: 20%;
             opacity: 0.9;
         }
         .signin {
@@ -204,17 +206,19 @@
     align-items: center;
     margin-bottom: 15px;
     width: 100%; 
-    margin-left: 200px;
+    margin-left: 350px;
 }
 
 .hidden-group label {
-    width: 25%; /* Align with other labels */
+    width: 20%; 
     text-align: right; 
     margin-right: 10px; 
+    margin-left: 100px;
+    
 }
 
 .hidden-group input[type="password"] {
-    width: 30%;
+    width: 15%;
     padding: 10px;
     border: 1px solid black;
     border-radius: 4px;
@@ -244,6 +248,7 @@ h4{ display: none;
         <h1>Forget Password Page</h1>
         
         <br><br>
+        <div id="first">
         <div class="form-group">
             <label for="email"><b>Email</b></label>
             <input type="text" placeholder="Enter Your Email" name="email" id="email" required>
@@ -259,6 +264,8 @@ h4{ display: none;
                 <button type="submit" class="registerbtn" id="submit">Verify</button> <br>
                 <button type="reset" id="cancel">Don't have an account? Sign up</button>
                 
+                </div>
+            
             </div>
         </div>
             <div class="none" > 

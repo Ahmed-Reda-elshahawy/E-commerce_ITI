@@ -4,117 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-
     <script>
         window.addEventListener('load', function() {
-            var h3=document.querySelector('h3');
-    document.getElementById('submit').addEventListener('click', function(event) {
-                
+            var h3 = document.querySelector('h3');
+            document.getElementById('submit').addEventListener('click', function(event) {
                 event.preventDefault();
                 var email = document.getElementById('email').value;
                 var password = document.getElementById('psw').value;
-          
-                
-                var users = JSON.parse(localStorage.getItem(`users`)) ;
-               for(var i=0; i<users.length; i++){
-              
-               if(users[i].email==email && users[i].password==password){
-                    alert('Login Successfully');
-                    window.location.href = "http:../Home/Home.html";
-                    return;
-                
-                }   
-                
-                
-            }
-            
-                 
-               h3.classList.add('active');
-               h3.innerHTML='Invalid Email or Password' ;
-    });
-    document.getElementById('cancel').addEventListener('click', function(event) {
-    
+                var users = JSON.parse(localStorage.getItem(`users`)) || [];
+                users.forEach(user => user.currentUser = false);
+                localStorage.setItem('users', JSON.stringify(users));
 
-    window.location.href = "http:../Auth/Registration.html";});
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            })//end of load;
+                for (var i = 0; i < users.length; i++) {
+                    if (users[i].email == email && users[i].password == password) {
+                        users[i].currentUser = true;
+                        localStorage.setItem('users', JSON.stringify(users));
+                        window.location.href = "../Home/Home.html";
+                        return;
+                    }
+                }
+                h3.classList.add('active');
+                h3.innerHTML = 'Invalid Email or Password';
+            });
+
+            document.getElementById('cancel').addEventListener('click', function() {
+                window.location.href = "../Auth/Registration.html";
+            });
+
+            document.getElementById('forget').addEventListener('click', function() {
+                window.location.href = "../Auth/Forgetpass.html";
+            });
+        });
     </script>
     <style>
-    * {
-        box-sizing: border-box;
-    }
-    .container {
-        padding: 16px;
-        display: flex;
-        flex-direction: column;
-    }
-    h1 {
-        font-size: 40px;
-        text-align: center;
-    }
-    p {
-        text-align: center;
-        color: gray;
-    }
-    .form-group {
-     display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-     width: 100%; 
-    margin-left: 160px; 
-    }
-
-    .form-group label {
-         width: 25%; 
-        text-align: right; 
-        margin-right: 10px; 
+        * {
+            box-sizing: border-box;
         }
-
-    .form-group input[type="text"],
-    .form-group input[type="password"] {
-    width: 30%;
-     padding: 10px;
-    
-     border: 1px solid black;
-     border-radius: 4px;
-}
-
-    input[type=text]:focus, input[type=password]:focus {
-        background-color: #ddd;
-        outline: none;
-    }
-    .button {
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #mainwrapper {
+            display: flex;
+            flex-direction: row;
+            height: 100vh; 
+        }
+        #form {
+            flex: 1; 
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #image {
+            flex: 1; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4; 
+        }
+        #image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        .container {
+           
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        h1 {
+            font-size: 50px;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            font-size: 19px;
+            color: gray;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        .form-group label {
+            width: 30%;
+            text-align: right;
+            margin-right: 10px;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+        .button {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -127,14 +119,10 @@
             margin: 8px auto;
             border: none;
             cursor: pointer;
-            width: 35%;
+            width: 90%;
             opacity: 0.9;
         }
-        .signin {
-            font-size: 40px;
-            text-align: center;
-        }
-        #cancel ,#forget{
+        #cancel, #forget {
             background: none;
             color: black;
             text-decoration: underline;
@@ -142,43 +130,47 @@
             margin: 8px auto;
             border: none;
             cursor: pointer;
-            width: 50%;
             font-size: 18px;
-
-          
         }
-        h3{
-            color:red;
+        h3 {
+            color: red;
             text-align: center;
-            display: none ;
-            }
+            display: none;
+        }
         .active {
             display: block;
-        } 
-</style> 
+        }
+    </style>
 </head>
 <body>
-    <form>
-    <div class="container">
-        <h1>Login Form</h1>
-        <p>Be Part of Your Community</p>
-        <br><br>
-        <div class="form-group">
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Your Email" name="email" id="email" required>
+    <div id="mainwrapper">
+        <!-- Form Section -->
+        <div id="form">
+            <form>
+                <div class="container">
+                    <h1>Login Form</h1>
+                    <p>Be Part of Your Community</p>
+                    <div class="form-group">
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Your Email" name="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Your Password" name="password" id="psw" required>
+                    </div>
+                    <div class="button">
+                        <h3>Wrong data Entered</h3>
+                        <button type="submit" class="registerbtn" id="submit">Login</button>
+                        <button type="reset" id="cancel">Don't have an account? Sign up</button>
+                        <button type="reset" id="forget">Forget Password?</button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter Your password" name="password" id="psw" required>
+        <!-- Image Section -->
+        <div id="image">
+            <img src="../../assets/images/login3.jfif" alt="Login Illustration">
         </div>
-        <br><br>
-            <div class="button">
-                <h3 >Wrong data Entered</h3>   
-                <button type="submit" class="registerbtn" id="submit">Login</button> <br>
-                <button type="reset" id="cancel">Don't have an account? Sign up</button>
-                <button type="reset" id="forget">Forget Password?</button>
-            
-        </div>
-    </form>
+    </div>
 </body>
 </html>

@@ -15,20 +15,22 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">BagHub</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-    
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active itemsnavhover" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active itemsnavhover" href="../Home/Home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link itemsnavhover" href="../Home/ShopAll.html">Shop</a>
+                        <a class="nav-link itemsnavhover" aria-current="page" href="../Home/ShopAll.html">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link itemsnavhover" href="#">About Us</a>
+                        <a class="nav-link itemsnavhover" href="../Home/AboutUs.html">About Us</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto d-flex justify-content-end align-items-center gap-3 w-100">
@@ -36,11 +38,12 @@
                         <div class="search-container">
                             <input type="text" class="form-control" placeholder="Search..." id="searchInput">
                             <a class="icon iconhover" href="#"><i class="fas fa-search"></i></a>
-                            <ul id="searchResults" style="list-style-type: none; padding-left: 0;"></ul>
+                            <ul id="searchResults"></ul>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="icon btn nav-link iconhover" id="userIcon" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="icon btn nav-link iconhover" id="userIcon" href="#" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             <i class="fas fa-user"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" id="userDropdown">
@@ -57,33 +60,43 @@
     </nav>
 
     <div class="filterAndShop d-flex align-items-center">
-        <div class="dropdown"style="color: white; background-color: black;border-radius:20px;">
-            <button class="btn dropdown-toggle" style="color: white;"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="dropdown" style="color: white; background-color: black;border-radius:20px;">
+            <button class="btn dropdown-toggle" style="color: white;" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
                 <b>Filter</b><i class="fa-solid fa-filter"></i>
             </button>
-            <ul class="dropdown-menu" style="height: 350px; width: 200px; border: 2px solid gray;">
-                <li class="dropdown-item"><input id="nike" class="brandFilter" type="checkbox" value="Nike"><label for="nike" class="brandName">Nike</label></li>
-                <li class="dropdown-item"><input id="adidas" class="brandFilter" type="checkbox" value="Adidas"><label for="adidas" class="brandName">Adidas</label></li>
-                <li class="dropdown-item"><input id="puma" class="brandFilter" type="checkbox" value="PUMA"><label for="puma" class="brandName">Puma</label></li>
-                <li class="dropdown-item"><input id="reebok" class="brandFilter" type="checkbox" value="Reebok"><label for="reebok" class="brandName">Reebok</label></li>
-                <li class="dropdown-item"><input id="theNorthFace" class="brandFilter" type="checkbox" value="TheNorthFace"><label for="theNorthFace" class="brandName">The North Face</label></li>
-                <li class="dropdown-item"><input id="herschel" class="brandFilter" type="checkbox" value="Herschel"><label for="herschel" class="brandName">Herschel</label></li>
+            <ul class="dropdown-menu" style="height: 400px; width: 200px; border: 2px solid gray;">
+                <li class="dropdown-item"><input id="nike" class="brandFilter" type="checkbox" value="Nike"><label
+                        for="nike" class="brandName">Nike</label></li>
+                <li class="dropdown-item"><input id="adidas" class="brandFilter" type="checkbox" value="Adidas"><label
+                        for="adidas" class="brandName">Adidas</label></li>
+                <li class="dropdown-item"><input id="puma" class="brandFilter" type="checkbox" value="PUMA"><label
+                        for="puma" class="brandName">Puma</label></li>
+                <li class="dropdown-item"><input id="reebok" class="brandFilter" type="checkbox" value="Reebok"><label
+                        for="reebok" class="brandName">Reebok</label></li>
+                <li class="dropdown-item"><input id="theNorthFace" class="brandFilter" type="checkbox"
+                        value="TheNorthFace"><label for="theNorthFace" class="brandName">The North Face</label></li>
+                <li class="dropdown-item"><input id="herschel" class="brandFilter" type="checkbox"
+                        value="Herschel"><label for="herschel" class="brandName">Herschel</label></li>
+                <li><button class="d-flex flex justify-content-center align-items-center" id="clearAll">
+                        Clear All
+                    </button></li>
             </ul>
-          </div>
-        <h4 class="NewArrivalHeader text-center mx-auto"><b>Shop All</b></h4>
-    </div>  
-      
+        </div>
+        <h4 class="NewArrivalHeader text-center flex-grow-1"><b>Shop All</b></h4>
+    </div>
+
     <div class="container mt-5 pt-5">
-        <div class="HomeProducts container">
+        <div class="HomeProducts">
             <div class="AllHomePro" style="background-color: white; padding-top: 100px;">
-                <div class="row ms-5 mb-5 g-2 allProducts" id="cardContainerAll">
+                <div class="row mb-5 g-2 allProducts" id="cardContainerAll">
 
                 </div>
             </div>
-            <div class="row ms-5 mt-4 g-2 allProducts" id="cardContainerAll">
+            <div class="row mt-4 g-2 allProducts" id="cardContainerAll">
 
+            </div>
         </div>
-    </div>
     </div>
 
     <div class="footer">
@@ -124,12 +137,12 @@
                             <li><a href="#">Questions or feedback?</a></li>
                             <li><a href="http://linkedin.com/in/yasmin-rabea">Follow us on LinkedIn</a></li>
                         </ul>
-                       
-                            <i class="fa-brands fa-facebook iconColor footerIcon"></i>
-                            <i class="fa-brands fa-instagram iconColor footerIcon"></i>
-                            <i class="fa-brands fa-twitter iconColor footerIcon"></i>
-                            <i class="fa-brands fa-linkedin iconColor footerIcon"></i>
-                       
+
+                        <i class="fa-brands fa-facebook iconColor footerIcon"></i>
+                        <i class="fa-brands fa-instagram iconColor footerIcon"></i>
+                        <i class="fa-brands fa-twitter iconColor footerIcon"></i>
+                        <i class="fa-brands fa-linkedin iconColor footerIcon"></i>
+
                     </div>
                 </div>
                 <div class="text-center mt-3">
@@ -146,7 +159,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
     <script src="../../assets/Bootstrap/bootstrap.bundle.js"></script>
     <script src="../../JavaScript/modules/products.js" type="module"></script>
-    <script src="../../JavaScript/Home/ShopAll.js"></script>
+    <script src="../../JavaScript/Home/ShopAll.js" type="module"></script>
+    <script src="../../JavaScript/Home/CommonHomeFunctions.js"></script>
 </body>
 
 </html>

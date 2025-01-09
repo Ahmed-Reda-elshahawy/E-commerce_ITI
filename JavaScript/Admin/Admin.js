@@ -149,3 +149,5 @@ document.getElementById("delete-product").addEventListener('click', confirmDelet
 
 // window.updateCustomer = updateCustomer;
 window.deleteProduct = deleteProduct;
+
+// =====================( orders )===================== //

@@ -94,3 +94,17 @@ export function confirmDeleteCustomer() {
     const modal = bootstrap.Modal.getInstance(deleteModal);
     modal.hide();
 }
+
+
+
+// ==== Search for a customer ==== //
+const searchInput = document.getElementById('usersSearch');
+function searchFilter(searchName) {
+    const users = getStoredCustomers();
+    return users.filter(user => user.username.toLowerCase().includes(searchName.toLowerCase()));
+}
+searchInput.addEventListener("input", function () {
+    let searchName = searchInput.value;
+    const users = searchFilter(searchName);
+    displayCustomers(users);
+});

@@ -11,105 +11,58 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">BagHub</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-    
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-<<<<<<< HEAD
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active itemsnavhover" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active itemsnavhover" aria-current="page" href="../Home/Home.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link itemsnavhover" href="../Home/ShopAll.html">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link itemsnavhover" href="#">About Us</a>
+                        <a class="nav-link itemsnavhover" href="../Home/AboutUs.html">About Us</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto d-flex justify-content-end align-items-center gap-3 w-100">
-=======
-                <div class="collection-nav-items d-flex justify-content-center align-items-center w-100">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active itemsnavhover" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link itemsnavhover" href="../Home/ShopAll.html">Shop</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="btn nav-link dropdown-toggle itemsnavhover" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1">
-                                Brands
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="categorylist">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <li><a class="dropdown-item brand" href="../Home/Category.html"
-                                                data-brand="Nike"><i class="fasspcial fas fa-suitcase"></i> Nike</a>
-                                        </li>
-                                        <li><a class="dropdown-item brand" href="../Home/Category.html"
-                                                data-brand="PUMA"><i class="fasspcial fas fa-suitcase"></i> Puma</a>
-                                        </li>
-                                        <li><a class="dropdown-item brand" href="../Home/Category.html"
-                                                data-brand="Adidas"><i class="fasspcial fas fa-suitcase"></i> Adidas</a>
-                                        </li>
-                                    </div>
-                                    <div class="col-6">
-                                        <li><a class="dropdown-item brand" href="../Home/Category.html"
-                                                data-brand="Reebok"><i class="fasspcial fas fa-suitcase"></i> Reebok</a>
-                                        </li>
-                                        <li><a class="dropdown-item brand" href="../Home/Category.html"
-                                                data-brand="Herschel"><i class="fasspcial fas fa-suitcase"></i>
-                                                Herschel</a></li>
-                                        <li><a class="dropdown-item brand" href="../Home/Category.html"
-                                                data-brand="TheNorthFace"><i class="fasspcial fas fa-suitcase"></i> The
-                                                North Face</a></li>
-                                    </div>
-                                </div>
-                            </ul>
-
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link itemsnavhover" href="#">About Us</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <ul class="navbar-nav rightSideNav d-flex justify-content-end align-items-center gap-3 w-100 ms-auto">
->>>>>>> 6cc5ba3e221890d3db0480cccdf0db631afed3ce
-                    <li class="nav-item navbar-nav d-flex justify-content-end align-items-center gap-2">
-                        <div class="search-container">
+                    <li class="nav-item searchGroup navbar-nav d-flex justify-content-end align-items-center gap-2">
+                        <div class="search-container d-flex justify-content-center align-items-center">
                             <input type="text" class="form-control" placeholder="Search..." id="searchInput">
                             <a class="icon iconhover" href="#"><i class="fas fa-search"></i></a>
-                            <ul id="searchResults" style="list-style-type: none; padding-left: 0;"></ul>
+                            <ul id="searchResults"></ul>
                         </div>
-                    </li>
-<<<<<<< HEAD
-=======
-
->>>>>>> 6cc5ba3e221890d3db0480cccdf0db631afed3ce
+                    </li>                    
                     <li class="nav-item dropdown">
-                        <a class="icon btn nav-link iconhover" id="userIcon" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="icon btn nav-link iconhover" id="userIcon" href="#" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             <i class="fas fa-user"></i>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" id="userDropdown">
+                        <ul class="dropdown-menu dropdown-menu-end beforelogin" id="userDropdown1">
                             <li class="dropdown-item"><a id="login" class="nav-link w-100" href="#">Login</a></li>
                             <li class="dropdown-item"><a id="signUp" class="nav-link w-100" href="#">Sign Up</a></li>
                         </ul>
+                        <ul class="dropdown-menu dropdown-menu-end afterlogin" id="userDropdown2">
+                            <li class="dropdown-item"><a id="logOut" class="nav-link w-100" href="#">Log Out</a></li>
+                            <li class="dropdown-item"><a id="sitting" class="nav-link w-100" href="#"><i class="fa-solid fa-gear p-2"></i>Profile</a></li>
+                        </ul>
+                        
                     </li>
                     <li class="nav-item">
-                        <a class="icon iconhover" href="#"><i class="fas fa-solid fa-bag-shopping"></i></a>
+                        <a class="icon iconhover" href="../../Html/Cart/cart.html"><i class="fas fa-solid fa-bag-shopping"></i></a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    
 
     <div id="carouselExampleCaptions" class="carousel slide gap-5" data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-indicators flex-wrap">
@@ -128,9 +81,9 @@
                             class="imgSlider d-block w-100" alt="Slider One">
                     </div>
                     <div class="text-content col-12 col-md-6 d-flex flex-column align-items-center">
-                        <div class="text-start">
+                        <div class="text-start container mt-3 mt-md-0">
                             <h2 class="sliderheader">Where Style Meets Functionality!</h2>
-                            <p>Discover the ultimate collection of backpacks for every <br> adventure—all in one
+                            <p>Discover the ultimate collection of backpacks for every adventure—all in one
                                 place.🎒Find Your Perfect Match Today!</p>
                         </div>
                     </div>
@@ -144,9 +97,9 @@
                             alt="Slider Two">
                     </div>
                     <div class="text-content col-12 col-md-6 d-flex flex-column align-items-center">
-                        <div class="text-start">
+                        <div class="text-start container mt-3 mt-md-0">
                             <h2 class="sliderheader">One Destination, <br> Endless Possibilities!</h2>
-                            <p>From sleek designs to rugged essentials, explore backpacks that <br> suit every
+                            <p>From sleek designs to rugged essentials, explore backpacks that suit every
                                 lifestyle.✨ Shop Now and Carry With Confidence!</p>
                         </div>
                     </div>
@@ -160,9 +113,9 @@
                             alt="Slider Three">
                     </div>
                     <div class="text-content col-12 col-md-6 d-flex flex-column align-items-center">
-                        <div class="text-start">
+                        <div class="text-start container mt-3 mt-md-0">
                             <h2 class="sliderheader">Your Backpack, Your Way!</h2>
-                            <p>All the styles you love, curated for you in one store. <br> Simplify your search—shop
+                            <p>All the styles you love, curated for you in one store. Simplify your search—shop
                                 now!🌟Click to Explore the Collection!</p>
                         </div>
                     </div>
@@ -204,7 +157,7 @@
                         love.</p>
                 </div>
             </div>
-            <div class="row ms-5 mt-4 g-2 allProducts" id="cardContainerAll">
+            <div class="row mt-4 g-2 allProducts" id="cardContainerAll">
 
             </div>
             <div class="NewArrivalButtonDiv mt-4">
@@ -239,7 +192,7 @@
                     <h2 class="NewArrivalHeader NewArrivalHeadersp">Today's best deal</h2>
                 </div>
             </div>
-            <div class="row ms-5 mt-4 g-2 allProducts" id="cardContainerAllSale">
+            <div class="row mt-4 g-2 allProducts" id="cardContainerAllSale">
 
             </div>
         </div>
@@ -278,10 +231,6 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 6cc5ba3e221890d3db0480cccdf0db631afed3ce
 
     <div class="footer">
         <footer>
@@ -321,12 +270,12 @@
                             <li><a href="#">Questions or feedback?</a></li>
                             <li><a href="http://linkedin.com/in/yasmin-rabea">Follow us on LinkedIn</a></li>
                         </ul>
-                       
-                            <i class="fa-brands fa-facebook iconColor footerIcon"></i>
-                            <i class="fa-brands fa-instagram iconColor footerIcon"></i>
-                            <i class="fa-brands fa-twitter iconColor footerIcon"></i>
-                            <i class="fa-brands fa-linkedin iconColor footerIcon"></i>
-                       
+
+                        <i class="fa-brands fa-facebook iconColor footerIcon"></i>
+                        <i class="fa-brands fa-instagram iconColor footerIcon"></i>
+                        <i class="fa-brands fa-twitter iconColor footerIcon"></i>
+                        <i class="fa-brands fa-linkedin iconColor footerIcon"></i>
+
                     </div>
                 </div>
                 <div class="text-center mt-3">
@@ -344,6 +293,7 @@
     <script src="../../assets/Bootstrap/bootstrap.bundle.js"></script>
     <script src="../../JavaScript/modules/loadData.js"></script>
     <script src="../../JavaScript/Home/Home.js" type="module"></script>
+    <script src="../../JavaScript/Home/CommonHomeFunctions.js"></script>
 </body>
 
 </html>
