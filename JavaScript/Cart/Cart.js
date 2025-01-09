@@ -1,14 +1,20 @@
 function loadCart() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotalElement = document.createElement('div'); // Element to show the total price.
 
     cartItemsContainer.innerHTML = '';
+    cartTotalElement.id = 'cart-total';
+    cartItemsContainer.appendChild(cartTotalElement);
+
     if (cart.length === 0) {
         cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
         return;
     }
 
-    cart.forEach(item => {
+    let totalCartPrice = 0;
+
+    cart.forEach((item, index) => {
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
         cartItem.innerHTML = `
@@ -19,29 +25,44 @@ function loadCart() {
                 <p><strong>Total:</strong> $<span class="item-total">${(item.price * item.quantity).toFixed(2)}</span></p>
             </div>
             <div class="cart-item-quantity">
-                <input type="number" value="${item.quantity}" min="1" class="quantity-input">
+                <input type="number" value="${item.quantity}" min="1" class="quantity-input" data-index="${index}">
             </div>
         `;
-        cartItemsContainer.appendChild(cartItem);
+
+        cartItemsContainer.insertBefore(cartItem, cartTotalElement); // Ensure total element is at the end.
+        totalCartPrice += item.price * item.quantity;
     });
+
+    // Display the initial total price
+    cartTotalElement.innerHTML = `<p><strong>Total Cart Price:</strong> $${totalCartPrice.toFixed(2)}</p>`;
 
     // Add event listeners to quantity inputs
     const quantityInputs = document.querySelectorAll('.quantity-input');
     quantityInputs.forEach(input => {
         input.addEventListener('change', (event) => {
+            const index = parseInt(event.target.dataset.index, 10);
             const quantity = parseInt(event.target.value, 10);
+
             if (quantity < 1) {
                 event.target.value = 1; // Ensure quantity is at least 1
                 return;
             }
 
+            // Update the cart object
+            cart[index].quantity = quantity;
+            localStorage.setItem('cart', JSON.stringify(cart));
+
             // Find the closest item total element
             const itemTotalElement = event.target.closest('.cart-item').querySelector('.item-total');
-            const price = parseFloat(event.target.closest('.cart-item').querySelector('.cart-item-details p:nth-child(2)').textContent.replace('$', ''));
+            const price = cart[index].price;
 
             // Update the total price for the item
             const totalPrice = (price * quantity).toFixed(2);
             itemTotalElement.textContent = totalPrice;
+
+            // Update the total cart price
+            const newTotalCartPrice = cart.reduce((acc, curr) => acc + curr.price * curr.quantity, 0);
+            cartTotalElement.innerHTML = `<p><strong>Total Cart Price:</strong> $${newTotalCartPrice.toFixed(2)}</p>`;
         });
     });
 
