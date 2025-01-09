@@ -105,7 +105,9 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = '../../Html/Auth/Login.html';
 
     });
-
+    document.getElementById('sitting').addEventListener('click', function() {
+        window.location.href = '../../Html/Auth/Userprofile.html';
+    });
 
     
     document.addEventListener('click', function(event) {

@@ -88,56 +88,49 @@
         }
     </style>
     <script>
-        window.addEventListener('load', function () {
-            var users = JSON.parse(localStorage.getItem('users')) || [{
-                username: 'DefaultUser',
-                email: 'user@example.com',
-                phone: '1234567890',
-                address: 'Default Address',
-                currentUser: true
-            }];
+       window.addEventListener('load', function () {
+    var users = JSON.parse(localStorage.getItem('users')) || [{
+        username: 'DefaultUser',
+        email: 'user@example.com',
+        phone: '1234567890',
+        address: 'Default Address',
+        currentUser: true
+    }];
 
-            var user = users.find(user => user.currentUser);
+    var user = users.find(user => user.currentUser);
 
-            document.getElementById('usernameLabel').textContent = "Hello "+ user.username;
-            document.getElementById('emailLabel').textContent = user.email;
-            document.getElementById('phoneLabel').textContent = user.phone;
-            document.getElementById('addressLabel').textContent = user.address;
+    // Set initial values
+    document.getElementById('usernameLabel').textContent =  user.username;
+    document.getElementById('emailLabel').textContent = user.email;
+    document.getElementById('phoneLabel').textContent = user.phone;
+    document.getElementById('addressLabel').textContent = user.address;
 
-            document.querySelectorAll('.edit-icon').forEach(icon => {
-                icon.addEventListener('click', function () {
-                    var field = this.previousElementSibling; // Input field
-                    var label = field.previousElementSibling; // Label
+    // Edit functionality
+    document.querySelectorAll('.edit-icon').forEach(icon => {
+        icon.addEventListener('click', function () {
+            var inputField = this.previousElementSibling; // Input field
+            var label = inputField.previousElementSibling; // Label
 
-                    if (field.style.display === 'none') {
-                        field.style.display = 'inline-block';
-                        field.value = label.textContent;
-                        label.style.display = 'none';
-                    } else {
-                        field.style.display = 'none';
-                        label.style.display = 'inline';
-                        label.textContent = field.value;
+            if (inputField.style.display === 'none' || inputField.style.display === '') {
+                // Enable editing: show input, hide label, and set input value
+                inputField.style.display = 'inline-block';
+                inputField.value = label.textContent;
+                label.style.display = 'none';
+            } else {
+                // Save changes: hide input, show label, and update label text
+                inputField.style.display = 'none';
+                label.style.display = 'inline';
+                label.textContent = inputField.value;
 
-                        // Save updated value to user object
-                        const fieldId = field.id.replace('Input', '');
-                        user[fieldId] = field.value;
+                // Save updated value to the user object
+                const fieldId = inputField.id.replace('Input', '');
+                user[fieldId] = inputField.value;
 
-                        // Save back to localStorage
-                        localStorage.setItem('users', JSON.stringify(users));
-                    }
-                });
-            });
-
-            document.getElementById('profileImage').addEventListener('change', function (event) {
-                var reader = new FileReader();
-                reader.onload = function () {
-                    document.getElementById('userImage').src = reader.result;
-                    user.profileImage = reader.result;
-                    localStorage.setItem('users', JSON.stringify(users));
-                };
-                reader.readAsDataURL(event.target.files[0]);
-            });
-        });
+                // Save back to localStorage
+                localStorage.setItem('users', JSON.stringify(users));
+            
+            }});});
+    });
     </script>
 </head>
 <body>
