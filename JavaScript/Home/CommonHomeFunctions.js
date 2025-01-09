@@ -52,38 +52,4 @@ document.addEventListener('click', function (event) {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    let user = JSON.parse(localStorage.getItem('user'));
-    let userIcon = document.getElementById('userIcon');
-    
-    userIcon.addEventListener('click', function(event) {
-        event.stopPropagation();
-        let dropdown1 = document.getElementById('userDropdown1');
-        let dropdown2 = document.getElementById('userDropdown2');
-        
-        if (user && user.active) {
-            if (dropdown2.style.display === 'block') {
-                dropdown2.style.display = 'none';
-            } else {
-                dropdown2.style.display = 'block';
-                dropdown1.style.display = 'none';
-            }
-        } else {
-            if (dropdown1.style.display === 'block') {
-                dropdown1.style.display = 'none';
-            } else {
-                dropdown1.style.display = 'block';
-                dropdown2.style.display = 'none';
-            }
-        }
-    });
-    
-    document.addEventListener('click', function(event) {
-        let dropdown1 = document.getElementById('userDropdown1');
-        let dropdown2 = document.getElementById('userDropdown2');
-        if (!userIcon.contains(event.target)) {
-            dropdown1.style.display = 'none';
-            dropdown2.style.display = 'none';
-        }
-    });
-});
+
