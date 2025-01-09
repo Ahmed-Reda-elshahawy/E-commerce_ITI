@@ -18,23 +18,23 @@ const searchResults = document.getElementById("searchResults");
 
 function allProducts() {
     let data = JSON.parse(localStorage.getItem("products"));
-    return data; 
+    return data;
 }
 
 searchInput.addEventListener('input', filterResults);
 
 function displayDropdown(products) {
-    searchResults.innerHTML = ''; 
+    searchResults.innerHTML = '';
     products.forEach(product => {
         let li = document.createElement('li');
-        li.textContent = product.title; 
+        li.textContent = product.title;
         li.addEventListener('click', function () {
-            localStorage.setItem('selectedTitle', product.title); 
-            window.location.href = '../../Html/Home/ProductSelectedFromSearch.html'; 
+            localStorage.setItem('selectedTitle', product.title);
+            window.location.href = '../../Html/Home/ProductSelectedFromSearch.html';
         });
         searchResults.appendChild(li);
     });
-    searchResults.style.display = 'block'; 
+    searchResults.style.display = 'block';
 }
 
 function filterResults() {
@@ -43,7 +43,7 @@ function filterResults() {
     let filteredProducts = products.filter(product =>
         product.title.toLowerCase().includes(searchText)
     );
-    displayDropdown(filteredProducts); 
+    displayDropdown(filteredProducts);
 }
 
 document.addEventListener('click', function (event) {
@@ -52,22 +52,38 @@ document.addEventListener('click', function (event) {
     }
 });
 
-const userDropdown1 = document.getElementById("userDropdown1");
-const userDropdown2 = document.getElementById("userDropdown2");
-
-function isLogin() {
-    const storedUsers = localStorage.getItem("users");
-    const users = JSON.parse(storedUsers);
-
-    if (users) {
-        const activeUser = users.find(user => user.active === true);
-
-        if (activeUser) {
-            userDropdown1.style.display = "none";
-            userDropdown2.style.display = "block";
+document.addEventListener("DOMContentLoaded", function() {
+    let user = JSON.parse(localStorage.getItem('user'));
+    let userIcon = document.getElementById('userIcon');
+    
+    userIcon.addEventListener('click', function(event) {
+        event.stopPropagation();
+        let dropdown1 = document.getElementById('userDropdown1');
+        let dropdown2 = document.getElementById('userDropdown2');
+        
+        if (user && user.active) {
+            if (dropdown2.style.display === 'block') {
+                dropdown2.style.display = 'none';
+            } else {
+                dropdown2.style.display = 'block';
+                dropdown1.style.display = 'none';
+            }
         } else {
-            userDropdown1.style.display = "block";
-            userDropdown2.style.display = "none";
+            if (dropdown1.style.display === 'block') {
+                dropdown1.style.display = 'none';
+            } else {
+                dropdown1.style.display = 'block';
+                dropdown2.style.display = 'none';
+            }
         }
-}
-}
+    });
+    
+    document.addEventListener('click', function(event) {
+        let dropdown1 = document.getElementById('userDropdown1');
+        let dropdown2 = document.getElementById('userDropdown2');
+        if (!userIcon.contains(event.target)) {
+            dropdown1.style.display = 'none';
+            dropdown2.style.display = 'none';
+        }
+    });
+});
