@@ -13,6 +13,64 @@ export function setStoredProducts(products) {
 
 
 // ==== Display products data ==== //
+// export function DisplayProducts(data) {
+//     productsTableBody.innerHTML = '';
+//     data.forEach(product => {
+//         productsTableBody.innerHTML += `
+//             <tr class="table-active">
+//                 <td>${product.id}</td>
+//                 <td><img src="${product.images[0]}" alt="product-img" style="width: 50px; border-radius: 6px;"/></td>
+//                 <td>${product.category}</td>
+//                 <td>$${product.price}</td>
+//                 <td>${product.stock}</td>
+//                 <td>
+                    
+//                     <button class="btn" id="delete-btn" data-bs-target="#deleteModalForProduct"
+//                         data-bs-toggle="modal" onclick="deleteProduct(${product.id})">
+//                         <i class="fa-solid fa-trash-can text-danger"></i>
+//                     </button>
+//                 </td>
+//             </tr>
+//         `
+//     });
+// }
+// ==== Delete a product ==== //
+// let currentProductIdToDelete = 0;
+// export function deleteProduct(productId) {
+//     currentProductIdToDelete = productId;
+// }
+
+// export function confirmDeleteProduct() {
+//     const products = getStoredProducts();
+//     const newProducts = products.filter(product => product.id != currentProductIdToDelete);
+//     setStoredProducts(newProducts);
+//     DisplayProducts(newProducts);
+//     const deleteModal = document.querySelector('#deleteModalForProduct');
+//     const modal = bootstrap.Modal.getInstance(deleteModal);
+//     modal.hide();
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==== Display products data ==== //
 export function DisplayProducts(data) {
     productsTableBody.innerHTML = '';
     data.forEach(product => {
@@ -24,17 +82,20 @@ export function DisplayProducts(data) {
                 <td>$${product.price}</td>
                 <td>${product.stock}</td>
                 <td>
+                    <button class="btn" id="edit-btn" data-bs-target="#updateModalForProducts"
+                        data-bs-toggle="modal" onclick="updateProduct(${product.id})">
+                        <i class="fa-regular fa-pen-to-square text-primary"></i>
+                    </button>
                     <button class="btn" id="delete-btn" data-bs-target="#deleteModalForProduct"
                         data-bs-toggle="modal" onclick="deleteProduct(${product.id})">
                         <i class="fa-solid fa-trash-can text-danger"></i>
                     </button>
+                    
                 </td>
             </tr>
-        `
+        `;
     });
 }
-
-
 
 // ==== Delete a product ==== //
 let currentProductIdToDelete = 0;
@@ -43,14 +104,94 @@ export function deleteProduct(productId) {
 }
 
 export function confirmDeleteProduct() {
-    const products = getStoredProducts();
-    const newProducts = products.filter(product => product.id != currentProductIdToDelete);
+    // Get the current list of products
+    let products = getStoredProducts();
+    
+    // Find the product being deleted by its ID
+    const productToDelete = products.find(product => product.id === currentProductIdToDelete);
+    if (!productToDelete) return; // Exit if the product is not found (safety check)
+
+    // Filter out the product being deleted
+    const newProducts = products.filter(product => product.id !== currentProductIdToDelete);
+    
+    // Update the stock for products with the same brand (category)
+    const deletedCategory = productToDelete.category;
+    newProducts.forEach(product => {
+        if (product.category === deletedCategory) {
+            product.stock = Math.max(0, product.stock - 1); // Ensure stock doesn't go below 0
+        }
+    });
+
+    // Save the updated products list to localStorage
     setStoredProducts(newProducts);
+
+    // Refresh the table display
     DisplayProducts(newProducts);
+
+    // Hide the delete modal
     const deleteModal = document.querySelector('#deleteModalForProduct');
     const modal = bootstrap.Modal.getInstance(deleteModal);
     modal.hide();
 }
+
+// ==== Edit a product ==== //
+// inputs of updateModal for products
+
+// const productBrand = document.querySelector("#floatingInputBrand");
+// const productPrice = document.querySelector("#floatingInputPrice");
+// const productStock = document.querySelector("#floatingInputStock");
+
+
+// // ==== Update product ==== //
+// let currentProductId = 0;
+
+// export function updateProduct(storedProductId) {
+//     const storedProducts = getStoredProducts();
+//     const product = storedProducts.find(product => product.id === storedProductId);
+//     if (product) {
+//         productBrand.value = product.brand;
+//         productPrice.value = product.price;
+//         productStock.value = product.stock;
+//         currentProductId = storedProductId;
+//     }
+// }
+
+// export function editProduct() {
+//     const storedProducts = getStoredProducts();
+//     const product = storedProducts.find(product => product.id === currentProductId);
+//     if (product) {
+//         product.brand = productBrand.value;
+//         product.price = productPrice.value;
+//         product.stock = productStock.value;
+//         setStoredProducts(storedProducts);
+//         displayProducts(storedProducts);
+//         const updateModal = document.querySelector('#updateModalForProducts');
+//         const modal = bootstrap.Modal.getInstance(updateModal);
+//         modal.hide();
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // // Get a product by its id
 // export function getProductById(productID) {
