@@ -8,47 +8,72 @@
     <link href="../../Style/Cart/CartPay.css" rel="stylesheet">
 </head>
 <body>
-    <div class="cart-container">
-        <!-- Shopping Cart -->
-        <div class="cart-items">
+    <div class="cart-and-payment-container">
+        <!-- Shopping Cart Section -->
+        <div class="cart-container">
             <div class="cart-header">
-                <h2>Shopping Cart</h2>
+                <h2>Your Shopping Cart</h2>
             </div>
             <div id="cart-items">
                 <!-- Cart items will be dynamically inserted here -->
             </div>
         </div>
 
-        <!-- Payment Info -->
-        <div class="payment-info">
-            <h4>Payment Info</h4>
+        <!-- Payment Info Section -->
+        <div class="payment-container">
+            <div class="payment-header">
+                <h2>Payment Info</h2>
+            </div>
             <form id="payment-form">
+                <!-- Payment Method Dropdown -->
                 <div class="form-group">
                     <label for="payment-method">Payment Method</label>
-                    <select id="payment-method" required>
+                    <select id="payment-method" class="form-control" required>
                         <option value="">Select Payment Method</option>
                         <option value="credit-card">Credit Card</option>
                         <option value="paypal">PayPal</option>
-                        <option value="cash-on-delivery">Cash on Delivery</option>
+                        <option value="bank-transfer">Bank Transfer</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="cardholder-name">Name On Card</label>
-                    <input type="text" id="cardholder-name" placeholder="John Carter" required>
+
+                <!-- Credit Card Fields (Initially Hidden) -->
+                <div id="credit-card-fields" class="payment-method-fields">
+                    <div class="form-group">
+                        <label for="cardholder-name">Name On Card</label>
+                        <input type="text" id="cardholder-name" placeholder="John Carter" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiry-date">Expiration Date</label>
+                        <input type="text" id="expiry-date" placeholder="MM/YY" required>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="card-number">Card Number</label>
-                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+
+                <!-- PayPal Fields (Initially Hidden) -->
+                <div id="paypal-fields" class="payment-method-fields" style="display: none;">
+                    <div class="form-group">
+                        <p>You will be redirected to PayPal to complete your payment.</p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="expiry-date">Expiration Date</label>
-                    <input type="text" id="expiry-date" placeholder="MM/YY" required>
+
+                <!-- Bank Transfer Fields (Initially Hidden) -->
+                <div id="bank-transfer-fields" class="payment-method-fields" style="display: none;">
+                    <div class="form-group">
+                        <p>Please transfer the amount to the following bank account:</p>
+                        <p><strong>Account Name:</strong> Your Company Name</p>
+                        <p><strong>Account Number:</strong> 1234 5678 9012 3456</p>
+                        <p><strong>Bank Name:</strong> Example Bank</p>
+                    </div>
                 </div>
+
                 <button type="submit" class="btn-checkout">Check Out</button>
             </form>
         </div>
     </div>
 
-   <script src="../../JavaScript/Cart/Cart.js"></script>
+    <script src="../../JavaScript/Cart/Cart.js"></script>
 </body>
 </html>
