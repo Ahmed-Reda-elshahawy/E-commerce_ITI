@@ -79,7 +79,11 @@
 
                 <section class="content p-4">
                     <div class="table-container">
-                        <table class="table table-light text-center products-table">
+                        <table class="table table-light text-center products-table" data-toggle="table">
+                            <div class="mb-2">
+                                <input type="search" name="searchByName" id="productsSearch" class="px-2 py-1 rounded"
+                                    placeholder="search">
+                            </div>
                             <caption>Products Data</caption>
                             <button class="btn btn-primary" id="add-btn" data-bs-target="#addModal" data-bs-toggle="modal">
                                 add product
@@ -87,8 +91,9 @@
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Photo</th>
-                                    <th>brand</th>
+                                    <th>Image</th>
+                                    <th>Category</th>
+                                    <th>Name</th>
                                     <th>price</th>
                                     <th>In stock</th>
                                     <th>Action</th>
@@ -176,9 +181,14 @@
                                             <div class="text-danger small" id="errorAddProductImg"></div>
                                         </div>
                                         <div class="form-floating mb-4">
-                                            <input type="text" class="form-control" id="addProductBrand" placeholder="Brand">
-                                            <label for="addProductBrand">Brand</label>
-                                            <div class="text-danger small" id="errorAddProductBrand"></div>
+                                            <input type="text" class="form-control" id="addProductCategory" placeholder="Category">
+                                            <label for="addProductCategory">Category</label>
+                                            <div class="text-danger small" id="erroraddProductCategory"></div>
+                                        </div>
+                                        <div class="form-floating mb-4">
+                                            <input type="text" class="form-control" id="addProductName" placeholder="Name">
+                                            <label for="addProductName">Name</label>
+                                            <div class="text-danger small" id="errorAddProductName"></div>
                                         </div>
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="addProductPrice" placeholder="Price">
@@ -220,7 +230,7 @@
                     </div>
 
                     <!-- Update product Modal -->
-                    <div class="modal fade" id="updateModalForProducts" tabindex="-1" aria-labelledby="updateModalLabel"
+                    <div class="modal fade" id="updateModalForProduct" tabindex="-1" aria-labelledby="updateModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -230,7 +240,16 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body py-4 text-center fw-medium">
-                                    <form action="">
+                                    <form action="" class="products-form">
+                                        <div class="form-floating mb-3 d-flex align-items-end gap-3">
+                                            <div>
+                                                <input type="file" class="form-control" id="floatingInputPI"
+                                                    onchange="previewImage(event)" placeholder="Product Image">
+                                                <label for="floatingInputPI"></label>
+                                            </div>
+                                            <img src="" alt="previewImage" id="prevImage"
+                                                class="d-none w-25 h-25 mb-2 rounded">
+                                        </div>
                                         <!-- <div class="form-floating mb-3">
                                             <input type="text" class="form-control product-name" id="floatingInputCN"
                                                 placeholder="product title">
@@ -243,23 +262,28 @@
                                         </div> -->
 
                                         <div class="form-floating mb-4">
-                                            <input type="text" class="form-control" id="floatingInputBrand"
-                                                placeholder="Brand">
-                                            <label for="floatingInputBrand">Brand</label>
+                                            <input type="text" class="form-control" id="floatingInputPC"
+                                                placeholder="Category">
+                                            <label for="floatingInputPC">category</label>
+                                        </div>
+                                        <div class="form-floating mb-4">
+                                            <input type="text" class="form-control" id="floatingInputPT"
+                                                placeholder="Name">
+                                            <label for="floatingInputPT">Name</label>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="floatingInputPrice"
+                                            <input type="text" class="form-control" id="floatingInputPP"
                                                 placeholder="Price">
-                                            <label for="floatingInputPrice">Price</label>
+                                            <label for="floatingInputPP">Price</label>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="floatingInputStock"
+                                            <input type="text" class="form-control" id="floatingInputPS"
                                                 placeholder="stock">
-                                            <label for="floatingInputStock">in stock</label>
+                                            <label for="floatingInputPS">in stock</label>
                                         </div>
                                         
                                         <div class="text-end">
-                                            <input type="button" value="Edit" class="btn btn-primary" id="edit-product">
+                                            <input type="submit" value="Edit" class="btn btn-primary" id="edit-product">
                                         </div>
                                     </form>
                                 </div>
