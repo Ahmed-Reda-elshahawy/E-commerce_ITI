@@ -1,5 +1,5 @@
 
-import { DisplayProducts, getStoredProducts, setStoredProducts ,deleteProduct, confirmDeleteProduct } from "../modules/products.js";
+import { DisplayProducts, getStoredProducts, setStoredProducts ,deleteProduct, confirmDeleteProduct,editProduct, updateProduct,previewImage } from "../modules/products.js";
 import {handleActiveSectionSaller} from "../modules/sellerActive.js"
             //Display.............
 // Fetch products from localStorage
@@ -21,8 +21,9 @@ window.deleteProduct = deleteProduct;
 
 
             //Edit
-// document.getElementById("edit-product").addEventListener('click', confirmUpdateProduct);
-// window.updateProduct = updateCustomer;
+            document.getElementById("edit-product").addEventListener('click', editProduct);
+            window.updateProduct = updateProduct;
+            window.previewImage = previewImage;
 
 
 
@@ -37,19 +38,22 @@ document.querySelector('#addModal form').addEventListener('submit', function (ev
 
     // Get form data
     const productImg = document.getElementById('addProductImg').value.trim();
-    const productBrand = document.getElementById('addProductBrand').value.trim();
+    const productCategory = document.getElementById('addProductCategory').value.trim();
+    const productName = document.getElementById('addProductName').value.trim(); // Added Name
     const productPrice = document.getElementById('addProductPrice').value.trim();
     const productStock = document.getElementById('addProductStock').value.trim();
 
     // Error message elements
     const errorImg = document.getElementById('errorAddProductImg');
-    const errorBrand = document.getElementById('errorAddProductBrand');
+    const errorCategory = document.getElementById('erroraddProductCategory');
+    const errorName = document.getElementById('errorAddProductName'); // Added Name error
     const errorPrice = document.getElementById('errorAddProductPrice');
     const errorStock = document.getElementById('errorAddProductStock');
 
     // Clear previous error messages
     errorImg.textContent = '';
-    errorBrand.textContent = '';
+    errorCategory.textContent = '';
+    errorName.textContent = ''; // Clear Name error
     errorPrice.textContent = '';
     errorStock.textContent = '';
 
@@ -68,11 +72,19 @@ document.querySelector('#addModal form').addEventListener('submit', function (ev
         isValid = false;
     }
 
-    if (!productBrand) {
-        errorBrand.textContent = 'Brand is required.';
+    if (!productCategory) {
+        errorCategory.textContent = 'Category is required.';
         isValid = false;
-    } else if (!textAndNumberPattern.test(productBrand)) {
-        errorBrand.textContent = 'Brand can only contain letters and numbers.';
+    } else if (!textAndNumberPattern.test(productCategory)) {
+        errorCategory.textContent = 'Category can only contain letters and numbers.';
+        isValid = false;
+    }
+
+    if (!productName) { // Validate Name
+        errorName.textContent = 'Name is required.';
+        isValid = false;
+    } else if (!textAndNumberPattern.test(productName)) {
+        errorName.textContent = 'Name can only contain letters and numbers.';
         isValid = false;
     }
 
@@ -107,7 +119,8 @@ document.querySelector('#addModal form').addEventListener('submit', function (ev
     const newProduct = {
         id: nextId, // Or you can generate a unique ID
         images: [productImg], // Assuming single image for simplicity
-        category: productBrand,
+        category: productCategory,
+        title: productName, // Add Name to product object
         price: parseFloat(productPrice),
         stock: parseInt(productStock, 10),
     };
