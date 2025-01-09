@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
-    
     <script>
         window.addEventListener('load', function() {
             document.getElementById('submit').addEventListener('click', function(event) {
-                
                 event.preventDefault();
 
                 var name = document.getElementById('fname').value;
@@ -17,145 +15,75 @@
                 var repeatPassword = document.getElementById('psw-repeat').value;
                 var phone = document.getElementById('phone').value;
                 var address = document.getElementById('address').value;
-                
                 var age = document.getElementById('age').value;
-                var date = new Date();
-                var h3=document.querySelector('h3');
-                var active=true;
-                // Generate unique ID
-            
-           
-               var users = JSON.parse(localStorage.getItem('users')) ;
-               for(var i=0; i<users.length; i++){
-              
-              if(users[i].email==email){
-                   
-                     h3.classList.add('active');
-                    h3.innerHTML='This email is already registered., Please use another email.'; ;
-                    return;
-                  
-               
-               }   
-               
-               
-           }
-           for(var i=0; i<users.length; i++){
-              
-             
-                   console.log(users[i].currentUser);
-                  users[i].currentUser=false;
-                  
-                  localStorage.setItem('users',JSON.stringify(users));
-                 
-               
-               
-           }
-           
-              
-   ;
-              
-   
-               
-                const usernameRegex = /^[^\d\s][^\s]*$/;
-                if (!usernameRegex.test(name)) {
+                var h3 = document.querySelector('h3');
+                var active = true;
+
+                var users = JSON.parse(localStorage.getItem('users')) || [];
+                for (var i = 0; i < users.length; i++) {
+                    if (users[i].email === email) {
+                        h3.classList.add('active');
+                        h3.innerHTML = 'This email is already registered. Please use another email.';
+                        return;
+                    }
+                }
+                users.forEach(user => user.currentUser = false);
+                localStorage.setItem('users', JSON.stringify(users));
+
+                if (!/^[^\d\s][^\s]*$/.test(name)) {
                     h3.classList.add('active');
-                    h3.innerHTML='Username cannot start with a number or contain spaces.';
-                    return; 
+                    h3.innerHTML = 'Username cannot start with a number or contain spaces.';
+                    return;
                 }
                 if (!/^\+?\d{7,15}$/.test(phone)) {
-  
-                h3.classList.add('active');
-                h3.innerHTML='Please enter a valid phone number (e.g., +123456789 or 123456789).';
-                    return; 
-                }
-                const ageRegex = /^\d+$/;
-                if(age !== "" && !/^\d+$/.test(age)){
-                    alert('Age must be a number');
                     h3.classList.add('active');
-                    h3.innerHTML='Age must be a number';
+                    h3.innerHTML = 'Please enter a valid phone number (e.g., +123456789 or 123456789).';
                     return;
                 }
-                // Email validation
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email)) {
-                    alert('Please enter a valid email address.');
+                if (age !== "" && !/^\d+$/.test(age)) {
                     h3.classList.add('active');
-                    h3.innerHTML='Please enter a valid email address.';
+                    h3.innerHTML = 'Age must be a number.';
                     return;
                 }
-                if (email.includes(' ')) {
-                   
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
                     h3.classList.add('active');
-                    h3.innerHTML='Email cannot contain spaces.';
+                    h3.innerHTML = 'Please enter a valid email address.';
                     return;
                 }
-
-                // Password validation
                 if (password !== repeatPassword) {
-                    
                     h3.classList.add('active');
-                    h3.innerHTML='Passwords do not match.';
+                    h3.innerHTML = 'Passwords do not match.';
                     return;
                 }
                 if (password.length < 8) {
-                    
                     h3.classList.add('active');
-                    h3.innerHTML='Password must be at least 8 characters long.';
+                    h3.innerHTML = 'Password must be at least 8 characters long.';
                     return;
                 }
-
-               
                 var userType = document.querySelector('input[name="type"]:checked');
-              
                 if (!userType) {
-                    
                     h3.classList.add('active');
-                    h3.innerHTML='Please select an account type (Customer or Seller).';
+                    h3.innerHTML = 'Please select an account type (Customer or Seller).';
                     return;
                 }
-                var selectedUserType = userType.value;
-               
-                if (selectedUserType === 'Customer') {
-                    selectedUserType = 'User';
-                } 
                 var userData = {
-                username: name,
-                email: email,
-                password: password,
-                phone: phone,
-                address: address,
-                ResigrationDate: date.toISOString(),
-                role:selectedUserType ,
-                active:true,
-                currentUser:active
+                    username: name,
+                    email: email,
+                    password: password,
+                    phone: phone,
+                    address: address,
+                    registrationDate: new Date().toISOString(),
+                    role: userType.value === 'Customer' ? 'User' : 'Seller',
+                    active: true,
+                    currentUser: active
                 };
-               
-                var users=JSON.parse(localStorage.getItem('users')) ;
-                if(users==null){
-                   
-                    users=[];
-                   
-                    users.push(userData);
-                    localStorage.setItem('users',JSON.stringify(users));
-                }
-                else{   
-                   
-                    users.push(userData);
-                    localStorage.setItem('users',JSON.stringify(users));
-                }
-
-            // Redirect to home page
-            window.location.href = '../Home/Home.html';
-                //link for home page
-             
-                
-                
-                
+                users.push(userData);
+                localStorage.setItem('users', JSON.stringify(users));
+                window.location.href = '../Home/Home.html';
             });
 
-
-            document.getElementById('cancel').addEventListener('click', function(event) {
-                window.location.href = "http:../Auth/Login.html";
+            document.getElementById('cancel').addEventListener('click', function() {
+                window.location.href = "../Auth/Login.html";
             });
         });
     </script>
@@ -163,10 +91,46 @@
         * {
             box-sizing: border-box;
         }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #mainwrapper {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+        }
+        #form {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          
+        }
+        form {
+            width: 65%;
+
+        }
+        #image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+        #image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
         .container {
-            padding: 16px;
             display: flex;
             flex-direction: column;
+            width: 100%;
+           
+           
         }
         h1 {
             text-align: center;
@@ -176,67 +140,44 @@
             color: gray;
         }
         .form-group {
-         display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-         width: 100%; 
-            }
-
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            width: 100%;
+            padding-right: 100px;
+            
+        }
         .form-group label {
-             width: 25%; 
-            text-align: right; 
-            margin-right: 10px; 
-            }
-
+            width: 40%;
+            text-align: right;
+            margin-right: 10px;
+        }
         .form-group input[type="text"],
         .form-group input[type="password"] {
-        width: 50%;
-         padding: 10px;
-        
-         border: 1px solid black;
-         border-radius: 4px;
-}
-
+            width: 70%;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
         input[type=text]:focus, input[type=password]:focus {
             background-color: #ddd;
             outline: none;
         }
-        
-    .radio-options {
-    display: flex;
-    width: 50%; 
-    height: 40px;
-    
-    border-radius: 4px;
-    justify-content: space-evenly; 
-   
-}
-
-.radio-options label {
-    display: flex;
-    align-items: center;
-}
-       
+        .button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
         .registerbtn {
-            background-color: #000333;
+            background-color: #1b1d36;
             color: white;
             font-size: 18px;
             padding: 16px 20px;
             margin: 8px auto;
             border: none;
             cursor: pointer;
-            width: 50%;
+            width: 90%;
             opacity: 0.9;
-        }
-        .registerbtn:hover {
-            opacity: 1;
-        }
-        a {
-            color: dodgerblue;
-        }
-        .signin {
-            font-size: 40px;
-            text-align: center;
         }
         #cancel {
             background: none;
@@ -246,84 +187,73 @@
             margin: 8px auto;
             border: none;
             cursor: pointer;
-            width: 50%;
             font-size: 18px;
-
-          
         }
-       .button {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        h3{
-            color:red;
+        h3 {
+            color: red;
             text-align: center;
-            display: none ;
-            }
+            display: none;
+        }
         .active {
             display: block;
-        }    
+        }
     </style>
 </head>
 <body>
-    <form>
-        <div class="container">
-            <h1>Registration Form</h1>
-            <p>Be Part of Your Community</p>
-            <br><br>
-            <div class="form-group">
-                <label for="fname"><b>User Name*</b></label>
-                <input type="text" placeholder="Enter Your Name" name="fname" id="fname" required>
-            </div>
-            <div class="form-group">
-                <label for="phone"><b>Phone*</b></label>
-                <input type="text" placeholder="Enter Your Phone Number" name="phone" id="phone" required>
-            </div>
-            <div class="form-group">
-                <label for="address"><b>Address</b></label>
-                <input type="text" placeholder="Enter Yout Address" name="address" id="address" >
-            </div>
-            <div class="form-group">
-                <label for="email"><b>Email*</b></label>
-                <input type="text" placeholder="Enter Email" name="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="psw"><b>Password*</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-            </div>
-            <div class="form-group">
-                <label for="psw-repeat"><b>Repeat Password*</b></label>
-                <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-            </div>
-            <div class="form-group">
-                <label for="age"><b>Age</b></label>
-                <input type="text" placeholder="Enter Age" id="age">
-            </div>
-            
-            <div class="form-group">
-                <label for="gender"><b>Gender</b></label>
-                <div class="radio-options">
-                    <label><input type="radio" name="gender" value="Male"> Male</label>
-                    <label><input type="radio" name="gender" value="Female"> Female</label>
+    <div id="mainwrapper">
+        <!-- Form Section -->
+        <div id="form">
+            <form>
+                <div class="container">
+                    <h1>Registration Form</h1>
+                    <p>Be Part of Your Community</p>
+                    <div class="form-group">
+                        <label for="fname"><b>User Name*</b></label>
+                        <input type="text" placeholder="Enter Your Name" name="fname" id="fname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone"><b>Phone*</b></label>
+                        <input type="text" placeholder="Enter Your Phone Number" name="phone" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address"><b>Address</b></label>
+                        <input type="text" placeholder="Enter Your Address" name="address" id="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><b>Email*</b></label>
+                        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="psw"><b>Password*</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="psw-repeat"><b>Repeat Password*</b></label>
+                        <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age"><b>Age</b></label>
+                        <input type="text" placeholder="Enter Age" id="age">
+                    </div>
+                    <div class="form-group">
+                        <label for="type"><b>Account Type*</b></label>
+                        <div>
+                            <label><input type="radio" name="type" value="Customer"> Customer</label>
+                            <label><input type="radio" name="type" value="Seller"> Seller</label>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <h3>Invalid input detected</h3>
+                        <button type="submit" class="registerbtn" id="submit">Register</button>
+                        <button type="reset" id="cancel">Already have an account? Login</button>
+                    </div>
                 </div>
-            </div>
-          
-            <div class="form-group">
-                <label for="type"><b>Account Type*</b></label>
-                <div class="radio-options">
-                    <label><input type="radio" name="type" value="Customer" id="Customer" required> Customer</label>
-                    <label><input type="radio" name="type" value="Seller" id="Seller" required> Seller</label>
-                </div>
-            </div>
-            </div>
-                <div class="button">
-                 <h3 >Wrong data Entered</h3>   
-                <button type="submit" class="registerbtn" id="submit">Create Account</button> <br>
-                <button type="reset" id="cancel">Already got an account? Sign in</button>
-            </div>
+            </form>
         </div>
-    </form>
-    <script src="../../JavaScript/modules/loadData.js" type="module"></script>
+        <!-- Image Section -->
+        <div id="image">
+            <img src="../../assets/images/login6.jfif" alt="Registration Illustration">
+        </div>
+    </div>
 </body>
 </html>
