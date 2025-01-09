@@ -52,4 +52,68 @@ document.addEventListener('click', function (event) {
     }
 });
 
+//before and after auth
+document.addEventListener("DOMContentLoaded", function() {
+    let user = JSON.parse(localStorage.getItem('users'));
+    let userIcon = document.getElementById('userIcon');
+    
+    userIcon.addEventListener('click', function(event) {
+        event.stopPropagation();
+        let dropdown1 = document.getElementById('userDropdown1');
+        let dropdown2 = document.getElementById('userDropdown2');
+        for(var i=0;i<user.length;i++){
+         
+        
+        if (user[i].currentUser) {
+            
+                dropdown1.style.display = 'none';
+                dropdown2.style.display = 'block';
+                return;
+                
+            }
 
+        
+        }        dropdown2.style.display = 'none';
+                dropdown1.style.display = 'block';
+               
+    
+    
+    });
+
+
+    document.getElementById('login').addEventListener('click', function() {
+
+        window.location.href = '../../Html/Auth/Login.html';
+
+    });
+
+    document.getElementById('signUp').addEventListener('click', function() {
+
+        window.location.href = '../../Html/Auth/Registration.html';
+
+    });
+
+
+    document.getElementById('logOut').addEventListener('click', function() {
+        let user = JSON.parse(localStorage.getItem('users'));
+        for(var i=0;i<user.length;i++){
+
+            user[i].currentUser = false;
+            localStorage.setItem('users', JSON.stringify(user));
+
+        }
+        window.location.href = '../../Html/Auth/Login.html';
+
+    });
+
+
+    
+    document.addEventListener('click', function(event) {
+        let dropdown1 = document.getElementById('userDropdown1');
+        let dropdown2 = document.getElementById('userDropdown2');
+        if (!userIcon.contains(event.target)) {
+            dropdown1.style.display = 'none';
+            dropdown2.style.display = 'none';
+        }
+    });
+});

@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="card h-100">
             <div class="card-image-container">
                 <img src="${product.images[0]}" class="card-img-top mainimg" alt="${product.title}">
+
             </div>
             <div class="card-body">
                 <h5 class="card-title">${product.title}</h5>
@@ -28,5 +29,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
-
-

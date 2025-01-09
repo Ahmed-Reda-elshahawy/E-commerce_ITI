@@ -40,8 +40,6 @@ function DisplayNewProducts() {
 }
 DisplayNewProducts();
 
-
-
 const productCards = document.querySelectorAll(".product-card");
 productCards.forEach(card => {
     card.addEventListener("click", function () {
