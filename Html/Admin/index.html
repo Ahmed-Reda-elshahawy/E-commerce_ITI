@@ -139,10 +139,12 @@
                             <thead>
                                 <tr>
                                     <th>Order Id</th>
-                                    <th>Image</th>
-                                    <th>Name</th>
-                                    <th>price</th>
-                                    <th>count</th>
+                                    <th>Date</th>
+                                    <th>Customer Name</th>
+                                    <th>Products ordered</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Seller</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -181,29 +183,38 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body py-4 text-center fw-medium">
-                                    <form action="">
-                                        <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="floatingInputP"
-                                                placeholder="product title">
-                                            <label for="floatingInputP">Product Title</label>
+                                    <form action="" class="products-form">
+                                        <div class="form-floating mb-3 d-flex align-items-end gap-3">
+                                            <div>
+                                                <input type="file" class="form-control" id="floatingInputPI"
+                                                    onchange="previewImage(event)" placeholder="Product Image">
+                                                <label for="floatingInputPI"></label>
+                                            </div>
+                                            <img src="" alt="previewImage" id="prevImage"
+                                                class="d-none w-25 h-25 mb-2 rounded">
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="floatingInputD"
-                                                placeholder="description">
-                                            <label for="floatingInputD">Description</label>
+                                            <input type="text" class="form-control" id="floatingInputPC"
+                                                placeholder="Product Category">
+                                            <label for="floatingInputPC">Product Category</label>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="floatingInputPrice"
+                                            <input type="text" class="form-control" id="floatingInputPT"
+                                                placeholder="Product Title">
+                                            <label for="floatingInputPT">Product Title</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="floatingInputPP"
                                                 placeholder="Price">
-                                            <label for="floatingInputPrice">Price</label>
+                                            <label for="floatingInputPP">Price</label>
                                         </div>
                                         <div class="form-floating mb-4">
-                                            <input type="text" class="form-control" id="floatingInputBrand"
-                                                placeholder="Brand">
-                                            <label for="floatingInputBrand">Brand</label>
+                                            <input type="text" class="form-control" id="floatingInputPS"
+                                                placeholder="Stock">
+                                            <label for="floatingInputPS">Stock</label>
                                         </div>
                                         <div class="text-end">
-                                            <input type="submit" value="Edit" class="btn btn-primary">
+                                            <input type="submit" value="Edit" class="btn btn-primary" id="edit-product">
                                         </div>
                                     </form>
                                 </div>

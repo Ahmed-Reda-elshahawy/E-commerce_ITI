@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../../assets/Bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../../Style/Home/Home.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -37,7 +39,6 @@
                     <li class="nav-item searchGroup navbar-nav d-flex justify-content-end align-items-center gap-2">
                         <div class="search-container d-flex justify-content-center align-items-center">
                             <input type="text" class="form-control" placeholder="Search..." id="searchInput">
-                            <a class="icon iconhover" href="#"><i class="fas fa-search"></i></a>
                             <ul id="searchResults"></ul>
                         </div>
                     </li>                    
@@ -148,7 +149,7 @@
 
     <hr style="margin-top: 40px;">
 
-    <div class="AllHomePro">
+    <div class="AllHomePro pt-4 pb-4">
         <div class="HomeProducts container">
             <div class="">
                 <div class="">
@@ -184,21 +185,25 @@
         </div>
     </div>
 
-
     <div class="AllHomePro">
         <div class="HomeProducts container">
-            <div class="">
-                <div class="">
+            <div>
+                <div>
                     <h2 class="NewArrivalHeader NewArrivalHeadersp">Today's best deal</h2>
                 </div>
             </div>
-            <div class="row mt-4 g-2 allProducts" id="cardContainerAllSale">
+            <div class="swiper-container">
+                <div class="swiper-wrapper row mt-4 g-2 allProducts p-4 pt-0" id="cardContainerAllSale">
 
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </div>
+    
 
-    <div class="container mt-4 whyCont">
+    <div class="container mt-4 whyCont pt-3">
         <div class="row">
             <div class="col-12 col-lg-4 d-flex flex-column justify-content-center align-items-center text-center">
                 <h2 class="head">Empowering Your Online Shopping Experience</h2>
@@ -287,7 +292,7 @@
         </footer>
     </div>
 
-
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
     <script src="../../assets/Bootstrap/bootstrap.bundle.js"></script>

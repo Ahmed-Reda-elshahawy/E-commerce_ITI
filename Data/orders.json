@@ -2,8 +2,19 @@
     {
         "orderId": "111",
         "userId": "user111",
+        "userName": "userName1",
         "sellerId": "seller1",
-        "products": [],
+        "sellerName": "sellerName1",
+        "products": [
+            {
+                "name": "product1",
+                "stock": 5
+            },
+            {
+                "name": "product2",
+                "stock": 4
+            }
+        ],
         "totalAmount": 100.00,
         "status": "Shipped",
         "shippingAddress": "456 User Avenue, City, Country",
@@ -12,8 +23,19 @@
     {
         "orderId": "222",
         "userId": "user222",
+        "userName": "userName2",
         "sellerId": "seller2",
-        "products": [],
+        "sellerName": "sellerName2",
+        "products": [
+            {
+                "name": "product3",
+                "stock": 5
+            },
+            {
+                "name": "product4",
+                "stock": 4
+            }
+        ],
         "totalAmount": 200.00,
         "status": "Shipped",
         "shippingAddress": "456 User Avenue, City, Country",
