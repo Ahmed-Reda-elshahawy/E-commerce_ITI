@@ -34,45 +34,39 @@ loadProductDetails()
 
 
  // Function to add product to cart
-
  function addToCart() {
-  
   const selectedProduct = JSON.parse(localStorage.getItem("productDetails"));
 
   if (selectedProduct) {
-    
     const product = {
-      id: selectedProduct.id, 
+      id: selectedProduct.id,
       name: selectedProduct.title && selectedProduct.tittle2
         ? `${selectedProduct.title} ${selectedProduct.tittle2}`
-        : 'Backpack', 
-      price: selectedProduct.price, 
-      image: selectedProduct.images[0] || 'https://via.placeholder.com/80', 
-      quantity: 1 
+        : 'Backpack',
+      price: selectedProduct.price,
+      image: selectedProduct.images[0] || 'https://via.placeholder.com/80',
+      quantity: 1
     };
 
-    
+    // Retrieve the current cart from localStorage or initialize an empty array
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    
+    // Check if the product already exists in the cart
     const existingProduct = cart.find(item => item.id === product.id);
     if (existingProduct) {
-      
+      // If the product exists, increase its quantity
       existingProduct.quantity += 1;
     } else {
-      
+      // If the product doesn't exist, add it to the cart
       cart.push(product);
     }
 
-  
+    // Save the updated cart back to localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
-
-    
-    window.location.href = '../../Html/cart/cartPay.html';
   } else {
     alert('No product selected. Please try again.');
   }
 }
 
-
+// Add event listener to the "Add to Cart" button
 document.getElementById('add-to-cart').addEventListener('click', addToCart);
