@@ -68,7 +68,7 @@ loadProductDetails()
     localStorage.setItem('cart', JSON.stringify(cart));
 
     
-    window.location.href = '../../Html/cart/cart.html';
+    window.location.href = '../../Html/cart/cartPay.html';
   } else {
     alert('No product selected. Please try again.');
   }
