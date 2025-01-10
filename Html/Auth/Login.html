@@ -11,7 +11,9 @@
                 event.preventDefault();
                 var email = document.getElementById('email').value;
                 var password = document.getElementById('psw').value;
-                var users = JSON.parse(localStorage.getItem(`users`)) || [];
+                var users = JSON.parse(localStorage.getItem(`users`)) ;
+                var admin=JSON.parse(localStorage.getItem(`admins`)) ;
+                console.log(admin);
                 users.forEach(user => user.currentUser = false);
                 localStorage.setItem('users', JSON.stringify(users));
 
@@ -19,11 +21,8 @@
                     if (users[i].email == email && users[i].password == password) {
                         users[i].currentUser = true;
                         localStorage.setItem('users', JSON.stringify(users));
-                        if (users[i].role == 'admin') {
-                            window.location.href = "../Home/Admin.html";
-                            return;
-                        } 
-                        else if(users[i].role == 'customer') {
+                        
+                         if(users[i].role == 'customer') {
                             window.location.href = "../Home/Home.html";
                             return;
                         }
@@ -31,6 +30,16 @@
                         return;}
                     }
                 }
+                
+                for (var i = 0; i < admin.length; i++) {
+                    if (admin[i].Email == email && admin[i].Password == password) {
+                        admin[i].currentUser = true;
+                        localStorage.setItem('admins', JSON.stringify(admin));
+                        window.location.href = "../Admin/index.html";
+                        return;
+                    }
+                }
+               
                 h3.classList.add('active');
                 h3.innerHTML = 'Invalid Email or Password';
             });
