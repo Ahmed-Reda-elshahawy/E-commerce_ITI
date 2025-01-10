@@ -217,6 +217,9 @@ document.querySelector('#addModal form').addEventListener('submit', function (ev
     document.querySelector('#addModal form').reset();
 });
 //*********************************************************************************************************** */
+
+
+
 // =====================( orders )===================== //
 displayOrders(getStoredOrders());
 document.getElementById("edit-order").addEventListener('click', editOrder);
@@ -251,7 +254,56 @@ window.updateOrderById = updateOrderById;
 handleActiveSectionSaller();
 
 //----------------------------------------------------------------------------------------------------------
-//search
+//chart
+
+// Include Chart.js from CDN
+const script = document.createElement('script');
+script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
+document.head.appendChild(script);
+
+// Wait for Chart.js to load
+script.onload = function () {
+    // Get the canvas element
+    const ctx = document.getElementById('sellerChart').getContext('2d');
+
+    // Create the chart
+    const sellerChart = new Chart(ctx, {
+        type: 'bar', // Change this to 'line', 'pie', etc., as needed
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May'], // Example labels
+            datasets: [
+                {
+                    label: 'Sellers',
+                    data: [5, 10, 8, 15, 20], // Example data
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                    ],
+                    borderWidth: 1,
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                },
+            },
+        },
+    });
+};
 
 //----------------------------------------------------------------------------------------------------------
 

@@ -47,7 +47,9 @@
                         class="w-100 mx-auto d-md-flex flex-md-column align-items-md-center mx-xl-0 flex-xl-row gap-2">
                         <i class="fa-solid fa-chart-pie p-2 bg-dark bg-opacity-10 rounded-circle"></i>
                         <span class="d-none d-md-block">Charts</span>
+                        
                     </button>
+                        <!-- Chart Section after Orders -->
                 </li>
             </ul>
         </aside>
@@ -133,6 +135,7 @@
 
 
 
+                    <!-- order table -->
                     <div class="table-container d-none">
                         <table class="table table-light text-center orders-table">
                             <div class="mb-2">
@@ -175,6 +178,30 @@
                             </tbody>
                         </table>
                     </div>
+
+                    
+                    <!-- Chart table -->
+                    <div class="table-container chart">
+                        <table class="table table-light text-center chart-table">
+                            <div class="mb-2">
+                            </div>
+                            <caption>Chart</caption>
+                            <thead>
+                                <tr>
+                                    <th>Chart</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <canvas id="sellerChart" width="400" height="200"></canvas>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
 
                     <!-- add -->
                     <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel"
@@ -360,6 +387,10 @@
                     </div>
 
 
+
+                    
+
+
                 </section>
             </main>
         </div>
@@ -371,7 +402,9 @@
         </script>
     <script src="../../JavaScript/modules/loadData.js"></script>
     <script src="../../JavaScript/Seller/DashboardSaller.js" type="module"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <!-- <canvas id="myChart" width="400" height="200"></canvas> -->
+
 
 
 </body>

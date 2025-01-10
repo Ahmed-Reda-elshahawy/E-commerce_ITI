@@ -193,7 +193,7 @@ export function confirmEditProduct() {
             // Hide the edit modal and alert success
             hideEditModal();
             // Show success message if needed
-            alert("Product updated successfully!");
+            // alert("Product updated successfully!");
         };
         reader.readAsDataURL(updatedPhotoInput.files[0]); // Read the new image as base64
     } else {
@@ -206,7 +206,7 @@ export function confirmEditProduct() {
         // Hide the edit modal and alert success
         hideEditModal();
         // Show success message if needed
-        alert("Product updated successfully!");
+        // alert("Product updated successfully!");
     }
 }
 
