@@ -51,22 +51,33 @@ export function confirmDeleteProduct() {
     const productToDelete = products.find(product => product.id === currentProductIdToDelete);
     if (!productToDelete) return; // Exit if the product is not found (safety check)
 
-    // Filter out the product being deleted
-    const newProducts = products.filter(product => product.id !== currentProductIdToDelete);
+    if (productToDelete && productToDelete.stock > 1) {
+        productToDelete.stock = productToDelete.stock - 1;
+        // Save the updated products list to localStorage
+        setStoredProducts(products);
 
-    // Update the stock for products with the same brand (category)
-    const deletedCategory = productToDelete.category;
-    newProducts.forEach(product => {
-        if (product.category === deletedCategory) {
-            product.stock = Math.max(0, product.stock - 1); // Ensure stock doesn't go below 0
-        }
-    });
+        // Refresh the table display
+        DisplayProducts(products);
+    }
+    else {
+        // Filter out the product being deleted
+        const newProducts = products.filter(product => product.id !== currentProductIdToDelete);
+        // Save the updated products list to localStorage
+        setStoredProducts(newProducts);
 
-    // Save the updated products list to localStorage
-    setStoredProducts(newProducts);
+        // Refresh the table display
+        DisplayProducts(newProducts);
+    }
 
-    // Refresh the table display
-    DisplayProducts(newProducts);
+
+    // // Update the stock for products with the same brand (category)
+    // const deletedCategory = productToDelete.category;
+    // newProducts.forEach(product => {
+    //     if (product.category === deletedCategory) {
+    //         product.stock = Math.max(0, product.stock - 1); // Ensure stock doesn't go below 0
+    //     }
+    // });
+
 
     // Hide the delete modal
     const deleteModal = document.querySelector('#deleteModalForProduct');
@@ -78,10 +89,11 @@ export function confirmDeleteProduct() {
 
 // ==== Update a product ==== //
 let currentProductIdToUpdate = 0;
-const categoryInput = document.getElementById('floatingInputPC')
-const titleInput = document.getElementById('floatingInputPT')
-const priceInput = document.getElementById('floatingInputPP')
-const stockInput = document.getElementById('floatingInputPS')
+const categoryInput = document.getElementById('floatingInputPC');
+const titleInput = document.getElementById('floatingInputPT');
+const priceInput = document.getElementById('floatingInputPP');
+const stockInput = document.getElementById('floatingInputPS');
+const errorMessage = document.querySelector(".error-message");
 export function updateProduct(productId) {
     const storedProducts = getStoredProducts();
     const product = storedProducts.find(p => p.id === productId);
@@ -101,13 +113,18 @@ export function editProduct() {
         product.title = titleInput.value;
         product.price = priceInput.value;
         product.stock = stockInput.value;
+        if (product.category !== '' && product.title !== '' && String(product.price) !== '' && String(product.stock) !== '' && !(/^[0-9]/.test(product.category)) && !(/^[0-9]/.test(product.title)) && /^\d*\.?\d+$/.test(String(product.price)) && /^\d+$/.test(String(product.stock))) {
+            errorMessage.classList.add('d-none');
+            setStoredProducts(products);
+            DisplayProducts(products);
 
-        setStoredProducts(products);
-        DisplayProducts(products);
-
-        const updateModal = document.querySelector('#updateModalForProduct');
-        const modal = bootstrap.Modal.getInstance(updateModal);
-        modal.hide();
+            const updateModal = document.querySelector('#updateModalForProduct');
+            const modal = bootstrap.Modal.getInstance(updateModal);
+            modal.hide();
+        }
+        else {
+            errorMessage.classList.remove('d-none');
+        }
     }
 }
 export function previewImage(event) {

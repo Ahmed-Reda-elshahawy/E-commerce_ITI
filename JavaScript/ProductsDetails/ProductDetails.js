@@ -33,13 +33,14 @@ loadProductDetails()
 
 
 
- // Function to add product to cart
- function addToCart() {
+// Function to add product to cart
+function addToCart() {
   const selectedProduct = JSON.parse(localStorage.getItem("productDetails"));
 
   if (selectedProduct) {
     const product = {
       id: selectedProduct.id,
+      sellerId: selectedProduct.sellerId,
       name: selectedProduct.title && selectedProduct.tittle2
         ? `${selectedProduct.title} ${selectedProduct.tittle2}`
         : 'Backpack',

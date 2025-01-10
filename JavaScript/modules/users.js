@@ -53,6 +53,7 @@ export function displayCustomers(storedUsers) {
 
 // ==== Update customer ==== //
 let currentCustomerId = 0;
+const errorMessage = document.querySelector(".error-message");
 export function updateCustomerById(storedUsersId) {
     const storedUsers = getStoredCustomers();
     const customer = storedUsers.find(customer => customer.id === storedUsersId);
@@ -68,11 +69,18 @@ export function editCustomer() {
     if (customer) {
         customer.username = customerName.value;
         customer.email = customerEmail.value;
-        setStoredCustomers(storedUsers);
-        displayCustomers(storedUsers);
-        const updateModal = document.querySelector('#updateModalForCustomer');
-        const modal = bootstrap.Modal.getInstance(updateModal);
-        modal.hide();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (customer.username != '' && customer.email != '' && !(/^[0-9]/.test(customer.username)) && !(/^[0-9]/.test(customer.email)) && emailRegex.test(customer.email)) {
+            errorMessage.classList.add('d-none');
+            setStoredCustomers(storedUsers);
+            displayCustomers(storedUsers);
+            const updateModal = document.querySelector('#updateModalForCustomer');
+            const modal = bootstrap.Modal.getInstance(updateModal);
+            modal.hide();
+        }
+        else {
+            errorMessage.classList.remove('d-none');
+        }
     }
 }
 
@@ -97,12 +105,14 @@ export function confirmDeleteCustomer() {
 
 // ==== Search for a customer ==== //
 const searchInput = document.getElementById('usersSearch');
-function searchFilter(searchName) {
-    const users = getStoredCustomers();
-    return users.filter(user => user.username.toLowerCase().includes(searchName.toLowerCase()));
+if (searchInput) {
+    function searchFilter(searchName) {
+        const users = getStoredCustomers();
+        return users.filter(user => user.username.toLowerCase().includes(searchName.toLowerCase()));
+    }
+    searchInput.addEventListener("input", function () {
+        let searchName = searchInput.value;
+        const users = searchFilter(searchName);
+        displayCustomers(users);
+    });
 }
-searchInput.addEventListener("input", function () {
-    let searchName = searchInput.value;
-    const users = searchFilter(searchName);
-    displayCustomers(users);
-});

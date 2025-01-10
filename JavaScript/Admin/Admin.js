@@ -7,8 +7,10 @@ import {
     deleteCustomerById
 } from '../../JavaScript/modules/users.js';
 import { handleActiveSection } from '../modules/activeSection.js';
-import { displayOrders, getStoredOrders } from '../modules/orders.js';
+import { confirmDeleteOrder, deleteOrderById, displayOrders, editOrder, getStoredOrders, updateOrderById } from '../modules/orders.js';
 import { confirmDeleteProduct, deleteProduct, DisplayProducts, editProduct, getStoredProducts, previewImage, updateProduct } from '../modules/products.js';
+
+
 
 const adminImgs = document.querySelectorAll('.adminImg');
 const adminNames = document.querySelectorAll('.adminName');
@@ -31,7 +33,6 @@ displayCustomers(getStoredCustomers());
 
 document.getElementById("edit-customer").addEventListener('click', editCustomer);
 document.getElementById("delete-customer").addEventListener('click', confirmDeleteCustomer);
-
 window.updateCustomerById = updateCustomerById;
 window.deleteCustomerById = deleteCustomerById;
 
@@ -42,7 +43,6 @@ DisplayProducts(getStoredProducts());
 
 document.getElementById("edit-product").addEventListener('click', editProduct);
 document.getElementById("delete-product").addEventListener('click', confirmDeleteProduct);
-
 window.updateProduct = updateProduct;
 window.deleteProduct = deleteProduct;
 window.previewImage = previewImage;
@@ -51,3 +51,8 @@ window.previewImage = previewImage;
 
 // =====================( orders )===================== //
 displayOrders(getStoredOrders());
+
+document.getElementById("edit-order").addEventListener('click', editOrder);
+document.getElementById("delete-order").addEventListener('click', confirmDeleteOrder);
+window.deleteOrderById = deleteOrderById;
+window.updateOrderById = updateOrderById;
