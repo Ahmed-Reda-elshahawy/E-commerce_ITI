@@ -57,7 +57,7 @@
 
                 <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
                     <a class="navbar-brand fw-bold" href="#">
-                        <span>Dash</span><span class="text-black-50">Saler</span>
+                        <span>Dash</span><span class="text-black-50">seller</span>
                     </a>
                     <div class="navbar-nav align-items-center ms-auto"> 
                         <div class="nav-item dropdown">
@@ -89,8 +89,8 @@
                     <div class="table-container">
                         <table class="table table-light text-center products-table" data-toggle="table">
                             <div class="mb-2">
-                                <input type="search" name="searchByName" id="productsSearch" class="px-2 py-1 rounded"
-                                    placeholder="search">
+                                <!-- <input type="search" name="searchByName" id="productsSearch" class="px-2 py-1 rounded"
+                                    placeholder="search"> -->
                             </div>
                             <caption>Products Data</caption>
                             <button class="btn btn-primary" id="add-btn" data-bs-target="#addModal" data-bs-toggle="modal">
@@ -135,8 +135,8 @@
                     <div class="table-container d-none">
                         <table class="table table-light text-center orders-table">
                             <div class="mb-2">
-                                <input type="search" name="searchByName" id="ordersSearch" class="px-2 py-1 rounded"
-                                    placeholder="search">
+                                <!-- <input type="search" name="searchByName" id="ordersSearch" class="px-2 py-1 rounded"
+                                    placeholder="search"> -->
                             </div>
                             <caption>Orders Data</caption>
                             <thead>
@@ -305,6 +305,53 @@
                             </div>
                         </div>
                     </div>
+                     <!-- Update Modal for orders -->
+                     <div class="modal fade" id="updateModalForOrder" tabindex="-1" aria-labelledby="updateModalLabelO"
+                     aria-hidden="true">
+                     <div class="modal-dialog">
+                         <div class="modal-content">
+                             <div class="modal-header">
+                                 <h5 class="modal-title">Update Data</h5>
+                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                     aria-label="Close"></button>
+                             </div>
+                             <div class="modal-body py-4 text-center fw-medium">
+                                 <form action="">
+                                     <div class="form-floating mb-3">
+                                         <select class="form-select mb-4" aria-label="Default select example"
+                                             id="selectStatus">
+                                             <option selected value="Pending">Select Order Status</option>
+                                             <option value="Pending">Pending</option>
+                                             <option value="Shipped">Shipped</option>
+                                             <option value="Delivered">Delivered</option>
+                                             <option value="Cancelled">Cancelled</option>
+                                         </select>
+                                     </div>
+                                     <div class="text-end">
+                                         <input type="button" value="Edit" class="btn btn-primary" id="edit-order">
+                                     </div>
+                                 </form>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <!-- Delete Modal for orders -->
+                 <div class="modal fade" id="deleteModalForOrder" tabindex="-1" aria-labelledby="deleteModalLabelO"
+                 aria-hidden="true">
+                 <div class="modal-dialog">
+                     <div class="modal-content">
+                         <div class="modal-body py-4 text-center fs-4 fw-bold">
+                             Are You Sure you want to delete this Order?
+                         </div>
+                         <div class="modal-footer">
+                             <button type="button" class="btn btn-secondary"
+                                 data-bs-dismiss="modal">Close</button>
+                             <button type="button" class="btn btn-danger" id="delete-order">Delete</button>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
 
                 </section>
             </main>
