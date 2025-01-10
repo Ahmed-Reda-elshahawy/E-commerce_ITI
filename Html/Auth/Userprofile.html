@@ -109,6 +109,50 @@
             
             margin-top: 100px;
         }
+
+        @media (max-width: 1024px) {
+    .navbar .container>.d-flex:first-child {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .navbar-nav>.nav-item {
+        display: inline-block;
+    }
+
+    .search-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-container input {
+        width: 80%;
+        max-width: 400px;
+    }
+
+    .navbar-collapse {
+        margin-top: 10px;
+    }
+
+    .ms-auto {
+        justify-content: center;
+    }
+
+    .icon {
+        font-size: 20px;
+    }
+}
+
     </style>
     <script>
 window.addEventListener('load', function () {
@@ -326,6 +370,7 @@ window.addEventListener('load', function () {
             </div>
         </div>
     </div>
+    
     
     <script src="../../JavaScript/Home/CommonHomeFunctions.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
