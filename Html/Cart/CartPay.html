@@ -84,19 +84,20 @@
                     <form id="payment-form">
                         <div id="credit-card-fields" class="payment-method-fields">
                             <label for="cardholder-name">Cardholder Name</label>
-                            <input type="text" id="cardholder-name" class="form-control" placeholder="Ahmed Mohamed"
-                                required>
+                            <input type="text" id="cardholder-name" class="form-control customer-name"
+                                placeholder="Ahmed Mohamed" required>
                             <div class="error-invalid-name d-none">
                                 <p class="text-danger fs-6">*Invalid User Name !!</p>
                             </div>
                             <label for="card-number" class="mt-3">Card Number</label>
-                            <input type="text" id="card-number" class="form-control" placeholder="1234 5678 9012 3456"
-                                required>
+                            <input type="text" id="card-number" class="form-control customer-card"
+                                placeholder="1234 5678 9012 3456" required>
                             <div class="error-invalid-card d-none">
                                 <p class="text-danger fs-6">*Invalid card number !!</p>
                             </div>
                             <label for="expiry-date" class="mt-3">Expiration Date</label>
-                            <input type="text" id="expiry-date" class="form-control" placeholder="MM/YY" required>
+                            <input type="text" id="expiry-date" class="form-control card-expire-date"
+                                placeholder="MM/YY" required>
                             <div class="error-invalid-date d-none">
                                 <p class="text-danger fs-6">*Invalid Expiration Date !!</p>
                             </div>
@@ -165,6 +166,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../JavaScript/Cart/Cart.js"></script>
+    <script src="../../JavaScript/modules/checkout.js" type="module"></script>
 </body>
 
 </html>
