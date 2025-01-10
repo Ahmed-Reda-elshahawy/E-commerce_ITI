@@ -74,7 +74,7 @@ function DisplayHomePageProducts() {
 
         const cardContainerSale = document.getElementById("cardContainerAllSale");
 
-        for (let i = 22; i < 35; i++) {
+        for (let i = 22; i < 37; i++) {
             const product = products[i];
                 
             const cardCol = document.createElement("div");

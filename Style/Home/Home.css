@@ -367,7 +367,7 @@ ul {
     background-color: white;
 }
 
-.NewArrivalButton:hover {
+.NewArrivalButton:hover , .shopNowButton:hover{
     background-color: black;
     color: white;
     font-weight: bold;

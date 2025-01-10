@@ -67,7 +67,7 @@
                     return;
                 }
                 var userData = {
-                    id:users.length + 1,
+                    id: users.length + 1,
                     username: name,
                     email: email,
                     password: password,
@@ -80,13 +80,11 @@
                 };
                 users.push(userData);
                 localStorage.setItem('users', JSON.stringify(users));
-                if(userType.value === 'Customer') {
+                if (userType.value === 'Customer') {
                     window.location.href = '../Home/Home.html';
-                }
-                else {
+                } else {
                     window.location.href = `../Seller/DashboardSaller.html`;
                 }
-             
             });
 
             document.getElementById('cancel').addEventListener('click', function() {
@@ -114,11 +112,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-          
         }
         form {
             width: 65%;
-
         }
         #image {
             flex: 1;
@@ -136,8 +132,6 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-           
-           
         }
         h1 {
             text-align: center;
@@ -152,7 +146,6 @@
             margin-bottom: 15px;
             width: 100%;
             padding-right: 100px;
-            
         }
         .form-group label {
             width: 40%;
@@ -204,11 +197,21 @@
         .active {
             display: block;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #image {
+                display: none;
+            }
+            #form {
+                flex: 1 1 100%;
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <div id="mainwrapper">
-        <!-- Form Section -->
         <div id="form">
             <form>
                 <div class="container">
@@ -257,7 +260,6 @@
                 </div>
             </form>
         </div>
-        <!-- Image Section -->
         <div id="image">
             <img src="../../assets/images/login6.jfif" alt="Registration Illustration">
         </div>

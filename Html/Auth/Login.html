@@ -11,8 +11,8 @@
                 event.preventDefault();
                 var email = document.getElementById('email').value;
                 var password = document.getElementById('psw').value;
-                var users = JSON.parse(localStorage.getItem(`users`)) ;
-                var admin=JSON.parse(localStorage.getItem(`admins`)) ;
+                var users = JSON.parse(localStorage.getItem(`users`)) || [];
+                var admin = JSON.parse(localStorage.getItem(`admins`)) || [];
                 console.log(admin);
                 users.forEach(user => user.currentUser = false);
                 localStorage.setItem('users', JSON.stringify(users));
@@ -21,16 +21,16 @@
                     if (users[i].email == email && users[i].password == password) {
                         users[i].currentUser = true;
                         localStorage.setItem('users', JSON.stringify(users));
-                        
-                         if(users[i].role == 'customer') {
+                        if (users[i].role == 'customer') {
                             window.location.href = "../Home/Home.html";
                             return;
+                        } else {
+                            window.location.href = "../Seller/DashBoardSaller.html";
+                            return;
                         }
-                        else{   window.location.href = "../Seller/DashBoardSaller.html";
-                        return;}
                     }
                 }
-                
+
                 for (var i = 0; i < admin.length; i++) {
                     if (admin[i].Email == email && admin[i].Password == password) {
                         admin[i].currentUser = true;
@@ -39,7 +39,7 @@
                         return;
                     }
                 }
-               
+
                 h3.classList.add('active');
                 h3.innerHTML = 'Invalid Email or Password';
             });
@@ -87,7 +87,6 @@
             border-radius: 10px;
         }
         .container {
-           
             display: flex;
             flex-direction: column;
             width: 100%;
@@ -103,14 +102,11 @@
         }
         .form-group {
             display: flex;
-            align-items: center;
+            flex-direction: column;
             margin-bottom: 15px;
-            width: 100%;
         }
         .form-group label {
-            width: 30%;
-            text-align: right;
-            margin-right: 10px;
+            margin-bottom: 5px;
         }
         .form-group input[type="text"],
         .form-group input[type="password"] {
@@ -157,11 +153,31 @@
         .active {
             display: block;
         }
+
+       
+        @media (max-width: 768px) {
+            #image {
+                display: none;
+            }
+            #form {
+                flex: 1 1 100%;
+                padding: 20px;
+            }
+            .form-group label {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 5px;
+            }
+            .form-group input[type="text"],
+            .form-group input[type="password"] {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <div id="mainwrapper">
-        <!-- Form Section -->
+        
         <div id="form">
             <form>
                 <div class="container">
@@ -184,7 +200,7 @@
                 </div>
             </form>
         </div>
-        <!-- Image Section -->
+       
         <div id="image">
             <img src="../../assets/images/login3.jfif" alt="Login Illustration">
         </div>
