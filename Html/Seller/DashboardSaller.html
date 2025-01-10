@@ -42,21 +42,13 @@
                         <span class="d-none d-md-block">Orders</span>
                     </button>
                 </li>
-                <li class=" w-100 p-2" data-section="charts">
-                    <button
-                        class="w-100 mx-auto d-md-flex flex-md-column align-items-md-center mx-xl-0 flex-xl-row gap-2">
-                        <i class="fa-solid fa-shop p-2 bg-dark bg-opacity-10 rounded-circle"></i>
-                        <span class="d-none d-md-block">charts</span>
-                    </button>
-                </li>
-                
-                <!-- <li class="w-100 p-2" data-section="charts">
+                <li class="w-100 p-2" data-section="charts">
                     <button
                         class="w-100 mx-auto d-md-flex flex-md-column align-items-md-center mx-xl-0 flex-xl-row gap-2">
                         <i class="fa-solid fa-chart-pie p-2 bg-dark bg-opacity-10 rounded-circle"></i>
                         <span class="d-none d-md-block">Charts</span>
                     </button>
-                </li> -->
+                </li>
             </ul>
         </aside>
         <div class="container position-relative d-flex min-vh-100 col-10">
@@ -67,12 +59,12 @@
                     <a class="navbar-brand fw-bold" href="#">
                         <span>Dash</span><span class="text-black-50">seller</span>
                     </a>
-                    <div class="navbar-nav align-items-center ms-auto"> 
+                    <div class="navbar-nav align-items-center ms-auto">
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                 <img class="rounded-circle me-lg-2" src="../../assets/images/user.jpg" alt="user-img"
                                     style="width: 40px; height: 40px;">
-                                <span class="d-none d-lg-inline-flex"></span>     
+                                <span class="d-none d-lg-inline-flex"></span>
                                 <!-- up the name on top left -->
                             </a>
                             <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
@@ -101,9 +93,10 @@
                                     placeholder="search"> -->
                             </div>
                             <caption>Products Data</caption>
-                            <button class="btn btn-primary" id="add-btn" data-bs-target="#addModal" data-bs-toggle="modal">
+                            <button class="btn btn-primary" id="add-btn" data-bs-target="#addModal"
+                                data-bs-toggle="modal">
                                 add product
-                            </button>                            
+                            </button>
                             <thead>
                                 <tr>
                                     <th>Id</th>
@@ -139,7 +132,7 @@
                     </div>
 
 
-                    
+
                     <div class="table-container d-none">
                         <table class="table table-light text-center orders-table">
                             <div class="mb-2">
@@ -184,7 +177,8 @@
                     </div>
 
                     <!-- add -->
-                    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel"
+                        aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body py-4 text-center fw-bold">
@@ -199,34 +193,39 @@
                                         </div> -->
 
                                         <div class="form-floating mb-4">
-                                            <input type="url" class="form-control" id="addProductImg" placeholder="Img"  >
+                                            <input type="url" class="form-control" id="addProductImg" placeholder="Img">
                                             <label for="addProductImg">Photo</label>
                                             <div class="text-danger small" id="errorAddProductImg"></div>
                                         </div>
                                         <div class="form-floating mb-4">
-                                            <input type="text" class="form-control" id="addProductCategory" placeholder="Category">
+                                            <input type="text" class="form-control" id="addProductCategory"
+                                                placeholder="Category">
                                             <label for="addProductCategory">Category</label>
                                             <div class="text-danger small" id="erroraddProductCategory"></div>
                                         </div>
                                         <div class="form-floating mb-4">
-                                            <input type="text" class="form-control" id="addProductName" placeholder="Name">
+                                            <input type="text" class="form-control" id="addProductName"
+                                                placeholder="Name">
                                             <label for="addProductName">Name</label>
                                             <div class="text-danger small" id="errorAddProductName"></div>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="addProductPrice" placeholder="Price">
+                                            <input type="text" class="form-control" id="addProductPrice"
+                                                placeholder="Price">
                                             <label for="addProductPrice">Price</label>
                                             <div class="text-danger small" id="errorAddProductPrice"></div>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="addProductStock" placeholder="Stock">
+                                            <input type="text" class="form-control" id="addProductStock"
+                                                placeholder="Stock">
                                             <label for="addProductStock">Stock</label>
                                             <div class="text-danger small" id="errorAddProductStock"></div>
                                         </div>
 
 
                                         <div class="text-end">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
                                             <input type="submit" value="Add" class="btn btn-success">
                                         </div>
                                     </form>
@@ -304,7 +303,7 @@
                                                 placeholder="stock">
                                             <label for="floatingInputPS">in stock</label>
                                         </div>
-                                        
+
                                         <div class="text-end">
                                             <input type="submit" value="Edit" class="btn btn-primary" id="edit-product">
                                         </div>
@@ -313,52 +312,52 @@
                             </div>
                         </div>
                     </div>
-                     <!-- Update Modal for orders -->
-                     <div class="modal fade" id="updateModalForOrder" tabindex="-1" aria-labelledby="updateModalLabelO"
-                     aria-hidden="true">
-                     <div class="modal-dialog">
-                         <div class="modal-content">
-                             <div class="modal-header">
-                                 <h5 class="modal-title">Update Data</h5>
-                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                     aria-label="Close"></button>
-                             </div>
-                             <div class="modal-body py-4 text-center fw-medium">
-                                 <form action="">
-                                     <div class="form-floating mb-3">
-                                         <select class="form-select mb-4" aria-label="Default select example"
-                                             id="selectStatus">
-                                             <option selected value="Pending">Select Order Status</option>
-                                             <option value="Pending">Pending</option>
-                                             <option value="Shipped">Shipped</option>
-                                             <option value="Delivered">Delivered</option>
-                                             <option value="Cancelled">Cancelled</option>
-                                         </select>
-                                     </div>
-                                     <div class="text-end">
-                                         <input type="button" value="Edit" class="btn btn-primary" id="edit-order">
-                                     </div>
-                                 </form>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-                 <!-- Delete Modal for orders -->
-                 <div class="modal fade" id="deleteModalForOrder" tabindex="-1" aria-labelledby="deleteModalLabelO"
-                 aria-hidden="true">
-                 <div class="modal-dialog">
-                     <div class="modal-content">
-                         <div class="modal-body py-4 text-center fs-4 fw-bold">
-                             Are You Sure you want to delete this Order?
-                         </div>
-                         <div class="modal-footer">
-                             <button type="button" class="btn btn-secondary"
-                                 data-bs-dismiss="modal">Close</button>
-                             <button type="button" class="btn btn-danger" id="delete-order">Delete</button>
-                         </div>
-                     </div>
-                 </div>
-             </div>
+                    <!-- Update Modal for orders -->
+                    <div class="modal fade" id="updateModalForOrder" tabindex="-1" aria-labelledby="updateModalLabelO"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Update Data</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body py-4 text-center fw-medium">
+                                    <form action="">
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select mb-4" aria-label="Default select example"
+                                                id="selectStatus">
+                                                <option selected value="Pending">Select Order Status</option>
+                                                <option value="Pending">Pending</option>
+                                                <option value="Shipped">Shipped</option>
+                                                <option value="Delivered">Delivered</option>
+                                                <option value="Cancelled">Cancelled</option>
+                                            </select>
+                                        </div>
+                                        <div class="text-end">
+                                            <input type="button" value="Edit" class="btn btn-primary" id="edit-order">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Delete Modal for orders -->
+                    <div class="modal fade" id="deleteModalForOrder" tabindex="-1" aria-labelledby="deleteModalLabelO"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body py-4 text-center fs-4 fw-bold">
+                                    Are You Sure you want to delete this Order?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-danger" id="delete-order">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
                 </section>
@@ -374,7 +373,7 @@
     <script src="../../JavaScript/Seller/DashboardSaller.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    
+
 </body>
 
 </html>
