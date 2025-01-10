@@ -39,7 +39,7 @@
         #delete {
             color: red;
         }
-        #logOut {
+        #logout {
             color: red;
         }
         #dataWrapper {
@@ -86,6 +86,16 @@
             background-color: white;
             width: 100%;
         }
+        #profileImage {
+    margin-top: 100px;     
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px 0;
+    object-fit: cover;
+    border: 2px solid gray;
+}
+
         #Leftwrapper h2 {
             margin-top: 70px;
             color: gray;
@@ -96,7 +106,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            border: 1px solid black;
+            
+            margin-top: 100px;
         }
     </style>
     <script>
@@ -167,6 +178,16 @@ window.addEventListener('load', function () {
     });
 
     document.getElementById('logOut').addEventListener('click', function () {
+        var user = JSON.parse(localStorage.getItem('users'));
+        for(var i=0;i<user.length;i++){
+
+            user[i].currentUser = false;
+            localStorage.setItem('users', JSON.stringify(user));
+
+        }
+        window.location.href = '../../Html/Auth/Login.html';
+    });
+    document.getElementById('logout').addEventListener('click', function () {
         var user = JSON.parse(localStorage.getItem('users'));
         for(var i=0;i<user.length;i++){
 
@@ -266,12 +287,13 @@ window.addEventListener('load', function () {
             <button>My Address Book</button>
             <button>Account Setting</button>
             <hr>
-            <button id="logOut">Logout</button>
+            <button id="logout">Logout</button>
             <button id="delete">Delete Account</button>
         </div>
     </div>
 
     <div id="Rightwrapper">
+        <img id="profileImage" src="../../assets/images/UserProfile.jpg" alt="Profile Image">
         <h1>Personal Details</h1>
         <div id="dataWrapper">
             <div class="dataItem">
@@ -303,9 +325,8 @@ window.addEventListener('load', function () {
                 </div>
             </div>
         </div>
-        
-        </div>
     </div>
+    
     <script src="../../JavaScript/Home/CommonHomeFunctions.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
