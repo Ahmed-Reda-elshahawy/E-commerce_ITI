@@ -46,7 +46,8 @@ function addToCart() {
         : 'Backpack',
       price: selectedProduct.price,
       image: selectedProduct.images[0] || 'https://via.placeholder.com/80',
-      quantity: 1
+      quantity: 1,
+      stock: selectedProduct.stock
     };
 
     // Retrieve the current cart from localStorage or initialize an empty array

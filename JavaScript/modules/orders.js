@@ -19,11 +19,11 @@ export function displayOrders(storedOrders) {
                 <td>${storedOrders[i].date}</td>
                 <td>${storedOrders[i].userName}</td>
                 <td>
-                ${storedOrders[i].products.map(p => `(${p.name} => ${p.stock})<br/>`)}
+                ${storedOrders[i].products.map(p => `(productId: ${p.id} => quantity: ${p.quantity})<br/>`)}
                 </td>
                 <td>$${storedOrders[i].totalAmount}</td>
                 <td class="fw-bold text-black-50">${storedOrders[i].status}</td>
-                <td>${storedOrders[i].sellerName}</td>
+                <td>${storedOrders[i].sellerIds.map(s => ` [${s}]`)}</td>
                 <td>
                     <button class="btn edit-btn" data-bs-target="#updateModalForOrder"
                         data-bs-toggle="modal" onclick="updateOrderById(${storedOrders[i].orderId})">

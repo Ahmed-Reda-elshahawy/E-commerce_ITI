@@ -81,36 +81,46 @@
             <h2>Payment Info</h2>
             <!-- <p id="payment-summary"><strong>Total:</strong> $<span id="cart-total-payment">0.00</span></p> -->
             <form id="payment-form">
-                <div class="form-group mt-4">
+                <!-- <div class="form-group mt-4">
                     <label for="payment-method">Payment Method</label>
                     <select id="payment-method" class="form-control">
                         <option value="">Select Payment Method</option>
                         <option value="credit-card">Credit Card</option>
                         <option value="paypal">PayPal</option>
                     </select>
-                </div>
+                </div> -->
 
-                <div id="credit-card-fields" class="payment-method-fields" style="display: none;">
+                <div id="credit-card-fields" class="payment-method-fields mt-5">
                     <label for="cardholder-name">Cardholder Name</label>
-                    <input type="text" id="cardholder-name" placeholder="John Doe" id="customer-name">
-                    <label for="card-number">Card Number</label>
-                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" id="customer-card">
-                    <label for="expiry-date">Expiration Date</label>
-                    <input type="text" id="expiry-date" placeholder="MM/YY" id="card-expire-date">
+                    <input type="text" id="cardholder-name" placeholder="John Doe" class="customer-name" required>
+                    <div class="error-invalid-name d-none">
+                        <p class="text-danger fs-6">*Invalid User Name !!</p>
+                    </div>
+                    <label for="card-number" class=" mt-3">Card Number</label>
+                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" class="customer-card"
+                        required>
+                    <div class="error-invalid-card d-none">
+                        <p class="text-danger fs-6">*Invalid card number !!</p>
+                    </div>
+                    <label for="expiry-date" class=" mt-3">Expiration Date</label>
+                    <input type="text" id="expiry-date" placeholder="MM/YY" class="card-expire-date" required>
+                    <div class="error-invalid-date d-none">
+                        <p class="text-danger fs-6">*Invalid Expiration Date !!</p>
+                    </div>
                 </div>
 
-
+                <!-- 
                 <div id="paypal-fields" class="payment-method-fields" style="display: none;">
                     <p>You will be redirected to PayPal to complete your payment.</p>
-                </div>
+                </div> -->
 
 
-                <div id="bank-transfer-fields" class="payment-method-fields" style="display: none;">
+                <!-- <div id="bank-transfer-fields" class="payment-method-fields" style="display: none;">
                     <p>Please transfer the amount to the following account:</p>
                     <p><strong>Account Name:</strong> Example Corp</p>
                     <p><strong>Account Number:</strong> 1234 5678 9012</p>
                     <p><strong>Bank Name:</strong> Example Bank</p>
-                </div>
+                </div> -->
 
                 <button type="button" class="btn-checkout" id="checkout-btn">Checkout</button>
             </form>

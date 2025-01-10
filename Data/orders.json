@@ -10,11 +10,11 @@
         "products": [
             {
                 "name": "product1",
-                "stock": 5
+                "quantity": 5
             },
             {
                 "name": "product2",
-                "stock": 4
+                "quantity": 4
             }
         ],
         "totalAmount": 100.00,
@@ -33,11 +33,11 @@
         "products": [
             {
                 "name": "product3",
-                "stock": 5
+                "quantity": 5
             },
             {
                 "name": "product4",
-                "stock": 4
+                "quantity": 4
             }
         ],
         "totalAmount": 200.00,

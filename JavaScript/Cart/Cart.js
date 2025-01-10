@@ -15,6 +15,9 @@ function loadCart() {
     let totalCartPrice = 0;
 
     cart.forEach((item, index) => {
+        const products = JSON.parse(localStorage.getItem('products')) || [];
+        const checkedProduct = products.find((product) => product.id === item.id);
+
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
         cartItem.innerHTML = `
@@ -25,10 +28,9 @@ function loadCart() {
                 <p><strong>Total:</strong> $<span class="item-total">${(item.price * item.quantity).toFixed(2)}</span></p>
             </div>
             <div class="cart-item-quantity">
-                <input type="number" value="${item.quantity}" min="1" class="quantity-input" data-index="${index}">
+                <input type="number" value="${item.quantity}" min="1" max="${checkedProduct.stock}" class="quantity-input" data-index="${index}">
             </div>
         `;
-
         cartItemsContainer.insertBefore(cartItem, cartTotalElement); // Ensure total element is at the end.
         totalCartPrice += item.price * item.quantity;
     });
@@ -63,31 +65,28 @@ function loadCart() {
             // Update the total cart price
             const newTotalCartPrice = cart.reduce((acc, curr) => acc + curr.price * curr.quantity, 0);
             cartTotalElement.innerHTML = `<p><strong>Total Cart Price:</strong> $${newTotalCartPrice.toFixed(2)}</p>`;
-            // total price in payment
-            const totalPay = document.getElementById("cart-total-payment");
-            totalPay.innerText = newTotalCartPrice.toFixed(2);
         });
     });
 
-    // Payment Method Selection Logic
-    const paymentMethodSelect = document.getElementById('payment-method');
-    const paymentMethodFields = document.querySelectorAll('.payment-method-fields');
+    // // Payment Method Selection Logic
+    // const paymentMethodSelect = document.getElementById('payment-method');
+    // const paymentMethodFields = document.querySelectorAll('.payment-method-fields');
 
-    paymentMethodSelect.addEventListener('change', (event) => {
-        const selectedMethod = event.target.value;
+    // paymentMethodSelect.addEventListener('change', (event) => {
+    //     const selectedMethod = event.target.value;
 
-        // Hide all payment method fields
-        paymentMethodFields.forEach(field => {
-            field.style.display = 'none';
-        });
+    //     // Hide all payment method fields
+    //     paymentMethodFields.forEach(field => {
+    //         field.style.display = 'none';
+    //     });
 
-        // Show the selected payment method fields
-        if (selectedMethod === 'credit-card') {
-            document.getElementById('credit-card-fields').style.display = 'block';
-        } else if (selectedMethod === 'paypal') {
-            document.getElementById('paypal-fields').style.display = 'block';
-        }
-    });
+    //     // Show the selected payment method fields
+    //     if (selectedMethod === 'credit-card') {
+    //         document.getElementById('credit-card-fields').style.display = 'block';
+    //     } else if (selectedMethod === 'paypal') {
+    //         document.getElementById('paypal-fields').style.display = 'block';
+    //     }
+    // });
 }
 
 loadCart();
