@@ -60,7 +60,7 @@ export function confirmDeleteProduct() {
     // Filter out the product being deleted
     const newProducts = products.filter(product => product.id !== currentProductIdToDelete);
 
-    // Update the stock for products with the same brand (category)
+    // Update the stock for products with the same category
     const deletedCategory = productToDelete.category;
     newProducts.forEach(product => {
         if (product.category === deletedCategory) {
@@ -71,17 +71,31 @@ export function confirmDeleteProduct() {
     // Save the updated products list to localStorage
     setStoredProducts(newProducts);
 
-    // Remove the product row from the table without refreshing all products
+    // Find the row for the deleted product and remove it from the table
     const productRow = document.querySelector(`tr[data-product-id="${currentProductIdToDelete}"]`);
     if (productRow) {
         productRow.remove();
     }
+
+    // Update the stock of other products in the same category in the table without re-rendering everything
+    const allRows = document.querySelectorAll('.products-table tbody tr');
+    allRows.forEach(row => {
+        const productId = parseInt(row.getAttribute('data-product-id'), 10);
+        const product = newProducts.find(p => p.id === productId);
+        if (product && product.category === deletedCategory) {
+            const stockCell = row.querySelector('td:nth-child(6)'); // Assuming stock is the 6th column
+            if (stockCell) {
+                stockCell.textContent = product.stock; // Update stock in the table
+            }
+        }
+    });
 
     // Hide the delete modal
     const deleteModal = document.querySelector('#deleteModalForProduct');
     const modal = bootstrap.Modal.getInstance(deleteModal);
     modal.hide();
 }
+
 
 
 //-------------------------------------------------------------------------------------
