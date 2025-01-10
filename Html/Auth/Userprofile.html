@@ -36,23 +36,26 @@
             font-size: 20px;
             cursor: pointer;
         }
-        .delete {
+        #delete {
+            color: red;
+        }
+        #logOut {
             color: red;
         }
         #dataWrapper {
             display: flex;
-            flex-direction: row; /* Arrange all items in a row */
-            justify-content: space-between; /* Add spacing between items */
+            flex-direction: row; 
+            justify-content: space-between;
             margin-top: 50px;
             width: 100%;
-            align-items: flex-start; /* Align items to the top */
+            align-items: flex-start; 
         }
         .dataItem {
             display: flex;
-            flex-direction: column; /* Label above value */
+            flex-direction: column;
             align-items: center;
             text-align: center;
-            width: 20%; /* Adjust width for uniformity */
+            width: 20%; 
             font-size: 16px;
         }
         .dataDisplay {
@@ -97,11 +100,11 @@
     </style>
     <script>
 window.addEventListener('load', function () {
-    // Retrieve users from localStorage
+   
     var users = JSON.parse(localStorage.getItem('users')) || [];
     var userIndex = users.findIndex(user => user.currentUser);
 
-    // Fallback user for testing if no user is found
+   
     if (userIndex === -1) {
         users.push({
             currentUser: true,
@@ -116,50 +119,85 @@ window.addEventListener('load', function () {
 
     var user = users[userIndex];
 
-    // Populate UI with user data
-    document.getElementById('username').innerText = user.username;
+   
     document.getElementById('username1').innerText = user.username;
+    document.getElementById('username').innerText = user.username;
     document.getElementById('email').innerText = user.email;
     document.getElementById('phone').innerText = user.phone;
     document.getElementById('address').innerText = user.address;
 
-    // Add edit functionality
+   
     document.querySelectorAll('.editButton').forEach((button) => {
         button.addEventListener('click', function () {
             const parent = this.closest('.dataItem');
             const displayValue = parent.querySelector('h3');
 
             if (!parent.querySelector('input')) {
-                // Create an input field and populate it with the current value
+                
                 const inputField = document.createElement('input');
                 inputField.type = 'text';
                 inputField.value = displayValue.innerText;
                 inputField.dataset.field = displayValue.id;
 
-                // Replace the display value with the input field
+               
                 displayValue.style.display = 'none';
                 parent.appendChild(inputField);
 
-                // Focus the input field
+               
                 inputField.focus();
 
-                // Save changes on blur
+              
                 inputField.addEventListener('blur', function () {
                     const fieldName = inputField.dataset.field;
                     const newValue = inputField.value;
 
-                    // Update UI and Local Storage
+                   
                     displayValue.innerText = newValue;
                     users[userIndex][fieldName] = newValue;
+                    document.getElementById('username1').innerText = user.username;
                     localStorage.setItem('users', JSON.stringify(users));
 
-                    // Switch back to display mode
+                    
                     displayValue.style.display = 'block';
                     inputField.remove();
                 });
             }
         });
     });
+
+    document.getElementById('logOut').addEventListener('click', function () {
+        var user = JSON.parse(localStorage.getItem('users'));
+        for(var i=0;i<user.length;i++){
+
+            user[i].currentUser = false;
+            localStorage.setItem('users', JSON.stringify(user));
+
+        }
+        window.location.href = '../../Html/Auth/Login.html';
+    });
+
+    document.getElementById('delete').addEventListener('click', function () {
+    // Retrieve users from localStorage
+    var users = JSON.parse(localStorage.getItem('users'));
+    var currentUserIndex = users.findIndex(user => user.currentUser);
+
+    if (currentUserIndex !== -1) {
+        
+        const isConfirmed = confirm(`Are you sure you want to delete your account, ${users[currentUserIndex].username}?`);
+
+        if (isConfirmed) {
+            // Remove the current user
+            users.splice(currentUserIndex, 1);
+            localStorage.setItem('users', JSON.stringify(users));
+
+          
+            
+            window.location.href = '../../Html/Auth/Login.html';
+        }
+    } 
+});
+
+
 });
 
     </script>
@@ -168,7 +206,7 @@ window.addEventListener('load', function () {
     <div id="Leftwrapper">
         <div id="name">
             <h2>Welcome,</h2>
-            <h1 id="username"></h1>
+            <h1 id="username1"></h1>
         </div>
         <div id="buttons">
             <button><b>Account Overview</b></button>
@@ -176,8 +214,8 @@ window.addEventListener('load', function () {
             <button>My Address Book</button>
             <button>Account Setting</button>
             <hr>
-            <button class="delete">Logout</button>
-            <button class="delete">Delete Account</button>
+            <button id="logOut">Logout</button>
+            <button id="delete">Delete Account</button>
         </div>
     </div>
 
@@ -187,7 +225,7 @@ window.addEventListener('load', function () {
             <div class="dataItem">
                 <h2>Name:</h2>
                 <div class="dataDisplay">
-                    <h3 id="username1"></h3>
+                    <h3 id="username"></h3>
                     <span class="editButton">✏️</span>
                 </div>
             </div>
