@@ -1,10 +1,12 @@
 [
     {
-        "orderId": "111",
+        "orderId": 111,
         "userId": "user111",
         "userName": "userName1",
-        "sellerId": "seller1",
-        "sellerName": "sellerName1",
+        "sellerIds": [
+            1,
+            2
+        ],
         "products": [
             {
                 "name": "product1",
@@ -21,11 +23,13 @@
         "date": "1/1/2025"
     },
     {
-        "orderId": "222",
+        "orderId": 222,
         "userId": "user222",
         "userName": "userName2",
-        "sellerId": "seller2",
-        "sellerName": "sellerName2",
+        "sellerIds": [
+            2,
+            3
+        ],
         "products": [
             {
                 "name": "product3",

@@ -18,7 +18,7 @@ export function handleActiveSectionSaller() {
                 ordersTableContainer.classList.add("d-none");
             }
             else if (this.getAttribute("data-section") == "orders") {
-                ordersTableContainer.classList.add("d-none");                    //remove 
+                ordersTableContainer.classList.remove("d-none");                    //remove 
                 productsTableContainer.classList.add("d-none");
             }
         });

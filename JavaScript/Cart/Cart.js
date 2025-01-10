@@ -63,6 +63,9 @@ function loadCart() {
             // Update the total cart price
             const newTotalCartPrice = cart.reduce((acc, curr) => acc + curr.price * curr.quantity, 0);
             cartTotalElement.innerHTML = `<p><strong>Total Cart Price:</strong> $${newTotalCartPrice.toFixed(2)}</p>`;
+            // total price in payment
+            const totalPay = document.getElementById("cart-total-payment");
+            totalPay.innerText = newTotalCartPrice.toFixed(2);
         });
     });
 
@@ -83,8 +86,6 @@ function loadCart() {
             document.getElementById('credit-card-fields').style.display = 'block';
         } else if (selectedMethod === 'paypal') {
             document.getElementById('paypal-fields').style.display = 'block';
-        } else if (selectedMethod === 'bank-transfer') {
-            document.getElementById('bank-transfer-fields').style.display = 'block';
         }
     });
 }
