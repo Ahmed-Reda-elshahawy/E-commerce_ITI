@@ -9,10 +9,12 @@
         ],
         "products": [
             {
+                "id": 1000,
                 "name": "product1",
                 "quantity": 5
             },
             {
+                "id": 2000,
                 "name": "product2",
                 "quantity": 4
             }

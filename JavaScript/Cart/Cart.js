@@ -24,6 +24,7 @@ function loadCart() {
             <img src="${item.image}" alt="${item.name}" class="product-image">
             <div class="cart-item-details">
                 <p><strong>Product:</strong> ${item.name}</p>
+                <p><strong>In Stock:</strong> ${checkedProduct.stock}</p>
                 <p><strong>Price:</strong> $${item.price.toFixed(2)}</p>
                 <p><strong>Total:</strong> $<span class="item-total">${(item.price * item.quantity).toFixed(2)}</span></p>
             </div>

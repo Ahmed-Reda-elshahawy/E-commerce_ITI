@@ -105,7 +105,12 @@ checkoutBtn.addEventListener("click", function (event) {
         setStoredOrders(orders);
         setStoredProducts(updateProductsAfterCheckout());
         localStorage.removeItem('cart');
+        document.getElementById('cart-items').innerHTML = "";
 
+        document.querySelector('.success-mess').classList.remove('d-none');
+        setTimeout(() => {
+            document.querySelector('.success-mess').classList.add('d-none');
+        }, 2000);
 
 
         paymentForm.reset();
