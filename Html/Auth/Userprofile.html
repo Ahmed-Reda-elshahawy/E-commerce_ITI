@@ -98,28 +98,49 @@
             margin-top: 100px;
         }
 
-        /* Responsive Styles */
-        @media (max-width: 900px) {
-            body {
-                font-size: 14px; /* Reduce the general font size */
-            }
-            h1 {
-                font-size: 18px;
-            }
-            h2 {
-                font-size: 16px;
-            }
-            h3 {
-                font-size: 14px;
-            }
-            #Leftwrapper {
-                display: none; /* Hide the left sidebar */
-            }
-            #Rightwrapper {
-                width: 100%; /* Expand the main content */
-                padding: 10px;
-            }
-        }
+        @media (max-width: 1024px) {
+    .navbar .container>.d-flex:first-child {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .navbar-nav>.nav-item {
+        display: inline-block;
+    }
+
+    .search-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-container input {
+        width: 80%;
+        max-width: 400px;
+    }
+
+    .navbar-collapse {
+        margin-top: 10px;
+    }
+
+    .ms-auto {
+        justify-content: center;
+    }
+
+    .icon {
+        font-size: 20px;
+    }
+}
+
     </style>
     <script>
         window.addEventListener('load', function () {
@@ -263,5 +284,11 @@
             </div>
         </div>
     </div>
+    
+    
+    <script src="../../JavaScript/Home/CommonHomeFunctions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+    <script src="../../assets/Bootstrap/bootstrap.bundle.js"></script>
 </body>
 </html>

@@ -19,17 +19,10 @@ function loadProductDetails() {
     document.getElementById('product-image').src = selectedProduct.images[0] || 'https://via.placeholder.com/400';
   } else {
     // If no product is selected, redirect to the homepage
-    window.location.href = 'index.html';
+    window.location.href = '../../Html/Home/Home.html';
   }
 }
 loadProductDetails()
-
-
-
-
-
-
-
 
 
 
@@ -46,7 +39,8 @@ function addToCart() {
         : 'Backpack',
       price: selectedProduct.price,
       image: selectedProduct.images[0] || 'https://via.placeholder.com/80',
-      quantity: 1
+      quantity: 1,
+      stock: selectedProduct.stock
     };
 
     // Retrieve the current cart from localStorage or initialize an empty array
@@ -70,4 +64,12 @@ function addToCart() {
 }
 
 // Add event listener to the "Add to Cart" button
-document.getElementById('add-to-cart').addEventListener('click', addToCart);
+document.getElementById('add-to-cart').addEventListener('click', function () {
+  const users = JSON.parse(localStorage.getItem('users'));
+  const IsLogin = users.find(user => user.currentUser == true);
+  if (IsLogin) {
+    addToCart();
+  } else {
+    window.location.href = '../../Html/Auth/Login.html';
+  }
+});

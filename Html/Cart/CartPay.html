@@ -9,12 +9,10 @@
     <link rel="stylesheet" href="../../Style/Cart/CartPay.css">
     <link rel="stylesheet" href="../../Style/Home/Home.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">BagHub</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -35,9 +33,9 @@
                         <a class="nav-link itemsnavhover" href="../Home/AboutUs.html">About Us</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ms-auto d-flex justify-content-end align-items-center gap-3 w-100">
-                    <li class="nav-item searchGroup navbar-nav d-flex justify-content-end align-items-center gap-2">
-                        <div class="search-container d-flex justify-content-center align-items-center">
+                <ul class="navbar-nav ms-auto d-flex align-items-center gap-3">
+                    <li class="nav-item searchGroup d-flex align-items-center">
+                        <div class="search-container">
                             <input type="text" class="form-control" placeholder="Search..." id="searchInput">
                             <ul id="searchResults"></ul>
                         </div>
@@ -51,12 +49,11 @@
                             <li class="dropdown-item"><a id="login" class="nav-link w-100" href="#">Login</a></li>
                             <li class="dropdown-item"><a id="signUp" class="nav-link w-100" href="#">Sign Up</a></li>
                         </ul>
-                        <ul class="dropdown-menu dropdown-menu-end afterlogin" id="userDropdown2">
+                        <ul class="dropdown-menu dropdown-menu-end afterlogin d-none" id="userDropdown2">
                             <li class="dropdown-item"><a id="logOut" class="nav-link w-100" href="#">Log Out</a></li>
                             <li class="dropdown-item"><a id="sitting" class="nav-link w-100" href="#"><i
                                         class="fa-solid fa-gear p-2"></i>Profile</a></li>
                         </ul>
-
                     </li>
                     <li class="nav-item">
                         <a class="icon iconhover" href="../../Html/Cart/CartPay.html"><i
@@ -67,53 +64,48 @@
         </div>
     </nav>
 
-    <div class="shopping-page-container" style="margin-top: 60px;">
-        <!-- Shopping Cart Section -->
-        <div id="cart-container" class="cart-container">
-            <h2>Shopping Cart</h2>
-            <div id="cart-items">
-
+    <div class="container mt-5 pt-5">
+        <div class="row g-4">
+            <!-- Shopping Cart Section -->
+            <div class="col-lg-6 col-md-12">
+                <div class="cart-container p-4 border rounded">
+                    <h2>Shopping Cart</h2>
+                    <div id="cart-items"></div>
+                </div>
             </div>
-        </div>
 
-
-        <div id="payment-container" class="payment-container">
-            <h2>Payment Info</h2>
-            <!-- <p id="payment-summary"><strong>Total:</strong> $<span id="cart-total-payment">0.00</span></p> -->
-            <form id="payment-form">
-                <div class="form-group mt-4">
-                    <label for="payment-method">Payment Method</label>
-                    <select id="payment-method" class="form-control">
-                        <option value="">Select Payment Method</option>
-                        <option value="credit-card">Credit Card</option>
-                        <option value="paypal">PayPal</option>
-                    </select>
+            <!-- Payment Section -->
+            <div class="col-lg-6 col-md-12">
+                <div class="payment-container p-4 border rounded">
+                    <h2>Payment Info</h2>
+                    <div class="alert alert-success success-mess d-none" role="alert">
+                        Your order has been received (:
+                    </div>
+                    <form id="payment-form">
+                        <div id="credit-card-fields" class="payment-method-fields">
+                            <label for="cardholder-name">Cardholder Name</label>
+                            <input type="text" id="cardholder-name" class="form-control customer-name"
+                                placeholder="Ahmed Mohamed" required>
+                            <div class="error-invalid-name d-none">
+                                <p class="text-danger fs-6">*Invalid User Name !!</p>
+                            </div>
+                            <label for="card-number" class="mt-3">Card Number</label>
+                            <input type="text" id="card-number" class="form-control customer-card"
+                                placeholder="1234 5678 9012 3456" required>
+                            <div class="error-invalid-card d-none">
+                                <p class="text-danger fs-6">*Invalid card number !!</p>
+                            </div>
+                            <label for="expiry-date" class="mt-3">Expiration Date</label>
+                            <input type="text" id="expiry-date" class="form-control card-expire-date"
+                                placeholder="MM/YY" required>
+                            <div class="error-invalid-date d-none">
+                                <p class="text-danger fs-6">*Invalid Expiration Date !!</p>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary mt-4 w-100" id="checkout-btn">Checkout</button>
+                    </form>
                 </div>
-
-                <div id="credit-card-fields" class="payment-method-fields" style="display: none;">
-                    <label for="cardholder-name">Cardholder Name</label>
-                    <input type="text" id="cardholder-name" placeholder="John Doe" id="customer-name">
-                    <label for="card-number">Card Number</label>
-                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" id="customer-card">
-                    <label for="expiry-date">Expiration Date</label>
-                    <input type="text" id="expiry-date" placeholder="MM/YY" id="card-expire-date">
-                </div>
-
-
-                <div id="paypal-fields" class="payment-method-fields" style="display: none;">
-                    <p>You will be redirected to PayPal to complete your payment.</p>
-                </div>
-
-
-                <div id="bank-transfer-fields" class="payment-method-fields" style="display: none;">
-                    <p>Please transfer the amount to the following account:</p>
-                    <p><strong>Account Name:</strong> Example Corp</p>
-                    <p><strong>Account Number:</strong> 1234 5678 9012</p>
-                    <p><strong>Bank Name:</strong> Example Bank</p>
-                </div>
-
-                <button type="button" class="btn-checkout" id="checkout-btn">Checkout</button>
-            </form>
+            </div>
         </div>
     </div>
 
@@ -172,11 +164,8 @@
         </footer>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../JavaScript/Cart/Cart.js"></script>
-    <script src="../../JavaScript/Home/CommonHomeFunctions.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
-    <script src="../../assets/Bootstrap/bootstrap.bundle.js"></script>
     <script src="../../JavaScript/modules/checkout.js" type="module"></script>
 </body>
 
