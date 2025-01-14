@@ -45,3 +45,43 @@ input[type="checkbox"] {
     background-color: black; 
     font-weight: bold;
 }
+
+.pagination {
+    margin-top: 20px;
+}
+
+.page-item {
+    margin: 0 4px; 
+}
+
+.page-link {
+    color: black; 
+    background-color: #ffffff; 
+    border: 1px solid #dee2e6; 
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.page-link:hover {
+    color: black; 
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+.page-item.active .page-link {
+    color: #ffffff; 
+    background-color: black; 
+    border-color: black; 
+}
+
+.page-item.disabled .page-link {
+    color: #6c757d; 
+    background-color: #ffffff; 
+    border-color: #dee2e6; 
+    cursor: not-allowed; 
+}
+
+.page-link:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25); 
+}

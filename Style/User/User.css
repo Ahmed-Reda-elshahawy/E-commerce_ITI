@@ -21,6 +21,19 @@
     background-color: #F6F6F6;
     border-radius: 30px;
     padding: 20px;
+    height: 90vh;
+}
+
+@media (min-width: 430px) and (max-width:768px) {
+    .sideContainer {
+        height: 60vh;
+    }
+}
+
+@media (min-width: 430px) and (max-width:768px) {
+   #Rightwrapper{
+    margin-top: 40px;
+   }
 }
 
 .bar {
@@ -54,7 +67,6 @@
 .bordered-box {
     display: flex;
     align-items: start; 
-    /* gap: 10px;  */
 }
 
 .infoText {

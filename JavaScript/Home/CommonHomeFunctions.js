@@ -124,10 +124,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function updateCartItemCount() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const uniqueProductCount = cart.length; // Count the number of unique products
+    const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0);
 
     const cartItemCountElement = document.getElementById('cart-item-count');
     if (cartItemCountElement) {
-        cartItemCountElement.textContent = uniqueProductCount; // Update the count display
+        if (cartItemCount > 0) {
+            cartItemCountElement.textContent = cartItemCount; // Update the cart item count display
+            cartItemCountElement.style.display = 'inline'; // Show the span
+        } else {
+            cartItemCountElement.style.display = 'none'; // Hide the span when the cart is empty
+        }
     }
 }
