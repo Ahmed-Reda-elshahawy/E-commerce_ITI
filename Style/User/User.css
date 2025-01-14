@@ -1,0 +1,111 @@
+#delete {
+    color: red;
+    border: none;
+    background-color: white;
+    text-decoration: underline;
+    text-align: start !important;
+    width: 30vw;
+}
+
+.fa-arrow-right-from-bracket {
+    background-color: #F6F6F6;
+    color: black;
+}
+
+#logOut{
+    background-color: #F6F6F6;
+    border: none;
+}
+
+.sideContainer {
+    background-color: #F6F6F6;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.bar {
+    background-color: #F6F6F6;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+#username,
+#email,
+#phone,
+#address {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 5px;
+    width: 40vw;
+}
+
+.dataItem h5{
+    width: 100px; 
+    margin: 0; 
+    text-align: start;
+}
+
+.dataDisplay {
+    display: flex;
+    align-items: start; 
+    flex-direction: row;
+}
+
+.bordered-box {
+    display: flex;
+    align-items: start; 
+    /* gap: 10px;  */
+}
+
+.infoText {
+    margin: 0; 
+    flex-grow: 1; 
+}
+
+.dataItem {
+    justify-content: start;
+}
+
+.bordered-box {
+    position: relative;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileIcon {
+    position: absolute;
+    top: -3px;
+    right: -10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.profileButton {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+#dataWrapper>div {
+    display: none;
+}
+
+.profileButton:hover {
+    background-color: black;
+    color: white;
+}
+
+.profileButton.active {
+    background-color: black;
+    color: white;
+}
