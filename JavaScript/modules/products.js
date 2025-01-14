@@ -8,6 +8,12 @@ export function setStoredProducts(products) {
     localStorage.setItem('products', JSON.stringify(products));
 }
 
+export function getStoredInCartProducts() {
+    return JSON.parse(localStorage.getItem('cart')) || [];
+}
+export function setStoredInCartProducts(cartProducts) {
+    localStorage.setItem('cart', JSON.stringify(cartProducts));
+}
 
 
 // ==== Display products data ==== //
