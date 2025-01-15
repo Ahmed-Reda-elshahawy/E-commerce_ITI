@@ -136,3 +136,4 @@ function updateCartItemCount() {
         }
     }
 }
+updateCartItemCount();
