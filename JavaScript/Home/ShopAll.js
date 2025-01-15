@@ -1,6 +1,6 @@
 import { getProductById, goToProductDetailsPage } from "../modules/products.js";
 
-// document.addEventListener("DOMContentLoaded", () => {
+
 function DisplayAllProducts() {
     const products = JSON.parse(localStorage.getItem("products"));
 
@@ -13,9 +13,16 @@ function DisplayAllProducts() {
             localStorage.setItem("shuffledProducts", JSON.stringify(shuffledProducts));
         }
 
-        const renderProducts = (filteredProducts) => {
+        const productsPerPage = 18; 
+        let currentPage = 1; 
+
+        const renderProducts = (filteredProducts, page) => {
             cardContainer.innerHTML = "";
-            filteredProducts.forEach((product) => {
+            const startIndex = (page - 1) * productsPerPage;
+            const endIndex = startIndex + productsPerPage;
+
+            for (let i = startIndex; i < Math.min(endIndex, filteredProducts.length); i++) {
+                const product = filteredProducts[i];
                 const cardCol = document.createElement("div");
                 cardCol.className = "col-6 col-md-4 col-lg-3 col-xl-2 mb-3";
                 cardCol.innerHTML = `
@@ -30,10 +37,36 @@ function DisplayAllProducts() {
                     </div>
                 `;
                 cardContainer.appendChild(cardCol);
-            });
+            }
+
+            let paginationControls = document.getElementById("paginationControls");
+            if (!paginationControls) {
+                paginationControls = document.createElement("nav");
+                paginationControls.id = "paginationControls";
+                paginationControls.setAttribute("aria-label", "Page navigation");
+                paginationControls.innerHTML = `
+                    <ul class="pagination justify-content-center"></ul>
+                `;
+                cardContainer.parentElement.appendChild(paginationControls);
+            }
+
+            const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+            const paginationUl = paginationControls.querySelector("ul");
+            paginationUl.innerHTML = "";
+
+            for (let i = 1; i <= totalPages; i++) {
+                const pageButton = document.createElement("li");
+                pageButton.className = `page-item ${i === currentPage ? "active" : ""}`;
+                pageButton.innerHTML = `<a class="page-link" href="#">${i}</a>`;
+                pageButton.addEventListener("click", () => {
+                    currentPage = i;
+                    renderProducts(filteredProducts, currentPage);
+                });
+                paginationUl.appendChild(pageButton);
+            }
         };
 
-        renderProducts(shuffledProducts);
+        renderProducts(shuffledProducts, currentPage);
 
         const brandFilters = document.querySelectorAll(".brandFilter");
         brandFilters.forEach((filter) => {
@@ -43,12 +76,12 @@ function DisplayAllProducts() {
                     .map((checkbox) => checkbox.value);
 
                 if (selectedBrands.length === 0) {
-                    renderProducts(shuffledProducts);
+                    renderProducts(shuffledProducts, currentPage);
                 } else {
                     const filteredProducts = shuffledProducts.filter((product) =>
                         selectedBrands.includes(product.brand)
                     );
-                    renderProducts(filteredProducts);
+                    renderProducts(filteredProducts, currentPage);
                 }
             });
         });
@@ -58,14 +91,14 @@ function DisplayAllProducts() {
             brandFilters.forEach((filter) => {
                 filter.checked = false;
             });
-            renderProducts(shuffledProducts);
+            renderProducts(shuffledProducts, currentPage);
         });
     } else {
         console.log("No products available or invalid data.");
     }
 }
 DisplayAllProducts();
-// });
+
 
 
 const productCards = document.querySelectorAll(".product-card");
