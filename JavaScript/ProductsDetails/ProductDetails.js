@@ -74,12 +74,21 @@ function addToCart() {
   }
 }
 
+const selectedProduct = JSON.parse(localStorage.getItem("productDetails"));
+if (selectedProduct.stock < 1) {
+  document.getElementById('add-to-cart').classList.add('d-none');
+  document.querySelector('.outStock').classList.remove('d-none');
+}
+// else {
+//   document.getElementById('add-to-cart').classList.remove('d-none');
+//   document.querySelector('.outStock').classList.add('d-none');
+// }
 // Add event listener to the "Add to Cart" button
 document.getElementById('add-to-cart').addEventListener('click', function () {
   const users = JSON.parse(localStorage.getItem('users'));
-  const selectedProduct = JSON.parse(localStorage.getItem("productDetails"));
+  // const selectedProduct = JSON.parse(localStorage.getItem("productDetails"));
   const IsLogin = users.find(user => user.currentUser == true);
-  if (IsLogin && selectedProduct.stock > 0) {
+  if (IsLogin) {
     addToCart();
   } else {
     window.location.href = '../../Html/Auth/Login.html';

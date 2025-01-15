@@ -1,3 +1,10 @@
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
+const users = JSON.parse(localStorage.getItem('users')) || [];
+const currentUser = users.find(user => user.currentUser == true);
+const userCart = cart.filter(CP => CP.userId == currentUser.id);
+
+
+
 function DisplayCartItems(userCart, totalCartPrice, cartItemsContainer, cartTotalElement) {
     // cart items list
     userCart.forEach((item, index) => {
@@ -14,7 +21,7 @@ function DisplayCartItems(userCart, totalCartPrice, cartItemsContainer, cartTota
                     <p><strong>Total:</strong> $<span class="item-total">${(item.price * item.quantity).toFixed(2)}</span></p>
                 </div>
                 <div class="cart-item-quantity">
-                    <input type="number" value="${item.quantity}" min="1" max="${item.stock}" class="quantity-input" data-index="${index}">
+                    <input type="number" value="${item.quantity}" min="1" max="${item.stock}" class="quantity-input px-1 rounded border-1" data-stock="${item.stock}" data-index="${index}">
                 </div>
             `;
         cartItemsContainer.insertBefore(cartItem, cartTotalElement); // Ensure total element is at the end.
@@ -32,10 +39,15 @@ function UpdateTotalPrice(cart, cartTotalElement) {
         input.addEventListener('change', (event) => {
             const index = parseInt(event.target.dataset.index, 10);
             const quantity = parseInt(event.target.value, 10);
+            const stock = parseInt(event.target.getAttribute("data-stock"), 10);
 
             if (quantity < 1) {
                 event.target.value = 1; // Ensure quantity is at least 1
-                return;
+                // return;
+            }
+            if (quantity > stock) {
+                event.target.value = stock;
+                // return;
             }
 
             // Update the cart object
@@ -51,7 +63,8 @@ function UpdateTotalPrice(cart, cartTotalElement) {
             itemTotalElement.textContent = totalPrice;
 
             // Update the total cart price
-            const newTotalCartPrice = cart.reduce((acc, curr) => acc + curr.price * curr.quantity, 0);
+            // const userCart = 
+            const newTotalCartPrice = userCart.reduce((acc, curr) => acc + curr.price * curr.quantity, 0);
             cartTotalElement.innerHTML = `<p><strong>Total Cart Price:</strong> $${newTotalCartPrice.toFixed(2)}</p>`;
         });
     });
@@ -59,10 +72,6 @@ function UpdateTotalPrice(cart, cartTotalElement) {
 
 
 function loadCart() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const currentUser = users.find(user => user.currentUser == true);
-    const userCart = cart.filter(CP => CP.userId == currentUser.id);
     const cartItemsContainer = document.getElementById('cart-items');
     const cartTotalElement = document.createElement('div'); // Element to show the total price.
     // const products = JSON.parse(localStorage.getItem('products')) || [];

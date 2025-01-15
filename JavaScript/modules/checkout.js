@@ -45,11 +45,11 @@ function updateProductsAfterCheckout() {
         const cartProduct = cartProducts.find(cartP => cartP.id === p.id);
         if (cartProduct) {
             const updatedStock = p.stock - cartProduct.quantity;
-            if (updatedStock > 0) {
-                return { ...p, stock: updatedStock };
-            }
+            // if (updatedStock > 0) {
+            return { ...p, stock: updatedStock };
+            // }
             // If stock is zero, exclude it from the result
-            return null;
+            // return null;
         }
         return p;
     }).filter(p => p !== null);
