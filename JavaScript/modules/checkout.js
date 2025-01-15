@@ -1,6 +1,6 @@
 import { getStoredOrders, setStoredOrders } from "./orders.js";
 import { getStoredCustomers } from "./users.js";
-import { getStoredProducts, setStoredProducts } from './products.js';
+import { getStoredInCartProducts, getStoredProducts, setStoredInCartProducts, setStoredProducts } from './products.js';
 
 
 function generateUniqueId() {
@@ -45,11 +45,11 @@ function updateProductsAfterCheckout() {
         const cartProduct = cartProducts.find(cartP => cartP.id === p.id);
         if (cartProduct) {
             const updatedStock = p.stock - cartProduct.quantity;
-            if (updatedStock > 0) {
-                return { ...p, stock: updatedStock };
-            }
+            // if (updatedStock > 0) {
+            return { ...p, stock: updatedStock };
+            // }
             // If stock is zero, exclude it from the result
-            return null;
+            // return null;
         }
         return p;
     }).filter(p => p !== null);
@@ -104,7 +104,12 @@ checkoutBtn.addEventListener("click", function (event) {
         orders.push(newOrder);
         setStoredOrders(orders);
         setStoredProducts(updateProductsAfterCheckout());
-        localStorage.removeItem('cart');
+        // localStorage.removeItem('cart');
+        const cartProducts = getStoredInCartProducts();
+        const users = getStoredCustomers();
+        const currentUser = users.find(user => user.currentUser == true);
+        const userCartAfterCheckout = cartProducts.filter(CP => CP.userId != currentUser.id);
+        setStoredInCartProducts(userCartAfterCheckout);
         document.getElementById('cart-items').innerHTML = "";
 
         document.querySelector('.success-mess').classList.remove('d-none');

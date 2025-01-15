@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="../../assets/Bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../Style/Home/Home.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../Style/User/User.css">
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+
+    <div class="container mt-5">
+        <div class="row" style="margin-top: 80px;">
+            <div class="col-lg-3 col-md-4 col-12 sideContainer">
+                <div>
+                    <button id="logOut"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center text-center mt-5" id="name">
+                    <h3>Welcome,</h3>
+                    <h5 id="username1"></h5>
+                </div>
+                <div class="info d-flex flex-column justify-content-center align-items-center text-center mt-5 gap-4">
+                    <button id="personalDetailsButton" class="profileButton">Personal Details</button>
+                    <button id="myOrdersButton" class="profileButton">My Orders</button>
+                    <button id="myAddressButton" class="profileButton">My Address</button>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-8 col-12 ">
+                <div id="Rightwrapper" class="">
+                    <div class="bar d-flex align-items-center text-center">
+                        <h3>Profile</h3>
+                    </div>
+                    <div id="dataWrapper">
+                        <div id="emptyProfile" class=" justify-content-center align-items-center text-center">
+                            <img class="w-50 h-25" id="profileImg" src="../../assets/images/11514757.jpg"
+                                alt="profileimg">
+                        </div>
+                        <div id="personalDetails">
+                            <div
+                                class="dataItem d-flex flex-wrap justify-content-start align-items-center text-start mt-2 ms-4">
+                                <h5>Name:</h5>
+                                <div class="dataDisplay justify-content-center">
+                                    <div class="bordered-box">
+                                        <p id="username" class="infoText"></p>
+                                        <i class="fa-regular fa-pen-to-square icon profileIcon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="dataItem d-flex flex-wrap justify-content-start align-items-center text-start ms-4">
+                                <h5>Email:</h5>
+                                <div class="dataDisplay justify-content-center">
+                                    <div class="bordered-box">
+                                        <p id="email" class="infoText"></p>
+                                        <i class="fa-regular fa-pen-to-square icon profileIcon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="dataItem d-flex flex-wrap justify-content-start align-items-center text-start ms-4">
+                                <h5>Phone:</h5>
+                                <div class="dataDisplay justify-content-center">
+                                    <div class="bordered-box">
+                                        <p id="phone" class="infoText"></p>
+                                        <i class="fa-regular fa-pen-to-square icon profileIcon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="dataItem d-flex flex-wrap justify-content-start align-items-center text-start ms-4">
+                                <h5>Address:</h5>
+                                <div class="dataDisplay justify-content-center">
+                                    <div class="bordered-box">
+                                        <p id="address" class="infoText"></p>
+                                        <i class="fa-regular fa-pen-to-square icon profileIcon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="buttons" class="d-flex flex-column justify-content-start mt-4 ms-4 gap-2">
+                                <button id="delete">Delete Account</button>
+                            </div>
+                        </div>
+                        <div id="myOrders">
+                            
+                        </div>
+
+                        <div id="myAddress">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script src="../../JavaScript/modules/LoadNav.js"></script>
+    <script src="../../JavaScript/User/User.js"></script>
+    <script src="../../JavaScript/Home/CommonHomeFunctions.js"></script>
+    <script src="../../assets/Bootstrap/bootstrap.bundle.js"></script>
+    <script src="../../JavaScript/modules/LoadFooter.js"></script>
+
+</body>
+
+</html>
