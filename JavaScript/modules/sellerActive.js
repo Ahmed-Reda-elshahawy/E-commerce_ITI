@@ -1,7 +1,7 @@
 const controlList = document.querySelectorAll(".control-list li");
 const productsTableContainer = document.querySelector(".table-container:nth-child(1)");
 const ordersTableContainer = document.querySelector(".table-container:nth-child(2)");
-const chartsTableContainer = document.querySelector(".table-container:nth-child(3)"); // Add charts container
+const chartsTableContainer = document.querySelector(".table-container:nth-child(3)"); 
 
 // Handle active section
 export function handleActiveSectionSaller() {
@@ -12,10 +12,8 @@ export function handleActiveSectionSaller() {
                 sec.classList.remove("active-section");
             });
 
-            // Add active class to the clicked section
             this.classList.add("active-section");
 
-            // Handle visibility of containers
             if (this.getAttribute("data-section") === "products") {
                 productsTableContainer.classList.remove("d-none");
                 ordersTableContainer.classList.add("d-none");
@@ -33,5 +31,5 @@ export function handleActiveSectionSaller() {
     });
 }
 
-// Initialize the function
+// call function
 handleActiveSectionSaller();

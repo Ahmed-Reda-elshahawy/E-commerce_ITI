@@ -67,7 +67,7 @@ export function displayOrdersForSeller(storedOrders) {
     }
 }
 
-// ==== Delete Orders data ==== //
+// ******************************************Delete Orders*************************
 let currentOrderIdToDelete = 0;
 export function deleteOrderById(orderId) {
     currentOrderIdToDelete = orderId;
@@ -81,8 +81,8 @@ export function confirmDeleteOrder() {
     const modal = bootstrap.Modal.getInstance(deleteModal);
     modal.hide();
 }
-
-// ==== Update Orders data ==== //
+//*********************************************************************************
+// ************************************** Update Orders data ************************* //
 let currentOrderId = 0;
 const orderStatusSelect = document.getElementById("selectStatus");
 export function updateOrderById(orderId) {

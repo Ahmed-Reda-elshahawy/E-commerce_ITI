@@ -1,4 +1,3 @@
-
 const productsTableBody = document.querySelector('.products-table tbody');
 
 //  Get and set   
@@ -37,9 +36,7 @@ export function DisplayProducts(data) {
     });
 }
 
-//---------------------------------------------------------------------------
-
-// ==== Delete a product ==== //
+//----------------------------------------------------------------------------
 
 // ==== Delete a product ==== //
 let currentProductIdToDelete = 0;
@@ -94,9 +91,6 @@ export function confirmDeleteProduct() {
     const modal = bootstrap.Modal.getInstance(deleteModal);
     modal.hide();
 }
-
-
-
 //-------------------------------------------------------------------------------------
 
 
@@ -260,79 +254,3 @@ export function updateProductRow(product) {
 
 //-------------------------------------------------------------------------------------------
 
-
-
-// // ==== Update a product ==== //
-// let currentProductIdToUpdate = 0;
-// const categoryInput = document.getElementById('floatingInputPC')
-// const titleInput = document.getElementById('floatingInputPT')
-// const priceInput = document.getElementById('floatingInputPP')
-// const stockInput = document.getElementById('floatingInputPS')
-// export function updateProduct(productId) {
-//     const storedProducts = getStoredProducts();
-//     const product = storedProducts.find(p => p.id === productId);
-//     if (product) {
-//         categoryInput.value = product.category;
-//         titleInput.value = product.title;
-//         priceInput.value = product.price;
-//         stockInput.value = product.stock;
-//         currentProductIdToUpdate = productId;
-//     }
-// }
-// export function editProduct() {
-//     const products = getStoredProducts();
-//     const product = products.find(p => p.id === currentProductIdToUpdate);
-//     if (product) {
-//         product.category = categoryInput.value;
-//         product.title = titleInput.value;
-//         product.price = priceInput.value;
-//         product.stock = stockInput.value;
-
-//         setStoredProducts(products);
-//         DisplayProducts(products);
-
-//         const updateModal = document.querySelector('#updateModalForProduct');
-//         const modal = bootstrap.Modal.getInstance(updateModal);
-//         modal.hide();
-//     }
-// }
-// export function previewImage(event) {
-//     const prevImage = document.getElementById('prevImage');
-//     const products = getStoredProducts();
-//     const product = products.find(p => p.id === currentProductIdToUpdate);
-//     const file = event.target.files[0];
-//     const reader = new FileReader();
-
-//     reader.onload = () => {
-//         prevImage.src = reader.result;
-//         prevImage.classList.remove("d-none");
-//         // Set the src of another image 
-//         product.images[0] = reader.result;
-//         setStoredProducts(products);
-//     };
-//     if (file) {
-//         reader.readAsDataURL(file);
-//     } else {
-//         prevImage.classList.add("d-none");
-//         console.log("no thing");
-//     }
-// }
-
-
-
-//search function
-// ==== Search functionality for displayed products ==== //
-// ==== Search function for products (without modifying DisplayProducts) ==== //
-
-
-
-
-// // Get a product by its id
-// export function goToProductDetailsPage(productId) {
-//     window.location.href = `../../Html/ProductsDetails/ProdDetails.html?productId=${productId}`;
-// }
-// export function getProductById(productId) {
-//     const allProducts = JSON.parse(localStorage.getItem("products"));
-//     const product = allProducts.find(product => product.id == productId);
-//     localStorage.setItem("productDetails", JSON.stringify(product));
-// }
