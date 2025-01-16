@@ -1,28 +1,11 @@
-
-// import { DisplayProducts, getStoredProducts, setStoredProducts ,deleteProduct, confirmDeleteProduct,editProduct, updateProduct,previewImage } from "../modules/products.js";
-// import {handleActiveSectionSaller} from "../modules/sellerActive.js"
-//             //Display.............
-// // Fetch products from localStorage
-// const products = getStoredProducts();
-
-// const filteredProducts = products.filter(product => product.id === 1);
-
-// // Display the products in the table
-// DisplayProducts(products);
-
-
-
 import { DisplayProducts, getStoredProducts,setStoredProducts  ,confirmDeleteProduct,
      deleteProduct, updateProduct, confirmEditProduct} from "../modules/SallerProducts.js";
 import { handleActiveSectionSaller } from "../modules/sellerActive.js";
-// import { displayOrders,  getLoggedInUseragain,   } from '../modules/SallerOrders.js';
 import { getStoredCustomers } from "../modules/users.js";
-// import {   } from '../modules/SallerProducts.js';
-import{getStoredOrders,displayOrders, confirmDeleteOrder, deleteOrderById, editOrder, updateOrderById} from "../modules/orders.js"
 
-// Helper to fetch logged-in user
+//fetch logged-in user For display 
 const getLoggedInUser = () => {
-    const users = getStoredCustomers(); // Assuming this fetches users.json from localStorage
+    const users = getStoredCustomers(); 
     return users.find(user => user.currentUser === true); // Find the logged-in user
 };
 
@@ -31,12 +14,10 @@ const loggedInUser = getLoggedInUser();
 
 if (loggedInUser) {
     // Fetch all products
-    const products = getStoredProducts(); // Assuming this fetches products.json from localStorage
-
-    // Filter products to only those with sellerId matching logged-in user's id
+    const products = getStoredProducts(); 
+    // Filter by user's id
     const filteredProducts = products.filter(product => product.sellerId === loggedInUser.id);
 
-    // Display the filtered products
     DisplayProducts(filteredProducts);
 } else {
     console.error("No logged-in user found!");
@@ -215,17 +196,65 @@ document.querySelector('#addModal form').addEventListener('submit', function (ev
 
     // Reset the form
     document.querySelector('#addModal form').reset();
+
+//*******************alert added************ */
+    // Display a Bootstrap alert at the top of the page
+// Display a Bootstrap alert at the top of the page with a custom width and auto-dismiss
+const globalAlertPlaceholder = document.getElementById('globalAlertPlaceholder');
+
+// Clear any existing alert
+globalAlertPlaceholder.innerHTML = '';
+
+// Create a new alert element
+const globalAlertDiv = document.createElement('div');
+globalAlertDiv.className = 'alert alert-success alert-dismissible fade show mx-auto';
+globalAlertDiv.role = 'alert';
+globalAlertDiv.style.width = '50%'; // Customize the width (e.g., 50%)
+globalAlertDiv.innerHTML = `
+    <strong>Your product has been added successfully!</strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+`;
+
+// Append the alert to the placeholder
+globalAlertPlaceholder.appendChild(globalAlertDiv);
+
+// Automatically remove the alert after 5 seconds
+setTimeout(() => {
+    globalAlertDiv.classList.remove('show'); // Hide the alert
+    globalAlertDiv.addEventListener('transitionend', () => {
+        globalAlertDiv.remove(); // Remove it from the DOM after transition
+    });
+}, 2000);
+
 });
 //*********************************************************************************************************** */
 
 
 
 // =====================( orders )===================== //
-displayOrders(getStoredOrders());
+// ==== Initialize Display ==== //
+import {
+    getStoredOrders,
+    displayOrdersForSeller,
+    confirmDeleteOrder,
+    deleteOrderById,
+    editOrder,
+    updateOrderById
+} from "../modules/SallerOrders.js";
+
+displayOrdersForSeller(getStoredOrders());
 document.getElementById("edit-order").addEventListener('click', editOrder);
 document.getElementById("delete-order").addEventListener('click', confirmDeleteOrder);
 window.deleteOrderById = deleteOrderById;
 window.updateOrderById = updateOrderById;
+
+//55
+// displayOrders(getStoredOrders());
+// document.getElementById("edit-order").addEventListener('click', editOrder);
+// document.getElementById("delete-order").addEventListener('click', confirmDeleteOrder);
+// window.deleteOrderById = deleteOrderById;
+// window.updateOrderById = updateOrderById;
+//55
 // Importing the functions from orders.js
 // Example usage of imported functions
 // document.addEventListener("DOMContentLoaded", () => {
@@ -256,54 +285,125 @@ handleActiveSectionSaller();
 //----------------------------------------------------------------------------------------------------------
 //chart
 
-// Include Chart.js from CDN
-const script = document.createElement('script');
-script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
-document.head.appendChild(script);
+// // Include Chart.js from CDN
+// const script = document.createElement('script');
+// script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
+// document.head.appendChild(script);
 
-// Wait for Chart.js to load
-script.onload = function () {
-    // Get the canvas element
-    const ctx = document.getElementById('sellerChart').getContext('2d');
+// // Wait for Chart.js to load
+// script.onload = function () {
+//     // Get the canvas element
+//     const ctx = document.getElementById('sellerChart').getContext('2d');
 
-    // Create the chart
-    const sellerChart = new Chart(ctx, {
-        type: 'bar', // Change this to 'line', 'pie', etc., as needed
-        data: {
-            labels: ['January', 'February', 'March', 'April', 'May'], // Example labels
-            datasets: [
-                {
-                    label: 'Sellers',
-                    data: [5, 10, 8, 15, 20], // Example data
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                    ],
-                    borderWidth: 1,
-                },
+//     // Create the chart
+//     const sellerChart = new Chart(ctx, {
+//         type: 'bar', // Change this to 'line', 'pie', etc., as needed
+//         data: {
+//             labels: ['January', 'February', 'March', 'April', 'May'], // Example labels
+//             datasets: [
+//                 {
+//                     label: 'Sellers',
+//                     data: [5, 10, 8, 15, 20], // Example data
+//                     backgroundColor: [
+//                         'rgba(255, 99, 132, 0.2)',
+//                         'rgba(54, 162, 235, 0.2)',
+//                         'rgba(255, 206, 86, 0.2)',
+//                         'rgba(75, 192, 192, 0.2)',
+//                         'rgba(153, 102, 255, 0.2)',
+//                     ],
+//                     borderColor: [
+//                         'rgba(255, 99, 132, 1)',
+//                         'rgba(54, 162, 235, 1)',
+//                         'rgba(255, 206, 86, 1)',
+//                         'rgba(75, 192, 192, 1)',
+//                         'rgba(153, 102, 255, 1)',
+//                     ],
+//                     borderWidth: 1,
+//                 },
+//             ],
+//         },
+//         options: {
+//             responsive: true,
+//             maintainAspectRatio: false,
+//             scales: {
+//                 y: {
+//                     beginAtZero: true,
+//                 },
+//             },
+//         },
+//     });
+// };
+    //**********************test chart****** */
+    
+
+    const orders = [
+        {
+            "orderId": 111,
+            "userId": "user111",
+            "userName": "userName1",
+            "sellerIds": [1, 2],
+            "products": [
+                { "id": 1000, "name": "product1", "quantity": 5 },
+                { "id": 2000, "name": "product2", "quantity": 4 }
             ],
+            "totalAmount": 100.00,
+            "status": "Shipped",
+            "date": "1/1/2025"
+        },
+        {
+            "orderId": 222,
+            "userId": "user222",
+            "userName": "userName2",
+            "sellerIds": [2, 3],
+            "products": [
+                { "name": "product3", "quantity": 5 },
+                { "name": "product4", "quantity": 4 }
+            ],
+            "totalAmount": 200.00,
+            "status": "Shipped",
+            "date": "1/1/2025"
+        }
+    ];
+
+    const processData = (orders) => {
+        const sellerSales = {};
+
+        orders.forEach(order => {
+            order.sellerIds.forEach(sellerId => {
+                if (!sellerSales[sellerId]) sellerSales[sellerId] = 0;
+                sellerSales[sellerId] += order.totalAmount;
+            });
+        });
+
+        return sellerSales;
+    };
+
+    const sellerSales = processData(orders);
+    const labels = Object.keys(sellerSales).map(sellerId => `Seller ${sellerId}`);
+    const data = Object.values(sellerSales);
+
+    const ctx = document.getElementById('sellerChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar', // Change to 'line' for a line chart
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Total Sales ($)',
+                data: data,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
         },
         options: {
             responsive: true,
-            maintainAspectRatio: false,
             scales: {
                 y: {
-                    beginAtZero: true,
-                },
-            },
-        },
+                    beginAtZero: true
+                }
+            }
+        }
     });
-};
 
 //----------------------------------------------------------------------------------------------------------
 

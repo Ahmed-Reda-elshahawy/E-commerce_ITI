@@ -1,12 +1,4 @@
-// const editBtn = document.getElementById('edit-btn');
-// const deleteBtn = document.getElementById('delete-btn');
-// const controlList = document.querySelectorAll(".control-list li");
-// const usersTableContainer = document.querySelector(".table-container:nth-child(1)");
-// const productsTableContainer = document.querySelector(".table-container:nth-child(2)");
-// const updateModalBody = document.querySelector("#updateModal .modal-body");
-
-
-// // inputs of updateModal
+// inputs of updateModal
 const customersTableBody = document.querySelector(".customers-table tbody");
 const customerName = document.querySelector(".customer-name");
 const customerEmail = document.querySelector(".customer-email");

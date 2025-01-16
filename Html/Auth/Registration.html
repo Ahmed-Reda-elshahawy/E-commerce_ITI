@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
-
+    <link rel="stylesheet" href="../../assets/Bootstrap/bootstrap.min.css">
     <script>
         window.addEventListener('load', function () {
             document.getElementById('submit').addEventListener('click', function (event) {
@@ -95,13 +95,17 @@
         });
     </script>
     <style>
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
         * {
             box-sizing: border-box;
         }
 
         body,
         html {
-            margin: 0;
             padding: 0;
             height: 100%;
         }
@@ -114,7 +118,7 @@
 
         #form {
             flex: 1;
-            padding: 40px;
+            padding: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -134,7 +138,7 @@
 
         #image img {
             width: 100%;
-            height: 100%;
+            height: 100vh;
             border-radius: 10px;
         }
 
@@ -142,6 +146,7 @@
             display: flex;
             flex-direction: column;
             width: 100%;
+            height: 100%;
         }
 
         h1 {
@@ -187,7 +192,7 @@
             justify-content: center;
         }
 
-        .registerbtn {
+        /* .registerbtn {
             background-color: #1b1d36;
             color: white;
             font-size: 18px;
@@ -197,8 +202,7 @@
             cursor: pointer;
             width: 90%;
             opacity: 0.9;
-        }
-
+        } */
         #cancel {
             background: none;
             color: black;
@@ -238,55 +242,63 @@
     <div id="mainwrapper">
         <div id="form">
             <form>
-                <div class="container">
-                    <h1>Registration Form</h1>
-                    <p>Be Part of Your Community</p>
-                    <div class="form-group">
-                        <label for="fname"><b>User Name*</b></label>
-                        <input type="text" placeholder="Enter Your Name" name="fname" id="fname" required>
+                <div style=" margin-top:25vh; " class="container  border border-black">
+                    <h1 class="fs-1 fw-bold">Register</h1>
+                    <p class="fs-5">Be Part of Your Community</p>
+
+                    <div class="mb-3">
+                        <label for="username">User Name</label>
+                        <input type="text" class="form-control shadow-sm" placeholder="Enter Your Name" name="fname"
+                            id="fname" required>
                     </div>
-                    <div class="form-group">
-                        <label for="phone"><b>Phone*</b></label>
-                        <input type="text" placeholder="Enter Your Phone Number" name="phone" id="phone" required>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="text" class="form-control shadow-sm" id="phone" name="phone" />
                     </div>
-                    <div class="form-group">
-                        <label for="address"><b>Address</b></label>
-                        <input type="text" placeholder="Enter Your Address" name="address" id="address">
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control shadow-sm" id="address" name="address" />
                     </div>
-                    <div class="form-group">
-                        <label for="email"><b>Email*</b></label>
-                        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control shadow-sm" id="email" name="email" />
                     </div>
-                    <div class="form-group">
-                        <label for="psw"><b>Password*</b></label>
-                        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+                    <div class="mb-3"">
+                        <label class=" form-label fw-bold" for="psw">Password</label>
+                        <input class="form-control shadow-sm" type="password" placeholder="Enter Password" name="psw"
+                            id="psw" required>
                     </div>
-                    <div class="form-group">
-                        <label for="psw-repeat"><b>Repeat Password*</b></label>
-                        <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+                    <div class="mb-3">
+                        <label for="psw-repeat" class="form-label">Repeat Password</label>
+                        <input type="password" class="form-control shadow-sm" placeholder="Repeat Password"
+                            name="psw-repeat" id="psw-repeat" required>
                     </div>
-                    <div class="form-group">
-                        <label for="age"><b>Age</b></label>
-                        <input type="text" placeholder="Enter Age" id="age">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" for="age">Age</label>
+                        <input class="form-control shadow-sm" type="text" placeholder="Enter Age" id="age">
                     </div>
-                    <div class="form-group ">
-                        <label for="type"><b>Account Type*</b></label>
-                        <div>
-                            <label><input class="col-lg-6 col-md-6 col-sm-6" type="radio" name="type" value="Customer">
-                                Customer</label>
-                            <label><input class="col-lg-6 col-md-6 col-sm-6" type="radio" name="type" value="Seller">
-                                Seller</label>
+                    <div class="mb-3">
+                        <label for="type"><b>Account Type</b></label>
+                        <div class="form-group">
+
+                            <div class="d-flex gap-3">
+                                <label class="d-flex  ml-5 align-items-center"><input type="radio" name="type"
+                                        value="Customer"> Customer</label>
+                                <label class="d-flex align-items-center"><input type="radio" name="type" value="Seller">
+                                    Seller</label>
+                            </div>
                         </div>
+
                     </div>
                     <div class="button">
                         <h3>Invalid input detected</h3>
-                        <button type="submit" class="registerbtn" id="submit">Register</button>
+                        <button type="submit" class="btn btn-primary" id="submit">Register</button>
                         <button type="reset" id="cancel">Already have an account? Login</button>
                     </div>
                 </div>
             </form>
         </div>
-        <div id="image">
+        <div style="height: 100vh ; margin-top: 0%;" id="image">
             <img src="../../assets/images/login6.jfif" alt="Registration Illustration">
         </div>
     </div>

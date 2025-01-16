@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (matchingProducts.length > 0) {
             matchingProducts.forEach(product => {
                 const productCard = document.createElement('div');
-                productCard.style.margin = "110px 0";
+                productCard.style.margin = "130px 0";
                 productCard.className = "col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3";
                 productCard.innerHTML = `
                 <div class="card product-card w-100 h-100">

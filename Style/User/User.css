@@ -1,3 +1,7 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #delete {
     color: red;
     border: none;
@@ -12,7 +16,7 @@
     color: black;
 }
 
-#logOut{
+#logOut1{
     background-color: #F6F6F6;
     border: none;
 }
@@ -21,18 +25,18 @@
     background-color: #F6F6F6;
     border-radius: 30px;
     padding: 20px;
-    height: 90vh;
+    height: 100vh;
 }
 
-@media (min-width: 430px) and (max-width:768px) {
+@media (min-width: 375px) and (max-width:768px) {
     .sideContainer {
-        height: 60vh;
+        height: 55vh;
     }
 }
 
-@media (min-width: 430px) and (max-width:768px) {
+@media (min-width:375px) and (max-width:768px) {
    #Rightwrapper{
-    margin-top: 40px;
+    margin-top: 30px;
    }
 }
 
@@ -120,4 +124,50 @@
 .profileButton.active {
     background-color: black;
     color: white;
+}
+
+#myOrders {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+#orderEmptyImg img {
+    width: 60%;
+    max-width: 300px;
+    margin-top: 20px;
+}
+
+#orderDetails {
+    margin-top: 20px;
+}
+
+#orderList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#orderList li {
+    border: 1px solid #F6F6F6;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgb(195, 192, 192);
+    background-color: #F6F6F6;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.product img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.product-info {
+    flex: 1;
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="../../assets/Bootstrap/bootstrap.min.css">
     <script>
         window.addEventListener('load', function() {
             var h3 = document.querySelector('h3');
@@ -123,18 +124,9 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
         }
-        .registerbtn {
-            background-color: #252eb6;
-            color: white;
-            font-size: 18px;
-            padding: 16px 20px;
-            margin: 8px auto;
-            border: none;
-            cursor: pointer;
-            width: 90%;
-            opacity: 0.9;
-        }
+     
         #cancel, #forget {
             background: none;
             color: black;
@@ -173,6 +165,26 @@
                 width: 100%;
             }
         }
+            .container:hover{
+transform: scale(1.05); 
+        }
+        
+         .btn-primary:hover {
+            background-color: #0056b3; 
+            transform: scale(1.05); 
+        }
+
+        #submit {
+            background-color: #252eb6;
+            color: white;
+            font-size: 18px;
+            padding: 16px 20px;
+            margin: 8px auto;
+            border: none;
+            cursor: pointer;
+            width: 90%;
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
@@ -180,9 +192,9 @@
         
         <div id="form">
             <form>
-                <div class="container">
-                    <h1>Login Form</h1>
-                    <p>Be Part of Your Community</p>
+                <div class="container mt-5 border border-color-dark">
+                    <h1 class="fs-1">Login </h1>
+                    <p>Be Part of our Community</p>
                     <div class="form-group">
                         <label for="email"><b>Email</b></label>
                         <input type="text" placeholder="Enter Your Email" name="email" id="email" required>
@@ -193,7 +205,7 @@
                     </div>
                     <div class="button">
                         <h3>Wrong data Entered</h3>
-                        <button type="submit" class="registerbtn" id="submit">Login</button>
+                        <button type="submit" class=" btn btn-primary" id="submit">Login</button>
                         <button type="reset" id="cancel">Don't have an account? Sign up</button>
                         <button type="reset" id="forget">Forget Password?</button>
                     </div>

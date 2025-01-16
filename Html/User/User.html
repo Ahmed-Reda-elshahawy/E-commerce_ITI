@@ -20,7 +20,7 @@
         <div class="row" style="margin-top: 80px;">
             <div class="col-lg-3 col-md-4 col-12 sideContainer">
                 <div>
-                    <button id="logOut"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+                    <button id="logOut1"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
                 </div>
                 <div class="d-flex flex-column justify-content-center align-items-center text-center mt-5" id="name">
                     <h3>Welcome,</h3>
@@ -29,7 +29,6 @@
                 <div class="info d-flex flex-column justify-content-center align-items-center text-center mt-5 gap-4">
                     <button id="personalDetailsButton" class="profileButton">Personal Details</button>
                     <button id="myOrdersButton" class="profileButton">My Orders</button>
-                    <button id="myAddressButton" class="profileButton">My Address</button>
                 </div>
             </div>
             <div class="col-lg-9 col-md-8 col-12 ">
@@ -39,13 +38,12 @@
                     </div>
                     <div id="dataWrapper">
                         <div id="emptyProfile" class=" justify-content-center align-items-center text-center">
-                            <img class="w-50 h-25" id="profileImg" src="../../assets/images/11514757.jpg"
+                            <img class="w-50 h-25" id="profileImg" src="../../assets/images/ZQH44lyrsMd2E8K671.gif"
                                 alt="profileimg">
                         </div>
                         <div id="personalDetails">
-                            <div
-                                class="dataItem d-flex flex-wrap justify-content-start align-items-center text-start mt-2 ms-4">
-                                <h5>Name:</h5>
+                            <div class="dataItem d-flex flex-wrap justify-content-center align-items-center text-center mt-5 ms-4">
+                                <b>Name:</b>
                                 <div class="dataDisplay justify-content-center">
                                     <div class="bordered-box">
                                         <p id="username" class="infoText"></p>
@@ -53,9 +51,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div
-                                class="dataItem d-flex flex-wrap justify-content-start align-items-center text-start ms-4">
-                                <h5>Email:</h5>
+                            <div class="dataItem d-flex flex-wrap justify-content-center align-items-center text-center ms-4">
+                                <b>Email:</b>
                                 <div class="dataDisplay justify-content-center">
                                     <div class="bordered-box">
                                         <p id="email" class="infoText"></p>
@@ -63,9 +60,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div
-                                class="dataItem d-flex flex-wrap justify-content-start align-items-center text-start ms-4">
-                                <h5>Phone:</h5>
+                            <div class="dataItem d-flex flex-wrap justify-content-center align-items-center text-center ms-4">
+                                <b>Phone:</b>
                                 <div class="dataDisplay justify-content-center">
                                     <div class="bordered-box">
                                         <p id="phone" class="infoText"></p>
@@ -73,9 +69,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div
-                                class="dataItem d-flex flex-wrap justify-content-start align-items-center text-start ms-4">
-                                <h5>Address:</h5>
+                            <div class="dataItem d-flex flex-wrap justify-content-center align-items-center text-center ms-4">
+                                <b>Address:</b>
                                 <div class="dataDisplay justify-content-center">
                                     <div class="bordered-box">
                                         <p id="address" class="infoText"></p>
@@ -88,11 +83,12 @@
                             </div>
                         </div>
                         <div id="myOrders">
-                            
-                        </div>
-
-                        <div id="myAddress">
-                            
+                            <div id="orderEmptyImg" class=" justify-content-center align-items-center text-center" style="display: none;">
+                                <img src="../../assets/images/835671585817Empty_Order.gif" alt="orders">
+                            </div>
+                            <div id="orderDetails" style="display: none;">
+                                <ul id="orderList"></ul>
+                            </div>
                         </div>
                     </div>
                 </div>

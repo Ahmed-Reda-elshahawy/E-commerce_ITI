@@ -1,14 +1,13 @@
 
 const productsTableBody = document.querySelector('.products-table tbody');
 
-// ==== Get and set stored products ==== //
+//  Get and set   
 export function getStoredProducts() {
     return JSON.parse(localStorage.getItem('products')) || [];
 }
 export function setStoredProducts(products) {
     localStorage.setItem('products', JSON.stringify(products));
 }
-
 
 
 // ==== Display products data ==== //
