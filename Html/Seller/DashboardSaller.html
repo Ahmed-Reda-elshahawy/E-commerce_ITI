@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-
-
-
 <html lang="en">
 
 <head>
@@ -19,14 +16,6 @@
 <body>
     <main class="container-fluid row">
         <aside class="bg-light col-2 p-1 p-sm-3">
-            <!-- user photo upleft -->
-            <!-- <div class="user d-flex gap-3 align-items-center justify-content-center">
-                <img src="" alt=" " class="rounded-circle adminImg" style="width: 40px; height: 40px;">  
-                <div class="d-none d-md-block">
-                    <h5 class="adminName"></h5>
-                    <p class="text-black-50 fs-6 mb-0 adminRole"></p>
-                </div>
-            </div> -->
             <ul class="control-list d-flex flex-column gap-4 mt-5 ps-0 align-items-center">
                 <li class="active-section w-100 p-2" data-section="products">
                     <button
@@ -46,21 +35,21 @@
                     <button
                         class="w-100 mx-auto d-md-flex flex-md-column align-items-md-center mx-xl-0 flex-xl-row gap-2">
                         <i class="fa-solid fa-chart-pie p-2 bg-dark bg-opacity-10 rounded-circle"></i>
-                        <span class="d-none d-md-block">Charts</span>
-                        
+                        <span class="d-none d-md-block">Sales analytics</span>
                     </button>
-                        <!-- Chart Section after Orders -->
                 </li>
             </ul>
         </aside>
         <div class="container position-relative d-flex min-vh-100 col-10">
             <main class="w-100">
-
-
                 <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
                     <a class="navbar-brand fw-bold" href="#">
                         <span>Dash</span><span class="text-black-50">seller</span>
                     </a>
+                    <!-- Alert placeholder -->
+                    <div id="globalAlertPlaceholder" class="container mt-3"></div>
+
+    
                     <div class="navbar-nav align-items-center ms-auto">
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -70,29 +59,20 @@
                                 <!-- up the name on top left -->
                             </a>
                             <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                                <!-- <button class="dropdown-item">My Profile</button>
-                                <button class="dropdown-item" data-bs-target="#addModalForCustomer"
-                                    data-bs-toggle="modal">Add New Admin</button> -->
                                 <button class="dropdown-item" id="logOut">Log Out</button>
                             </div>
                         </div>
                         <div class="nav-item">
-                            <!-- <div class="nav-link">
-                                <img class="rounded-circle me-lg-2 adminImg" src="" alt=""    
-                                    style="width: 40px; height: 40px;">                    
-                                <span class="d-none d-lg-inline-flex adminName"></span>
-                            </div> -->
                         </div>
                     </div>
                 </nav>
 
-
+                <!-- Tables  -->
                 <section class="content p-4">
+                    <!-- products Table  -->
                     <div class="table-container">
                         <table class="table table-light text-center products-table" data-toggle="table">
                             <div class="mb-2">
-                                <!-- <input type="search" name="searchByName" id="productsSearch" class="px-2 py-1 rounded"
-                                    placeholder="search"> -->
                             </div>
                             <caption>Products Data</caption>
                             <button class="btn btn-primary" id="add-btn" data-bs-target="#addModal"
@@ -118,15 +98,7 @@
                                     <td>test</td>
                                     <th></th>
                                     <td>
-                                        <!-- <button class="btn" id="edit-btn" data-bs-target="#updateModal"
-                                            data-bs-toggle="modal">
-                                            <i class="fa-regular fa-pen-to-square text-primary"></i>
-                                        </button>
                                         
-                                        <button class="btn" id="delete-btn" data-bs-target="#deleteModal"
-                                            data-bs-toggle="modal">
-                                            <i class="fa-solid fa-trash-can text-danger"></i>
-                                        </button> -->
                                     </td>
                                 </tr>
                             </tbody>
@@ -156,32 +128,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- <tr class="table-active">
-                                    <td>1</td>
-                                    <td>2023-05-23T08:56:21.618Z</td>
-                                    <td>Shipped</td>
-                                    <td>400</td>
-                                    <td>
-                                        <button class="btn" id="add-btn" data-bs-target="#addModal" data-bs-toggle="modal">
-                                            <i class="fa-solid fa-plus text-success"></i>
-                                        </button>
-                                        <button class="btn" id="edit-btn" data-bs-target="#updateModal"
-                                            data-bs-toggle="modal">
-                                            <i class="fa-regular fa-pen-to-square text-primary"></i>
-                                        </button>
-                                        <button class="btn" id="delete-btn" data-bs-target="#deleteModal"
-                                            data-bs-toggle="modal">
-                                            <i class="fa-solid fa-trash-can text-danger"></i>
-                                        </button>
-                                    </td>
-                                </tr> -->
                             </tbody>
                         </table>
                     </div>
 
                     
                     <!-- Chart table -->
-                    <div class="table-container chart">
+                    <div class="table-container chart d-none">
                         <table class="table table-light text-center chart-table">
                             <div class="mb-2">
                             </div>
@@ -203,22 +156,13 @@
                     </div>
 
 
-                    <!-- add -->
+                    <!-- add button for products -->
                     <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body py-4 text-center fw-bold">
                                     <form action="">
-                                        <!-- <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="addProductTitle" placeholder="Product Title">
-                                            <label for="addProductTitle">Product Title</label>
-                                        </div>
-                                        <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="addProductDescription" placeholder="Description">
-                                            <label for="addProductDescription">Description</label>
-                                        </div> -->
-
                                         <div class="form-floating mb-4">
                                             <input type="url" class="form-control" id="addProductImg" placeholder="Img">
                                             <label for="addProductImg">Photo</label>
@@ -249,7 +193,6 @@
                                             <div class="text-danger small" id="errorAddProductStock"></div>
                                         </div>
 
-
                                         <div class="text-end">
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Close</button>
@@ -260,6 +203,11 @@
                             </div>
                         </div>
                     </div>
+                    <!-- add alert bootstap  -->
+                    <div class="modal-body py-4 text-center fw-bold">
+                        <div id="addProductAlert"></div>
+                    </div>
+                    
 
                     <!-- Delete Modal  for products-->
                     <div class="modal fade" id="deleteModalForProduct" tabindex="-1" aria-labelledby="deleteModalLabel"
@@ -299,16 +247,7 @@
                                             <img src="" alt="previewImage" id="prevImage"
                                                 class="d-none w-25 h-25 mb-2 rounded">
                                         </div>
-                                        <!-- <div class="form-floating mb-3">
-                                            <input type="text" class="form-control product-name" id="floatingInputCN"
-                                                placeholder="product title">
-                                            <label for="floatingInputP">Product Title</label>
-                                        </div>
-                                        <div class="form-floating mb-3">
-                                            <input type="text" class="form-control product-email" id="floatingInputD"
-                                                placeholder="description">
-                                            <label for="floatingInputD">product-email</label>
-                                        </div> -->
+                                        
 
                                         <div class="form-floating mb-4">
                                             <input type="text" class="form-control" id="floatingInputPC"
@@ -339,7 +278,8 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Update Modal for orders -->
+
+                    <!-- Update Modal for orders (edit) -->
                     <div class="modal fade" id="updateModalForOrder" tabindex="-1" aria-labelledby="updateModalLabelO"
                         aria-hidden="true">
                         <div class="modal-dialog">
@@ -385,12 +325,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-                    
-
-
                 </section>
             </main>
         </div>
@@ -399,14 +333,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="../../JavaScript/modules/loadData.js"></script>
     <script src="../../JavaScript/Seller/DashboardSaller.js" type="module"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
-    <!-- <canvas id="myChart" width="400" height="200"></canvas> -->
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 
 </html>
