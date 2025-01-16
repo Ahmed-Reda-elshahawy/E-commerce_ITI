@@ -66,6 +66,14 @@ function addToCart() {
       cart.push(selectedProduct);
     }
 
+    // alert to give a feedback
+    const successAlert = document.getElementById('success-add');
+    successAlert.innerText = `${selectedProduct.title} has been added to your cart`;
+    successAlert.classList.remove("d-none");
+    setTimeout(() => {
+      successAlert.classList.add("d-none");
+    }, 2000);
+
     // Save the updated cart back to localStorage
     // localStorage.setItem('cart', JSON.stringify(cart));
     setStoredInCartProducts(cart);

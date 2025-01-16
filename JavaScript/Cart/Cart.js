@@ -23,6 +23,7 @@ function DisplayCartItems(userCart, totalCartPrice, cartItemsContainer, cartTota
                 <div class="cart-item-quantity">
                     <input type="number" value="${item.quantity}" min="1" max="${item.stock}" class="quantity-input px-1 rounded border-1" data-stock="${item.stock}" data-index="${index}">
                 </div>
+                <span class="delete-btn" data-index="${index}" style="cursor: pointer; color: gary; font-weight: bold;">X</span>
             `;
         cartItemsContainer.insertBefore(cartItem, cartTotalElement); // Ensure total element is at the end.
         totalCartPrice += item.price * item.quantity;
@@ -82,9 +83,20 @@ function loadCart() {
     cartItemsContainer.appendChild(cartTotalElement);
 
     if (userCart.length === 0) {
-        cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+        cartItemsContainer.innerHTML = '<div><img src="../../assets/images/EmptyCart.jpg"" alt="Empty Cart" width="500" height="300"> </div>';
         return;
     }
+
+    const deleteButtons = document.querySelectorAll('.delete-btn');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const index = parseInt(event.target.dataset.index, 10);
+            cart.splice(index, 1); // Remove the item from the cart
+            localStorage.setItem('cart', JSON.stringify(cart)); // Update local storage
+            DisplayCartItems(); // Reload the cart to reflect the changes
+            // updateCartItemCount(); // Update cart item count when item is deleted
+        });
+    });
 
     let totalCartPrice = 0;
 

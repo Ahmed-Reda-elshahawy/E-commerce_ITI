@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
+
     <script>
-        window.addEventListener('load', function() {
-            document.getElementById('submit').addEventListener('click', function(event) {
+        window.addEventListener('load', function () {
+            document.getElementById('submit').addEventListener('click', function (event) {
                 event.preventDefault();
 
                 var name = document.getElementById('fname').value;
@@ -87,7 +89,7 @@
                 }
             });
 
-            document.getElementById('cancel').addEventListener('click', function() {
+            document.getElementById('cancel').addEventListener('click', function () {
                 window.location.href = "../Auth/Login.html";
             });
         });
@@ -96,16 +98,20 @@
         * {
             box-sizing: border-box;
         }
-        body, html {
+
+        body,
+        html {
             margin: 0;
             padding: 0;
             height: 100%;
         }
+
         #mainwrapper {
             display: flex;
             flex-direction: row;
             height: 100vh;
         }
+
         #form {
             flex: 1;
             padding: 40px;
@@ -113,9 +119,11 @@
             align-items: center;
             justify-content: center;
         }
+
         form {
             width: 65%;
         }
+
         #image {
             flex: 1;
             display: flex;
@@ -123,23 +131,28 @@
             align-items: center;
             background-color: #f4f4f4;
         }
+
         #image img {
             width: 100%;
             height: 100%;
             border-radius: 10px;
         }
+
         .container {
             display: flex;
             flex-direction: column;
             width: 100%;
         }
+
         h1 {
             text-align: center;
         }
+
         p {
             text-align: center;
             color: gray;
         }
+
         .form-group {
             display: flex;
             align-items: center;
@@ -147,11 +160,13 @@
             width: 100%;
             padding-right: 100px;
         }
+
         .form-group label {
             width: 40%;
             text-align: right;
             margin-right: 10px;
         }
+
         .form-group input[type="text"],
         .form-group input[type="password"] {
             width: 70%;
@@ -159,15 +174,19 @@
             border: 1px solid black;
             border-radius: 4px;
         }
-        input[type=text]:focus, input[type=password]:focus {
+
+        input[type=text]:focus,
+        input[type=password]:focus {
             background-color: #ddd;
             outline: none;
         }
+
         .button {
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
+
         .registerbtn {
             background-color: #1b1d36;
             color: white;
@@ -179,6 +198,7 @@
             width: 90%;
             opacity: 0.9;
         }
+
         #cancel {
             background: none;
             color: black;
@@ -189,11 +209,13 @@
             cursor: pointer;
             font-size: 18px;
         }
+
         h3 {
             color: red;
             text-align: center;
             display: none;
         }
+
         .active {
             display: block;
         }
@@ -203,6 +225,7 @@
             #image {
                 display: none;
             }
+
             #form {
                 flex: 1 1 100%;
                 padding: 20px;
@@ -210,6 +233,7 @@
         }
     </style>
 </head>
+
 <body>
     <div id="mainwrapper">
         <div id="form">
@@ -245,11 +269,13 @@
                         <label for="age"><b>Age</b></label>
                         <input type="text" placeholder="Enter Age" id="age">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group ">
                         <label for="type"><b>Account Type*</b></label>
                         <div>
-                            <label><input type="radio" name="type" value="Customer"> Customer</label>
-                            <label><input type="radio" name="type" value="Seller"> Seller</label>
+                            <label><input class="col-lg-6 col-md-6 col-sm-6" type="radio" name="type" value="Customer">
+                                Customer</label>
+                            <label><input class="col-lg-6 col-md-6 col-sm-6" type="radio" name="type" value="Seller">
+                                Seller</label>
                         </div>
                     </div>
                     <div class="button">
@@ -265,4 +291,5 @@
         </div>
     </div>
 </body>
+
 </html>
