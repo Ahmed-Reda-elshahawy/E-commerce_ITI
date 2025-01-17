@@ -50,7 +50,7 @@ function loadNavbar() {
                         <li class="nav-item">
                             <a class="icon iconhover" href="../../Html/Cart/CartPay.html"><i
                                     class="fas fa-solid fa-bag-shopping"></i></a>
-                                     <span id="cart-item-count" class="cart-count">0</span>
+                                    
                         </li>
                     </ul>
                 </div>
@@ -61,3 +61,4 @@ function loadNavbar() {
 }
 
 loadNavbar();
+// <span id="cart-item-count" class="cart-count">0</span>

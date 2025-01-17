@@ -122,18 +122,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //cart
 
-function updateCartItemCount() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0);
+// function updateCartItemCount() {
+//     const cart = JSON.parse(localStorage.getItem('cart')) || [];
+//     const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0);
 
-    const cartItemCountElement = document.getElementById('cart-item-count');
-    if (cartItemCountElement) {
-        if (cartItemCount > 0) {
-            cartItemCountElement.textContent = cartItemCount; // Update the cart item count display
-            cartItemCountElement.style.display = 'inline'; // Show the span
-        } else {
-            cartItemCountElement.style.display = 'none'; // Hide the span when the cart is empty
-        }
-    }
-}
-updateCartItemCount();
+//     const cartItemCountElement = document.getElementById('cart-item-count');
+//     if (cartItemCountElement) {
+//         if (cartItemCount > 0) {
+//             cartItemCountElement.textContent = cartItemCount; // Update the cart item count display
+//             cartItemCountElement.style.display = 'inline'; // Show the span
+//         } else {
+//             cartItemCountElement.style.display = 'none'; // Hide the span when the cart is empty
+//         }
+//     }
+// }
+// updateCartItemCount();

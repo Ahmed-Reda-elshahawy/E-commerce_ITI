@@ -27,10 +27,6 @@ export function displayCustomers(storedUsers) {
                 <td>${storedUsers[i].email}</td>
                 <td>${storedUsers[i].role}</td>
                 <td>
-                    <button class="btn edit-btn" data-bs-target="#updateModalForCustomer"
-                        data-bs-toggle="modal" onclick="updateCustomerById(${storedUsers[i].id})">
-                        <i class="fa-regular fa-pen-to-square text-primary"></i>
-                    </button>
                     <button class="btn delete-btn" data-bs-target="#deleteModalForCustomer"
                         data-bs-toggle="modal" onclick="deleteCustomerById(${storedUsers[i].id})">
                         <i class="fa-solid fa-trash-can text-danger"></i>
@@ -41,7 +37,10 @@ export function displayCustomers(storedUsers) {
     }
 }
 
-
+{/* <button class="btn edit-btn" data-bs-target="#updateModalForCustomer"
+data-bs-toggle="modal" onclick="updateCustomerById(${storedUsers[i].id})">
+<i class="fa-regular fa-pen-to-square text-primary"></i>
+</button> */}
 
 // ==== Update customer ==== //
 let currentCustomerId = 0;

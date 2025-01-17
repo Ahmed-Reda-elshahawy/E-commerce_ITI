@@ -31,9 +31,9 @@ handleActiveSection();
 // =====================( users )===================== //
 displayCustomers(getStoredCustomers());
 
-document.getElementById("edit-customer").addEventListener('click', editCustomer);
+// document.getElementById("edit-customer").addEventListener('click', editCustomer);
 document.getElementById("delete-customer").addEventListener('click', confirmDeleteCustomer);
-window.updateCustomerById = updateCustomerById;
+// window.updateCustomerById = updateCustomerById;
 window.deleteCustomerById = deleteCustomerById;
 
 
@@ -45,7 +45,7 @@ document.getElementById("edit-product").addEventListener('click', editProduct);
 document.getElementById("delete-product").addEventListener('click', confirmDeleteProduct);
 window.updateProduct = updateProduct;
 window.deleteProduct = deleteProduct;
-window.previewImage = previewImage;
+// window.previewImage = previewImage;
 
 
 

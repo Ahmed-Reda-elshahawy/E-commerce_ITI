@@ -64,6 +64,7 @@ function addToCart() {
     } else {
       // If the product doesn't exist, add it to the cart
       cart.push(selectedProduct);
+      updateCartItemCount();
     }
 
     // alert to give a feedback
@@ -91,6 +92,26 @@ if (selectedProduct.stock < 1) {
 //   document.getElementById('add-to-cart').classList.remove('d-none');
 //   document.querySelector('.outStock').classList.add('d-none');
 // }
+
+function updateCartItemCount() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+  const currentUser = users.find(user => user.currentUser == true);
+  const userCart = cart.filter(CP => CP.userId == currentUser.id);
+  const cartItemCount = userCart.reduce((total, item) => total + item.quantity, 0);
+
+  const cartItemCountElement = document.getElementById('cart-item-count');
+  if (cartItemCountElement) {
+    if (cartItemCount > 0) {
+      cartItemCountElement.textContent = cartItemCount; // Update the cart item count display
+      cartItemCountElement.style.display = 'inline'; // Show the span
+    } else {
+      cartItemCountElement.style.display = 'none'; // Hide the span when the cart is empty
+    }
+  }
+}
+
+
 // Add event listener to the "Add to Cart" button
 document.getElementById('add-to-cart').addEventListener('click', function () {
   const users = JSON.parse(localStorage.getItem('users'));

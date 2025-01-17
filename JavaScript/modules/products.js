@@ -117,8 +117,8 @@ export function editProduct() {
     if (product) {
         product.category = categoryInput.value;
         product.title = titleInput.value;
-        product.price = priceInput.value;
-        product.stock = stockInput.value;
+        product.price = Number(priceInput.value);
+        product.stock = Number(stockInput.value);
         if (product.category !== '' && product.title !== '' && String(product.price) !== '' && String(product.stock) !== '' && !(/^[0-9]/.test(product.category)) && !(/^[0-9]/.test(product.title)) && /^\d*\.?\d+$/.test(String(product.price)) && /^\d+$/.test(String(product.stock))) {
             errorMessage.classList.add('d-none');
             setStoredProducts(products);
