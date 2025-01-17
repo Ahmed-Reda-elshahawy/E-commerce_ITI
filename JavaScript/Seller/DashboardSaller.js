@@ -3,6 +3,10 @@ import { DisplayProducts, getStoredProducts,setStoredProducts  ,confirmDeletePro
 import { handleActiveSectionSaller } from "../modules/sellerActive.js";
 import { getStoredCustomers } from "../modules/users.js";
 
+
+
+//-----------------------------------Display-----------------------------------------------------
+
 //fetch logged-in user For display 
 const getLoggedInUser = () => {
     const users = getStoredCustomers(); 
@@ -23,23 +27,13 @@ if (loggedInUser) {
     console.error("No logged-in user found!");
 }
 
-
-//---------------------------------------------------------------------------------------
-//             //Delete...............
-// main.js (or wherever you want to use the functions)
-
-// Import the functions from the product.js file
- //Delete...............
-// document.getElementById("edit-customer").addEventListener('click', editCustomer);
+//----------------------------------Delete product--------------------------------------------
 document.getElementById("delete-product").addEventListener('click', confirmDeleteProduct);
-
-// window.updateCustomer = updateCustomer;
 window.deleteProduct = deleteProduct;
-//----------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------
 
 
-//             //Edit
-// Attach event listener to the "Edit" button
+//----------------------------------Edit product--------------------------------------------
 document.getElementById("edit-product").addEventListener("click", (event) => {
     event.preventDefault(); // Prevent form submission
     confirmEditProduct();
@@ -63,14 +57,7 @@ function previewImage(event) {
         preview.classList.add('d-none'); // Hide the preview image if no file is selected
     }
 }
-
-// Make the function accessible globally if it's invoked from HTML
 window.previewImage = previewImage;
-
-//             document.getElementById("edit-product").addEventListener('click', editProduct);
-//             window.updateProduct = updateProduct;
-//             window.previewImage = previewImage;
-
 //--------------------------------------------------------------------------------------------
 
 
@@ -198,8 +185,6 @@ document.querySelector('#addModal form').addEventListener('submit', function (ev
     document.querySelector('#addModal form').reset();
 
 //*******************alert added************ */
-    // Display a Bootstrap alert at the top of the page
-// Display a Bootstrap alert at the top of the page with a custom width and auto-dismiss
 const globalAlertPlaceholder = document.getElementById('globalAlertPlaceholder');
 
 // Clear any existing alert
@@ -209,7 +194,7 @@ globalAlertPlaceholder.innerHTML = '';
 const globalAlertDiv = document.createElement('div');
 globalAlertDiv.className = 'alert alert-success alert-dismissible fade show mx-auto';
 globalAlertDiv.role = 'alert';
-globalAlertDiv.style.width = '50%'; // Customize the width (e.g., 50%)
+globalAlertDiv.style.width = '50%'; 
 globalAlertDiv.innerHTML = `
     <strong>Your product has been added successfully!</strong> 
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -225,7 +210,6 @@ setTimeout(() => {
         globalAlertDiv.remove(); // Remove it from the DOM after transition
     });
 }, 2000);
-
 });
 //*********************************************************************************************************** */
 
@@ -248,94 +232,11 @@ document.getElementById("delete-order").addEventListener('click', confirmDeleteO
 window.deleteOrderById = deleteOrderById;
 window.updateOrderById = updateOrderById;
 
-//55
-// displayOrders(getStoredOrders());
-// document.getElementById("edit-order").addEventListener('click', editOrder);
-// document.getElementById("delete-order").addEventListener('click', confirmDeleteOrder);
-// window.deleteOrderById = deleteOrderById;
-// window.updateOrderById = updateOrderById;
-//55
-// Importing the functions from orders.js
-// Example usage of imported functions
-// document.addEventListener("DOMContentLoaded", () => {
-//     // Get the logged-in user
-//     const loggedInUser = getLoggedInUseragain();
-//     if (loggedInUser) {
-//         // Fetch orders from localStorage
-//         const orders = JSON.parse(localStorage.getItem('orders')) || [];
-//         // Filter orders where the sellerId matches the logged-in user's id
-//         const userOrders = orders.filter(order => order.sellerIds.includes(loggedInUser.id));
-//         // Display orders
-//         displayOrders(userOrders);
-//     } else {
-//         console.log("No user is logged in.");
-//     }
-// });
-
-
-// document.getElementById("edit-order").addEventListener('click', editOrder);
-// document.getElementById("delete-order").addEventListener('click', confirmDeleteOrder);
-// window.deleteOrderById = deleteOrderById;
-// window.updateOrderById = updateOrderById;
-
 //--------------------------------------------------------------------------------------------------------------
 
 handleActiveSectionSaller();
 
-//----------------------------------------------------------------------------------------------------------
-//chart
-
-// // Include Chart.js from CDN
-// const script = document.createElement('script');
-// script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
-// document.head.appendChild(script);
-
-// // Wait for Chart.js to load
-// script.onload = function () {
-//     // Get the canvas element
-//     const ctx = document.getElementById('sellerChart').getContext('2d');
-
-//     // Create the chart
-//     const sellerChart = new Chart(ctx, {
-//         type: 'bar', // Change this to 'line', 'pie', etc., as needed
-//         data: {
-//             labels: ['January', 'February', 'March', 'April', 'May'], // Example labels
-//             datasets: [
-//                 {
-//                     label: 'Sellers',
-//                     data: [5, 10, 8, 15, 20], // Example data
-//                     backgroundColor: [
-//                         'rgba(255, 99, 132, 0.2)',
-//                         'rgba(54, 162, 235, 0.2)',
-//                         'rgba(255, 206, 86, 0.2)',
-//                         'rgba(75, 192, 192, 0.2)',
-//                         'rgba(153, 102, 255, 0.2)',
-//                     ],
-//                     borderColor: [
-//                         'rgba(255, 99, 132, 1)',
-//                         'rgba(54, 162, 235, 1)',
-//                         'rgba(255, 206, 86, 1)',
-//                         'rgba(75, 192, 192, 1)',
-//                         'rgba(153, 102, 255, 1)',
-//                     ],
-//                     borderWidth: 1,
-//                 },
-//             ],
-//         },
-//         options: {
-//             responsive: true,
-//             maintainAspectRatio: false,
-//             scales: {
-//                 y: {
-//                     beginAtZero: true,
-//                 },
-//             },
-//         },
-//     });
-// };
-    //**********************test chart****** */
-    
-
+//--------------------------------------------chart--------------------------------------------------------------
     const orders = [
         {
             "orderId": 111,
@@ -406,16 +307,8 @@ handleActiveSectionSaller();
     });
 
 //----------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
 //log out
 document.getElementById('logOut').addEventListener('click', function() {
-    
-    window.location.href = '../../Html/Auth/Login.html';
-
+        window.location.href = '../../Html/Auth/Login.html';
 });
 
