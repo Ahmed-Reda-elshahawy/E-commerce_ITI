@@ -37,18 +37,6 @@ function addToCart() {
   const currentUser = users.find(user => user.currentUser == true);
 
   if (selectedProduct) {
-    // const product = {
-    //   id: selectedProduct.id,
-    //   sellerId: selectedProduct.sellerId,
-    //   name: selectedProduct.title && selectedProduct.tittle2
-    //     ? `${selectedProduct.title} ${selectedProduct.tittle2}`
-    //     : 'Backpack',
-    //   price: selectedProduct.price,
-    //   image: selectedProduct.images[0] || 'https://via.placeholder.com/80',
-
-    //   quantity: 1,
-    //   stock: selectedProduct.stock
-    // };
     selectedProduct.quantity = 1;
     selectedProduct.userId = currentUser.id;
 
